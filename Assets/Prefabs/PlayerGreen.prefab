@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54f5d34d29f77544d8b72897f56c2760, type: 2}
+  - {fileID: 2100000, guid: 9ee4142b71b5c9f419191896d3dfd651, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,12 +154,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8166040892525687113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db297e68f9ff724d9834cba2d4337c0, type: 3}
+  m_Script: {fileID: 11500000, guid: d847dc48b145c64428be66371c04b1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 6cc6e4ae65e406c4891879fc59829a98, type: 2}
   shootCooldown: 0.2
-  tmp_ProjPrefab: {fileID: 1805633794432633542, guid: a6ea9e76137bc8347a2733036e404699, type: 3}
+  tmp_ProjPrefab: {fileID: 1805633794432633542, guid: 89dfd72e1e84d1047a9a3c7de10440a2, type: 3}
 --- !u!143 &7249247840707618523
 CharacterController:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f96abf113d5a82c41b90d15899a1adca, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 5b9f64e1c90cb184abb8ee3b93c7a03f, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
