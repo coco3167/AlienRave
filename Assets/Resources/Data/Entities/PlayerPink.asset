@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149fbf5de9b04094b876f34101340d57, type: 3}
+  m_Script: {fileID: 11500000, guid: 25e57519fcabbd342b60e34b57d0ebe1, type: 3}
   m_Name: PlayerPink
   m_EditorClassIdentifier: 
-  speed: 1
-  maxHealth: 100
+  speed: 5
+  maxHealth: 3
+  fireRate: 0.2
+  projectileType: 0

@@ -41,10 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7880679624227888944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935310c5f7920bd428126fa3ddb88e1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bddba369b497b94f92f3f8d404badc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - type: 0
-    prefab: {fileID: 8185652407434083554, guid: c8bf1d80b94ac004c81510f86ce3ebde, type: 3}
-    size: 50
+  pools: []

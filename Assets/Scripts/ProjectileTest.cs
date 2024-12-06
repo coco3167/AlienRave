@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileTest : Spawnable
+/*public class ProjectileTest : Spawnable
 {
     private Rigidbody rb;
 
@@ -23,4 +23,4 @@ public class ProjectileTest : Spawnable
         rb.angularVelocity = Vector3.zero;
         gameObject.SetActive(false);
     }
-}
+}*/

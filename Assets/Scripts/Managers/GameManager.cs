@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
 
+	public delegate void TimeChange();
+	public event TimeChange OnPause;
+	public event TimeChange OnPlay;
+
 	private void Awake()
 	{
 		instance = this;
@@ -38,5 +42,17 @@ public class GameManager : MonoBehaviour
 	public void OnDeviceReconnected(PlayerInput playerInput)
 	{
 
+	}
+
+	public void Pause()
+	{
+		//TODO Afficher l'écran de pause
+		OnPause?.Invoke();
+	}
+
+	public void Play()
+	{
+		//TODO Cacher l'écran de pause
+		OnPlay?.Invoke();
 	}
 }

@@ -3,24 +3,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : Entity
 {
-	[SerializeField] private float shootCooldown = 0.2f;
-	[SerializeField] private GameObject tmp_ProjPrefab;
-	//[SerializeField] private PoolTag projectileTag;
-
-	private PlayerInput input;
 	private Vector2 moveInput;
 	private bool shooting;
 	private Transform shootPoint;
 	private float shootTimer;
 	private CharacterController ctrl;
+	private PlayerInput input;
 
-	private void Awake()
+	protected override void Awake()
 	{
-		ctrl = GetComponent<CharacterController>();
-		input = GetComponent<PlayerInput>();
-		shootPoint = transform.GetChild(0);
+		base.Awake();
 
-		shootTimer = shootCooldown;
+		input = GetComponent<PlayerInput>();
+		ctrl = GetComponent<CharacterController>();
+		shootPoint = transform.GetChild(0);
+		shootTimer = data.fireRate;
 	}
 
 	private void FixedUpdate()
@@ -36,27 +33,29 @@ public class PlayerController : Entity
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
 		if(shooting && shootTimer <= 0)
 		{
-			// TODO récup un projectile et le lancer.
-			Instantiate(tmp_ProjPrefab, shootPoint.position, shootPoint.rotation);
-			shootTimer = shootCooldown;
+			PoolManager.Instance.SpawnElement(data.projectileType, shootPoint.position, shootPoint.rotation);
+			shootTimer = data.fireRate;
 		}
 	}
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
 
 	public void OnShoot(InputAction.CallbackContext ctx) => shooting = ctx.performed;
+
 	public override void Die()
 	{
-		throw new System.NotImplementedException();
+		// TODO Lancer l'écran de fin : perdu
 	}
 
 	public override void Pause()
 	{
-		throw new System.NotImplementedException();
+		input.enabled = false;
+		// TODO Pause anims
 	}
 
 	public override void Play()
 	{
-		throw new System.NotImplementedException();
+		input.enabled = true;
+		// TODO Play anims
 	}
 }

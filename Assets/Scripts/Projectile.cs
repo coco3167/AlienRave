@@ -1,8 +1,22 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, IPausable
 {
 	[SerializeField] protected ProjectileData data;
+
+	private bool paused;
+
+	private void Awake()
+	{
+		GameManager.Instance.OnPause += Pause;
+		GameManager.Instance.OnPlay += Play;
+	}
+
+	private void Update()
+	{
+		if (paused) return;
+		transform.Translate(transform.forward * data.speed);
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -10,14 +24,12 @@ public class Projectile : MonoBehaviour
 		Hit(other.GetComponentInParent<Entity>());
 	}
 
-	private void Update()
-	{
-		transform.Translate(transform.forward * data.speed);
-	}
-
 	protected virtual void Hit(Entity entity)
 	{
 		entity.Harm(data.damage);
 		gameObject.SetActive(false);
 	}
+
+	public void Pause() => paused = true;
+	public void Play() => paused = false;
 }

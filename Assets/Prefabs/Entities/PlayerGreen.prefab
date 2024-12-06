@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54f5d34d29f77544d8b72897f56c2760, type: 2}
+  - {fileID: 2100000, guid: e75950ce714f91e41832b278fbce2ef2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,12 +119,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447953716132080507}
-  - component: {fileID: 6353184670968331641}
-  - component: {fileID: 7249247840707618523}
+  - component: {fileID: 6297325741069125958}
   - component: {fileID: 2510046196245942567}
+  - component: {fileID: 7249247840707618523}
   m_Layer: 0
   m_Name: PlayerGreen
-  m_TagString: Untagged
+  m_TagString: PlayerGreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Transform:
   - {fileID: 8220097060962780638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6353184670968331641
+--- !u!114 &6297325741069125958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,12 +154,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 8166040892525687113}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db297e68f9ff724d9834cba2d4337c0, type: 3}
+  m_Script: {fileID: 11500000, guid: dce088f9b1b38e241934dcd5cd447d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 58b9977bef0e07f47a58514c73131eae, type: 2}
+  data: {fileID: 11400000, guid: 030f95aafa8887e4ab25f119495934b6, type: 2}
   shootCooldown: 0.2
-  tmp_ProjPrefab: {fileID: 1805633794432633542, guid: a6ea9e76137bc8347a2733036e404699, type: 3}
+  tmp_ProjPrefab: {fileID: 1805633794432633542, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+--- !u!114 &2510046196245942567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166040892525687113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d0bdc3109ca009d4a95d7f54c714aec5, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6297325741069125958}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 34ff0601-1d5a-4a5e-93b8-b79f82f0c7d9
+    m_ActionName: 'Movement/Direction[/XInputControllerWindows/leftStick]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9ed0edad-f043-4f3d-b37f-65e51d2a9f96
+    m_ActionName: 'Input/Dash[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea8ca570-cb21-482d-b8fb-9cefaec8e20e
+    m_ActionName: 'Input/Parry[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6297325741069125958}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aaa88f2f-7891-4da0-9a64-b034bdfe88d2
+    m_ActionName: 'Input/Shoot[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Input
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!143 &7249247840707618523
 CharacterController:
   m_ObjectHideFlags: 0
@@ -185,73 +255,3 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2510046196245942567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166040892525687113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f96abf113d5a82c41b90d15899a1adca, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6353184670968331641}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 34ff0601-1d5a-4a5e-93b8-b79f82f0c7d9
-    m_ActionName: 'Movement/Direction[/XInputControllerWindows/leftStick]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9ed0edad-f043-4f3d-b37f-65e51d2a9f96
-    m_ActionName: 'Input/Dash[/XInputControllerWindows/rightTrigger,/XInputControllerWindows1/rightTrigger]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ea8ca570-cb21-482d-b8fb-9cefaec8e20e
-    m_ActionName: 'Input/Parry[/XInputControllerWindows/leftTrigger,/XInputControllerWindows1/leftTrigger]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6353184670968331641}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnShoot
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: aaa88f2f-7891-4da0-9a64-b034bdfe88d2
-    m_ActionName: 'Input/Shoot[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Input
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

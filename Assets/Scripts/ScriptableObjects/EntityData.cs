@@ -5,5 +5,6 @@ public class EntityData : ScriptableObject
 {
 	public float speed;
 	public int maxHealth;
-	//public PoolTag projPoolTag;
+	public float fireRate;
+	public PoolType projectileType;
 }
