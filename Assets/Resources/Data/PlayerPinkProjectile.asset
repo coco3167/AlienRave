@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2758707fe5caf14886655dd29fbd276, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fdfab75ac2b84a4599b17cc980dc8fe, type: 3}
   m_Name: PlayerPinkProjectile
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 1
-  targetTag: 
+  speed: 5
+  targetTag: EnemyPink
