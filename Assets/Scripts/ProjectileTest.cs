@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : Spawnable
+public class ProjectileTest : Spawnable
 {
     private Rigidbody rb;
 
