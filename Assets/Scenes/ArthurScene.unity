@@ -161,12 +161,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 101723355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd7c179f81de4b40b2c4b9ca18c6eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 240aa43baf9cb664293fb56dddf0528c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefabs:
-  - {fileID: 8166040892525687113, guid: 79997d2a92096854abd522739292001b, type: 3}
-  - {fileID: 2837132552774771676, guid: e5abd3922642a4c4b8d7d73671fe8881, type: 3}
+  - {fileID: 8166040892525687113, guid: bf88d7e8790c10c49956cec5e48b94d0, type: 3}
+  - {fileID: 1182811725354978444, guid: dcf02f2674ea4a24c921a8ad24d18f6b, type: 3}
 --- !u!114 &101723358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 8166040892525687113, guid: 79997d2a92096854abd522739292001b, type: 3}
+  m_PlayerPrefab: {fileID: 8166040892525687113, guid: bf88d7e8790c10c49956cec5e48b94d0, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
