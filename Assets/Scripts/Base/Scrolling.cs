@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Scrolling : Spawnable
+public abstract class Scrolling : Spawnable
 {
 	protected Rigidbody rb;
 	[SerializeField] protected float scrollSpeed;
@@ -15,15 +15,13 @@ public class Scrolling : Spawnable
 		Move();
 	}
 
-	protected virtual void Move()
-	{
-		rb.linearVelocity = scrollSpeed * Time.deltaTime * Vector3.back;
-	}
+	protected abstract void Move();
 
 	public override void Despawn()
 	{
 		base.Despawn();
 		scrolling = false;
+		rb.linearVelocity = Vector3.zero;
 	}
 	public override void Spawn()
 	{

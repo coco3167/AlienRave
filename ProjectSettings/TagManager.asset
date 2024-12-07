@@ -8,16 +8,17 @@ TagManager:
   - PlayerPink
   - EnemyPink
   - EnemyGreen
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CrowdAvoid
   - Water
   - UI
   - Player
   - PlayerOnly
-  - 
+  - Projectile
   - 
   - 
   - 

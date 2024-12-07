@@ -12,13 +12,19 @@ public class Projectile : Spawnable
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag(data.targetTag)) Hit(other.GetComponentInParent<IHarmable>());
-		Despawn();
+		if (other.CompareTag(data.targetTag))
+		{
+			Hit(other.GetComponentInParent<IHarmable>());
+			return;
+		}
+
+		if (other.CompareTag("Obstacle")) Despawn();
 	}
 
 	protected virtual void Hit(IHarmable entity)
 	{
 		entity.Harm(data.damage);
 		gameObject.SetActive(false);
+		Despawn();
 	}
 }
