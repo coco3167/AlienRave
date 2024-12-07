@@ -11,8 +11,9 @@ public class InstantPowerUp : PowerUp
 			case PowerUpData.Type.Heal: GameManager.Instance.Heal((int)value);
 				break;
 			case PowerUpData.Type.FireRate: playerData.fireRate -= value;
+				if (playerData.fireRate <= 0) playerData.fireRate = 0.01f;
 				break;
-			case PowerUpData.Type.NbProjectiles: playerData.nbProjectiles += (int)value;
+			case PowerUpData.Type.NbProjectiles: player.IncreaseShootPoints();
 				break;
 			case PowerUpData.Type.Homing: //TODO todo? 
 				break;

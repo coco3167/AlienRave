@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
 	}
 	public void Heal(int amount)
 	{
+		if(playersHealth == maxPlayersHealth) return;
+
 		playersHealth += amount;
 		if (playersHealth > maxPlayersHealth) playersHealth = maxPlayersHealth;
 		// TODO Update UI.
