@@ -23,11 +23,11 @@ public class Scrolling : Spawnable
 	public override void Despawn()
 	{
 		base.Despawn();
-		scrolling = true;
+		scrolling = false;
 	}
 	public override void Spawn()
 	{
 		base.Spawn();
-		scrolling = false;
+		scrolling = true;
 	}
 }
