@@ -40,4 +40,15 @@ public abstract class Enemy : Scrolling, IHarmable
 		base.Despawn();
 		// TODO Reset ragdoll
 	}
+
+	public void DropPowerUp()
+	{
+		if (Random.Range(0f, 1f) < data.powerUpDropChance) return;
+
+		// TODO Random avec des poids ?
+		int powerUpTypeIndex = Random.Range(9, 16);
+		// TODO implémenter le homing et le slowmotion
+		if (powerUpTypeIndex == 12) powerUpTypeIndex = 9;
+		PoolManager.Instance.SpawnElement((PoolType)powerUpTypeIndex);
+	}
 }
