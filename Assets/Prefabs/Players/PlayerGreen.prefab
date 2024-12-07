@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce088f9b1b38e241934dcd5cd447d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 030f95aafa8887e4ab25f119495934b6, type: 2}
+  data: {fileID: 11400000, guid: c66c0092815ef2a49935a39e99264477, type: 2}
   invincibiltyDuration: 0.2
 --- !u!114 &2510046196245942567
 MonoBehaviour:

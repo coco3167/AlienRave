@@ -68,10 +68,22 @@ public class GameManager : MonoBehaviour
 		// TODO Réactiver l'input.
 	}
 
+	public void UpdatePowerUps(Sprite sprite, int playerIndex)
+	{
+		// TODO Afficher le sprite du powerup du côté du joueur.
+	}
+
 	public void Harm(int damage)
 	{
 		playersHealth -= damage;
 		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
+		// TODO Update UI.
+	}
+	public void Heal(int amount)
+	{
+		playersHealth += amount;
+		if (playersHealth > maxPlayersHealth) playersHealth = maxPlayersHealth;
+		// TODO Update UI.
 	}
 
 	public void Pause()

@@ -119,8 +119,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7774553096085986958}
-  - component: {fileID: 6594755265529021498}
   - component: {fileID: 8917543044859965950}
+  - component: {fileID: 6594755265529021498}
   - component: {fileID: 1619050286394241200}
   m_Layer: 0
   m_Name: GreenDrunkEnemy
@@ -145,6 +145,22 @@ Transform:
   - {fileID: 3538803036796366976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8917543044859965950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312074981931040748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad8097672831894e95518247d427034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 0
+  data: {fileID: 11400000, guid: 7b863c13e252c4347a042c4436f1ab98, type: 2}
+  targetTag: PlayerGreen
+  maxAngle: 0.2
 --- !u!54 &6594755265529021498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -172,22 +188,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &8917543044859965950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8312074981931040748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad8097672831894e95518247d427034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 0
-  data: {fileID: 11400000, guid: d853ea770f1d6964eb7cd2edbb25fa10, type: 2}
-  targetTag: PlayerGreen
-  maxAngle: 0.2
 --- !u!65 &1619050286394241200
 BoxCollider:
   m_ObjectHideFlags: 0

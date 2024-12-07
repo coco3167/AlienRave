@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : Pausable, IHarmable
 {
-	[SerializeField] private EntityData data;
-	[SerializeField] private float invincibiltyDuration = 0.2f;
+	[SerializeField] private PlayerData data;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -37,7 +36,7 @@ public class PlayerController : Pausable, IHarmable
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
 		if(shooting && shootTimer <= 0)
 		{
-			PoolManager.Instance.SpawnElement(data.projectileType, shootPoint.position, shootPoint.rotation);
+			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
 			shootTimer = data.fireRate;
 		}
 	}
@@ -63,13 +62,32 @@ public class PlayerController : Pausable, IHarmable
 		if (!canTakeDmg) return;
 		print($"{name} poc");
 		GameManager.Instance.Harm(damage);
-		canTakeDmg = false;
-		StartCoroutine(InvincibilityCooldown());
+		Invulnerability();
 	}
 
-	private IEnumerator InvincibilityCooldown()
+	public void PickUpPowerUp(PowerUp powerUp)
 	{
-		yield return new WaitForSeconds(invincibiltyDuration);
+		Sprite sprite = powerUp.Apply(data, this);
+		if(sprite != null) GameManager.Instance.UpdatePowerUps(sprite,data.playerIndex);
+	}
+
+	public void Invulnerability()
+	{
+		canTakeDmg = false;
+		StartCoroutine(InvulnerabilityCooldown());
+		// TODO Anims / effets visuels ?
+	}
+
+	public IEnumerator PowerUpTimer(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		LastingPowerUp powerUp = data.powerUps.Dequeue();
+		powerUp.Remove();
+	}
+
+	private IEnumerator InvulnerabilityCooldown()
+	{
+		yield return new WaitForSeconds(data.invulnerabilityDuration);
 		canTakeDmg = true;
 	}
 }

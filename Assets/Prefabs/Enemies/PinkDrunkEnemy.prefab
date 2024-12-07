@@ -65,10 +65,6 @@ PrefabInstance:
       value: EnemyPink
       objectReference: {fileID: 0}
     - target: {fileID: 8917543044859965950, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
-      propertyPath: data
-      value: 
-      objectReference: {fileID: 11400000, guid: 5abe3fd4ab656b245b812bdb795fdd90, type: 2}
-    - target: {fileID: 8917543044859965950, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
       propertyPath: targetTag
       value: PlayerPink
       objectReference: {fileID: 0}

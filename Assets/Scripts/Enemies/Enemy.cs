@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Enemy : Scrolling, IHarmable
 {
-	[SerializeField] protected EntityData data;
+	[SerializeField] protected EnemyData data;
 	protected int health;
 	[SerializeField] protected string targetTag;
 
