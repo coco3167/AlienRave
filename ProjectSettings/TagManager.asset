@@ -19,8 +19,8 @@ TagManager:
   - Player
   - PlayerOnly
   - Projectile
-  - 
-  - 
+  - CrowdObstacle
+  - CrowdMember
   - 
   - 
   - 

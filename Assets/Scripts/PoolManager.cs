@@ -69,5 +69,5 @@ public enum PoolType
 {
 	PlayerPinkProjectile, PlayerGreenProjectile,
 	PinkDrunkEnemy, GreenDrunkEnemy, PinkThrowEnemy, GreenThrowEnemy, HybridEnemy,
-	CrowdMember
+	CrowdMember, CrowdObstacle
 }

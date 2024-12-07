@@ -12,12 +12,15 @@ public class GameManager : MonoBehaviour
 	private enum ScreenState { Pause, Win, Lose, Disconnected }
 
 	[SerializeField] private GameObject[] playerPrefabs;
+	[SerializeField] private CrowdManager tmp_crowdManager;
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
+
+	private float tmpObstacleSPawnertimer = 2f;
 
 	#region Événements
 
@@ -33,6 +36,16 @@ public class GameManager : MonoBehaviour
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
 
 		playersHealth = maxPlayersHealth;
+	}
+
+	private void Update()
+	{
+		tmpObstacleSPawnertimer -= Time.deltaTime;
+		if (tmpObstacleSPawnertimer <= 0)
+		{
+			tmp_crowdManager.TMP_SpawnRandomObstacle();
+			tmpObstacleSPawnertimer = 3f;
+		}
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
