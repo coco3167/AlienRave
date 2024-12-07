@@ -33,6 +33,7 @@ public abstract class Enemy : Scrolling, IHarmable
 		rb.constraints = RigidbodyConstraints.None;
 		rb.useGravity = true;
 		print($"{name} : ded");
+		DropPowerUp();
 	}
 
 	public override void Despawn()
@@ -49,6 +50,6 @@ public abstract class Enemy : Scrolling, IHarmable
 		int powerUpTypeIndex = Random.Range(9, 16);
 		// TODO implémenter le homing et le slowmotion
 		if (powerUpTypeIndex == 12) powerUpTypeIndex = 9;
-		PoolManager.Instance.SpawnElement((PoolType)powerUpTypeIndex);
+		PoolManager.Instance.SpawnElement((PoolType)powerUpTypeIndex,transform.position, Quaternion.identity);
 	}
 }
