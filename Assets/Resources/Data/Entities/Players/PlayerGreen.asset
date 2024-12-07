@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d8f4c8e9c9ebd40ad92977f2a1a212, type: 3}
   m_Name: PlayerGreen
   m_EditorClassIdentifier: 
+  playerIndex: 0
   speed: 5
   fireRate: 0.2
+  nbProjectiles: 1
+  invulnerabilityDuration: 0.2
   projType: 1
+  projectileData: {fileID: 0}

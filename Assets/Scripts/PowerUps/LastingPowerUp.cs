@@ -41,7 +41,7 @@ public class LastingPowerUp : PowerUp
 	{
 		switch (type)
 		{
-			case PowerUpData.Type.Speed: playerData.speed -= value;
+			case PowerUpData.Type.Speed:playerData.speed -= value;
 				break;
 
 			case PowerUpData.Type.Damage: playerData.projectileData.damage -= (int)value;

@@ -83,6 +83,7 @@ public class PlayerController : Pausable, IHarmable
 		yield return new WaitForSeconds(duration);
 		LastingPowerUp powerUp = data.powerUps.Dequeue();
 		powerUp.Remove();
+		print("Fin de l'effet du powerUp");
 	}
 
 	private IEnumerator InvulnerabilityCooldown()
