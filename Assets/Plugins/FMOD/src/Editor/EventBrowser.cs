@@ -571,7 +571,6 @@ namespace FMODUnity
             {
                 if (hasSearch)
                 {
-                    // Hack to undo TreeView flattening the hierarchy when searching
                     baseIndent = oldBaseIndent + args.item.depth * depthIndentWidth;
                 }
 

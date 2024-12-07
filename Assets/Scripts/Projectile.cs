@@ -1,23 +1,30 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Spawnable
 {
 	[SerializeField] protected ProjectileData data;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (!other.CompareTag(data.targetTag)) return;
-		Hit(other.GetComponentInParent<Entity>());
-	}
-
 	private void Update()
 	{
+		if (paused) return;
 		transform.Translate(transform.forward * data.speed);
 	}
 
-	protected virtual void Hit(Entity entity)
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag(data.targetTag))
+		{
+			Hit(other.GetComponentInParent<IHarmable>());
+			return;
+		}
+
+		if (other.CompareTag("Obstacle")) Despawn();
+	}
+
+	protected virtual void Hit(IHarmable entity)
 	{
 		entity.Harm(data.damage);
 		gameObject.SetActive(false);
+		Despawn();
 	}
 }
