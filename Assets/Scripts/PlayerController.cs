@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : Entity
+public class PlayerController : Pausable, IHarmable
 {
+	[SerializeField] private EntityData data;
+
 	private Vector2 moveInput;
 	private bool shooting;
 	private Transform shootPoint;
@@ -10,10 +12,8 @@ public class PlayerController : Entity
 	private CharacterController ctrl;
 	private PlayerInput input;
 
-	protected override void Awake()
+	private void Awake()
 	{
-		base.Awake();
-
 		input = GetComponent<PlayerInput>();
 		ctrl = GetComponent<CharacterController>();
 		shootPoint = transform.GetChild(0);
@@ -42,20 +42,17 @@ public class PlayerController : Entity
 
 	public void OnShoot(InputAction.CallbackContext ctx) => shooting = ctx.performed;
 
-	public override void Die()
-	{
-		// TODO Lancer l'écran de fin : perdu
-	}
-
-	public override void Pause()
+	protected override void Pause()
 	{
 		input.enabled = false;
 		// TODO Pause anims
 	}
 
-	public override void Play()
+	protected override void Play()
 	{
 		input.enabled = true;
 		// TODO Play anims
 	}
+
+	public void Harm(int damage) => GameManager.Instance.Harm(damage);
 }

@@ -9,20 +9,30 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance => instance; // TODO faire un vrai singleton
 	#endregion
 
+	private enum ScreenState { Pause, Win, Lose, Disconnected }
+
 	[SerializeField] private GameObject[] playerPrefabs;
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
 
+	[SerializeField] private int maxPlayersHealth;
+	private int playersHealth;
+
+	#region Événements
+
 	public delegate void TimeChange();
 	public event TimeChange OnPause;
 	public event TimeChange OnPlay;
+	#endregion
 
 	private void Awake()
 	{
 		instance = this;
 		playerInputManager = GetComponent<PlayerInputManager>();
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
+
+		playersHealth = maxPlayersHealth;
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -36,23 +46,48 @@ public class GameManager : MonoBehaviour
 
 	public void OnDeviceDisconnected(PlayerInput playerInput)
 	{
-
+		ShowUIScreen(ScreenState.Disconnected);
+		// TODO Bloquer l'input jusqu'à la reconnection.
 	}
 
 	public void OnDeviceReconnected(PlayerInput playerInput)
 	{
+		// TODO Réactiver l'input.
+	}
 
+	public void Harm(int damage)
+	{
+		playersHealth -= damage;
+		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
 	}
 
 	public void Pause()
 	{
-		//TODO Afficher l'écran de pause
+		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
 	}
 
 	public void Play()
 	{
-		//TODO Cacher l'écran de pause
 		OnPlay?.Invoke();
+		HideUIScreen();
+	}
+
+	private void ShowUIScreen(ScreenState state)
+	{
+		switch(state)
+		{
+			case ScreenState.Pause:
+				break;
+			case ScreenState.Win:
+				break;
+			case ScreenState.Lose:
+				break;
+		}
+	}
+
+	public void HideUIScreen()
+	{
+	
 	}
 }

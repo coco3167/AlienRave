@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IPausable
+public class Projectile : Spawnable
 {
 	[SerializeField] protected ProjectileData data;
-
-	private bool paused;
-
-	private void Awake()
-	{
-		GameManager.Instance.OnPause += Pause;
-		GameManager.Instance.OnPlay += Play;
-	}
 
 	private void Update()
 	{
@@ -20,16 +12,13 @@ public class Projectile : MonoBehaviour, IPausable
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (!other.CompareTag(data.targetTag)) return;
-		Hit(other.GetComponentInParent<Entity>());
+		if (other.CompareTag(data.targetTag)) Hit(other.GetComponentInParent<IHarmable>());
+		Despawn();
 	}
 
-	protected virtual void Hit(Entity entity)
+	protected virtual void Hit(IHarmable entity)
 	{
 		entity.Harm(data.damage);
 		gameObject.SetActive(false);
 	}
-
-	public void Pause() => paused = true;
-	public void Play() => paused = false;
 }

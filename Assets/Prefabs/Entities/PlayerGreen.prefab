@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6555524977329477322}
   - component: {fileID: 1884123816194716559}
   - component: {fileID: 5545716401848570429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6297325741069125958}
   - component: {fileID: 2510046196245942567}
   - component: {fileID: 7249247840707618523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerGreen
   m_TagString: PlayerGreen
   m_Icon: {fileID: 0}
@@ -158,8 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 030f95aafa8887e4ab25f119495934b6, type: 2}
-  shootCooldown: 0.2
-  tmp_ProjPrefab: {fileID: 1805633794432633542, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
 --- !u!114 &2510046196245942567
 MonoBehaviour:
   m_ObjectHideFlags: 0

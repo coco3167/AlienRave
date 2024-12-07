@@ -19,7 +19,7 @@ public class PoolManager : MonoBehaviour
 	}
 	
 	[SerializeField] private List<Pool> pools;
-	private readonly Dictionary<PoolType, Queue<GameObject>> poolDictionary = new();
+	private readonly Dictionary<PoolType, Queue<Spawnable>> poolDictionary = new();
 
 	private void Awake() => instance = this;
 
@@ -28,42 +28,37 @@ public class PoolManager : MonoBehaviour
 		// Spawn all spawnables
 		foreach (Pool pool in pools)
 		{
-			Queue<GameObject> poolQueue = new();
-			GameObject spawnable;
+			Queue<Spawnable> poolQueue = new();
+			Spawnable spawnable;
 			
 			for (int loop = 0; loop < pool.size; loop++)
 			{
-				spawnable = Instantiate(pool.prefab, transform);
-				spawnable.SetActive(false);
+				spawnable = Instantiate(pool.prefab, transform).GetComponent<Spawnable>();
+				spawnable.Despawn();
 				poolQueue.Enqueue(spawnable);
 			}
 			
 			poolDictionary.Add(pool.type, poolQueue);
 		}
 	}
-	
-	/*private void FixedUpdate()
-	{
-		GetSpawnable(PoolTypes.Projectile);
-	}*/
 
-	public GameObject SpawnElement(PoolType type)
+	public Spawnable SpawnElement(PoolType type)
 	{
 		return SpawnElement(type, Vector3.zero, Quaternion.identity);
 	}
 
 	// ReSharper disable Unity.PerformanceAnalysis
-	public GameObject SpawnElement(PoolType type, Vector3 position, Quaternion rotation)
+	public Spawnable SpawnElement(PoolType type, Vector3 position, Quaternion rotation)
 	{
-		if (!poolDictionary.TryGetValue(type, out Queue<GameObject> poolQueue))
+		if (!poolDictionary.TryGetValue(type, out Queue<Spawnable> poolQueue))
 		{
 			Debug.LogError("Type " + type + " does not exist");
 			return null;
 		}
 
-		GameObject spawnable = poolQueue.Dequeue();
+		Spawnable spawnable = poolQueue.Dequeue();
 		spawnable.transform.SetPositionAndRotation(position, rotation);
-		spawnable.SetActive(true);
+		spawnable.Spawn();
 		poolQueue.Enqueue(spawnable);
 
 		return spawnable;
