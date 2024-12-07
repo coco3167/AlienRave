@@ -57,6 +57,7 @@ public class PoolManager : MonoBehaviour
 		}
 
 		Spawnable spawnable = poolQueue.Dequeue();
+		spawnable.transform.parent = null;
 		spawnable.transform.SetPositionAndRotation(position, rotation);
 		spawnable.Spawn();
 		poolQueue.Enqueue(spawnable);

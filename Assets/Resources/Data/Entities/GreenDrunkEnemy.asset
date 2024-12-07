@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25e57519fcabbd342b60e34b57d0ebe1, type: 3}
-  m_Name: PinkDrunkEnemy
+  m_Name: GreenDrunkEnemy
   m_EditorClassIdentifier: 
   speed: 350
   maxHealth: 1
   fireRate: 0
   damage: 0
-  projectileType: 0
+  projectileType: 1

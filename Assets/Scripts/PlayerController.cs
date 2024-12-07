@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : Pausable, IHarmable
 {
 	[SerializeField] private EntityData data;
+	[SerializeField] private float invincibiltyDuration = 0.2f;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -11,6 +13,8 @@ public class PlayerController : Pausable, IHarmable
 	private float shootTimer;
 	private CharacterController ctrl;
 	private PlayerInput input;
+
+	private bool canTakeDmg = true;
 
 	private void Awake()
 	{
@@ -54,5 +58,18 @@ public class PlayerController : Pausable, IHarmable
 		// TODO Play anims
 	}
 
-	public void Harm(int damage) => GameManager.Instance.Harm(damage);
+	public void Harm(int damage)
+	{
+		if (!canTakeDmg) return;
+		print($"{name} poc");
+		GameManager.Instance.Harm(damage);
+		canTakeDmg = false;
+		StartCoroutine(InvincibilityCooldown());
+	}
+
+	private IEnumerator InvincibilityCooldown()
+	{
+		yield return new WaitForSeconds(invincibiltyDuration);
+		canTakeDmg = true;
+	}
 }
