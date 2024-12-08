@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
 	private enum ScreenState { Pause, Win, Lose, Disconnected }
 
 	[SerializeField] private GameObject[] playerPrefabs;
+	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
+
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour
 	private int playersHealth;
 
 	private float tmpObstacleSPawnertimer = 2f;
+
+	public int score;
 
 	#region Événements
 
@@ -68,24 +72,40 @@ public class GameManager : MonoBehaviour
 		// TODO Réactiver l'input.
 	}
 
-	public void UpdatePowerUps(Sprite sprite, int playerIndex)
+	public void UpdatePowerUps(int playerIndex, Sprite sprite, float timer)
 	{
-		// TODO Afficher le sprite du powerup du côté du joueur.
+		hud.UpdatePowerUpVisuals(playerIndex, sprite, timer);
+		// TODO Anims ?
+	}
+
+	public void UpdateScore(int amount)
+	{
+		score += amount;
+		hud.UpdateScore(score);
+		// TODO Anims ?
 	}
 
 	public void Harm(int damage)
 	{
 		playersHealth -= damage;
-		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
-		// TODO Update UI.
+
+		if (playersHealth <= 0)
+		{
+			ShowUIScreen(ScreenState.Lose);
+			if (playersHealth < 0) playersHealth = 0;
+		}
+
+		hud.UpdateLifeVisuals(playersHealth);
 	}
+
 	public void Heal(int amount)
 	{
 		if(playersHealth == maxPlayersHealth) return;
 
 		playersHealth += amount;
 		if (playersHealth > maxPlayersHealth) playersHealth = maxPlayersHealth;
-		// TODO Update UI.
+
+		hud.UpdateLifeVisuals(playersHealth);
 	}
 
 	public void Pause()

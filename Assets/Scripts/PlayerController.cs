@@ -13,6 +13,7 @@ public class PlayerController : Pausable, IHarmable
 	private float shootTimer;
 	private CharacterController ctrl;
 	private PlayerInput input;
+	private float powerUpTimer;
 
 	private bool canTakeDmg = true;
 
@@ -97,7 +98,13 @@ public class PlayerController : Pausable, IHarmable
 	public void PickUpPowerUp(PowerUp powerUp)
 	{
 		Sprite sprite = powerUp.Apply(data, this);
-		if(sprite != null) GameManager.Instance.UpdatePowerUps(sprite,data.playerIndex);
+		if(sprite != null)
+		{
+			print("should be showing now");
+			// Si le powerUp touche les deux joueur playerIndex = 2;
+			int index = powerUp.type == PowerUpData.Type.SlowMotion ? 2 : data.playerIndex;
+			GameManager.Instance.UpdatePowerUps(index, sprite, powerUpTimer);
+		}
 	}
 
 	public void Invulnerability()
@@ -109,6 +116,7 @@ public class PlayerController : Pausable, IHarmable
 
 	public IEnumerator PowerUpTimer(float duration)
 	{
+		powerUpTimer = duration;
 		yield return new WaitForSeconds(duration);
 		LastingPowerUp powerUp = data.powerUps.Dequeue();
 		powerUp.Remove();
