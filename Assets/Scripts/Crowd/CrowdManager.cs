@@ -1,14 +1,26 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary> Script g�rant les diff�rents types de foule pr�sents dans le niveau. </summary>
 public class CrowdManager : Pausable
 {
-	[SerializeField] private Transform[] crowdSpawnBounds;
-	[SerializeField] private Transform[] crowdObstaclesBounds;
+	#region Attributs
 
+	#region Param�tres
+
+	/// <summary> Limites de la zone d'apparition de la foule d�filant vers les joueurs. </summary>
+	[SerializeField] private Transform[] crowdSpawnBounds;
+	/// <summary> Limites de la zone d'apparition des blocs de foule "obstacle"
+	/// passant lat�ralements </summary>
+	[SerializeField] private Transform[] crowdObstaclesBounds;
+	/// <summary> Temps entre chaque spawn d'un membre de la foule d�filante. </summary>
 	[SerializeField] private float spawnCooldownDuration;
+	/// <summary> Nombre de membres apparaissant � chaque interval. </summary>
 	[SerializeField] private int nbSpawned = 10;
-	private bool canSpawn = true;
+	#endregion
+	#endregion
+
+	private bool canSpawn;
 
 	private Vector3 CrowdSpawnPosition
 	{
@@ -77,6 +89,8 @@ public class CrowdManager : Pausable
 		StartCoroutine(SpawnCooldown());
 	}
 
+	/// <summary> Permet de faire appara�tre un bloc de foule obstacle au fur et � mesure,
+	/// appel� pendant l'update lorsque les param�tres du bloc ont �t� initialis�s. </summary>
 	private IEnumerator SpawnCrowdObstacles(int length, Vector3 direction, float zSpread, float xPos, float zPos, float zBasePos, float zLength, float speed, int nb)
 	{
 		for (int loop = 0; loop < length; ++loop)
@@ -94,6 +108,12 @@ public class CrowdManager : Pausable
 		}
 	}
 
+	/// <summary> Permet d'initialiser les param�tre d'un bloc de foule obstacle pour lancer son apparition progressive.</summary>
+	/// <param name="nb"> Nombre d'�l�ment par interval. </param>
+	/// <param name="length"> Dur�e de l'apparition du bloc, �quivalent � la longueur de celui-ci. </param>
+	/// <param name="speed"> Vitesse des membres du bloc. </param>
+	/// <param name="origin"> Position d'origin des membres � leur apparition. </param>
+	/// <param name="direction"> Direction que devront prendre tous les membres du bloc. </param>
 	public void SpawnCrowdObstacles(CrowdData crowdData, float xPos, float zPos, float zBasePos, float zLength, Vector3 direction)
 	{
 		StartCoroutine(SpawnCrowdObstacles(crowdData.length, direction, crowdData.zSpread, xPos, zPos, zBasePos, zLength, crowdData.speed, crowdData.nb));

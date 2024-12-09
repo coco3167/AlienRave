@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class PowerUp
 {
 	protected float value;
-	protected PowerUpData.Type type;
+	public PowerUpData.Type type;
 
 	public PowerUp(float value, PowerUpData.Type type)
 	{

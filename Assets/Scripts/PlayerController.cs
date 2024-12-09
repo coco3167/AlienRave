@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,10 +9,11 @@ public class PlayerController : Pausable, IHarmable
 
 	private Vector2 moveInput;
 	private bool shooting;
-	private Transform shootPoint;
+	private Transform[] shootPoints;
 	private float shootTimer;
 	private CharacterController ctrl;
 	private PlayerInput input;
+	private float powerUpTimer;
 
 	private bool canTakeDmg = true;
 
@@ -19,7 +21,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		input = GetComponent<PlayerInput>();
 		ctrl = GetComponent<CharacterController>();
-		shootPoint = transform.GetChild(0);
+		shootPoints = new Transform[] { transform.GetChild(0).GetChild(0) };
 		shootTimer = data.fireRate;
 	}
 
@@ -34,16 +36,44 @@ public class PlayerController : Pausable, IHarmable
 	private void Update()
 	{
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
-		if(shooting && shootTimer <= 0)
-		{
-			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
-			shootTimer = data.fireRate;
-		}
+		if (shooting && shootTimer <= 0) Shoot();
 	}
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
 
 	public void OnShoot(InputAction.CallbackContext ctx) => shooting = ctx.performed;
+
+	public void IncreaseShootPoints()
+	{
+		if (data.nbProjectiles == 4) return;
+		Transform shootParent = transform.GetChild(0);
+
+		shootPoints = ++data.nbProjectiles switch
+		{
+			2 => new Transform[] { shootParent.GetChild(1), shootParent.GetChild(2) },
+			3 => new Transform[]
+			{
+				shootParent.GetChild(0),
+				shootParent.GetChild(3),
+				shootParent.GetChild(4),
+			},
+			_ => new Transform[]
+			{
+				shootParent.GetChild(5),
+				shootParent.GetChild(6),
+				shootParent.GetChild(7),
+				shootParent.GetChild(8),
+			}
+		};
+	}
+
+	public void Shoot()
+	{
+		foreach(var shootPoint in shootPoints)
+			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
+		
+		shootTimer = data.fireRate;
+	}
 
 	protected override void Pause()
 	{
@@ -68,7 +98,13 @@ public class PlayerController : Pausable, IHarmable
 	public void PickUpPowerUp(PowerUp powerUp)
 	{
 		Sprite sprite = powerUp.Apply(data, this);
-		if(sprite != null) GameManager.Instance.UpdatePowerUps(sprite,data.playerIndex);
+		if(sprite != null)
+		{
+			print("should be showing now");
+			// Si le powerUp touche les deux joueur playerIndex = 2;
+			int index = powerUp.type == PowerUpData.Type.SlowMotion ? 2 : data.playerIndex;
+			GameManager.Instance.UpdatePowerUps(index, sprite, powerUpTimer);
+		}
 	}
 
 	public void Invulnerability()
@@ -80,6 +116,7 @@ public class PlayerController : Pausable, IHarmable
 
 	public IEnumerator PowerUpTimer(float duration)
 	{
+		powerUpTimer = duration;
 		yield return new WaitForSeconds(duration);
 		LastingPowerUp powerUp = data.powerUps.Dequeue();
 		powerUp.Remove();

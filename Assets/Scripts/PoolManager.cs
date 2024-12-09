@@ -69,5 +69,7 @@ public enum PoolType
 {
 	PlayerPinkProjectile, PlayerGreenProjectile,
 	PinkDrunkEnemy, GreenDrunkEnemy, PinkThrowEnemy, GreenThrowEnemy, HybridEnemy,
-	CrowdMember, CrowdObstacle
+	CrowdMember, CrowdObstacle,
+	HealPowerUp, FireRatePowerUp, NbProjectilesPowerUp, HomingPowerUp,
+	SpeedPowerUp, DamagePowerUp, InvulnerabilityPowerUp, SlowMotionPowerUp
 }
