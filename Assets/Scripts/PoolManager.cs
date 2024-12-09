@@ -67,9 +67,10 @@ public class PoolManager : MonoBehaviour
 
 public enum PoolType
 {
-	PlayerPinkProjectile, PlayerGreenProjectile,
+	PlayerPinkProjectile, PlayerGreenProjectile, EnemyPinkProjectile, EnemyGreenProjectile,
 	PinkDrunkEnemy, GreenDrunkEnemy, PinkThrowEnemy, GreenThrowEnemy, HybridEnemy,
 	CrowdMember, CrowdObstacle,
-	HealPowerUp, FireRatePowerUp, NbProjectilesPowerUp, HomingPowerUp,
-	SpeedPowerUp, DamagePowerUp, InvulnerabilityPowerUp, SlowMotionPowerUp
+	HealPowerUp, FireRatePowerUp, NbProjectilesPowerUp,
+	SpeedPowerUp, DamagePowerUp, InvulnerabilityPowerUp,
+	PinkFollowEnemy, GreenFollowEnemy
 }
