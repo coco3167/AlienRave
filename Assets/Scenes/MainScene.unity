@@ -483,7 +483,7 @@ MonoBehaviour:
       Data2: 1257739683
       Data3: 1796911806
       Data4: 210793111
-    Path: event:/CrowdBackground
+    Path: event:/Crowd/CrowdBackground
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
