@@ -1,5 +1,6 @@
 using UnityEngine;
 
+/// <summary> Classe mère de tous les éléments défilant à l'écran. </summary>
 [RequireComponent(typeof(Rigidbody))]
 public abstract class Scrolling : Spawnable
 {
