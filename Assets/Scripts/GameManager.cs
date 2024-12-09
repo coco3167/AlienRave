@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
-	private float tmpObstacleSPawnertimer = 2f;
+	//private float tmpObstacleSPawnertimer = 2f;
 
-	#region Événements
+	#region ï¿½vï¿½nements
 
 	public delegate void TimeChange();
 	public event TimeChange OnPause;
@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
 
 	private void Update()
 	{
-		tmpObstacleSPawnertimer -= Time.deltaTime;
-		if (tmpObstacleSPawnertimer <= 0)
-		{
-			tmp_crowdManager.TMP_SpawnRandomObstacle();
-			tmpObstacleSPawnertimer = 3f;
-		}
+		// tmpObstacleSPawnertimer -= Time.deltaTime;
+		// if (tmpObstacleSPawnertimer <= 0)
+		// {
+		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
+		// 	tmpObstacleSPawnertimer = 3f;
+		// }
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -60,17 +60,17 @@ public class GameManager : MonoBehaviour
 	public void OnDeviceDisconnected(PlayerInput playerInput)
 	{
 		ShowUIScreen(ScreenState.Disconnected);
-		// TODO Bloquer l'input jusqu'à la reconnection.
+		// TODO Bloquer l'input jusqu'ï¿½ la reconnection.
 	}
 
 	public void OnDeviceReconnected(PlayerInput playerInput)
 	{
-		// TODO Réactiver l'input.
+		// TODO Rï¿½activer l'input.
 	}
 
 	public void UpdatePowerUps(Sprite sprite, int playerIndex)
 	{
-		// TODO Afficher le sprite du powerup du côté du joueur.
+		// TODO Afficher le sprite du powerup du cï¿½tï¿½ du joueur.
 	}
 
 	public void Harm(int damage)

@@ -18,6 +18,7 @@ namespace LDTool
         private void OnEnable()
         {
             ldToolManager = (LDToolManager)target;
+            ldToolManager.InitializeChapters();
 
             titleStyle.normal.textColor = Color.white;
             titleStyle.fontStyle = FontStyle.Bold;

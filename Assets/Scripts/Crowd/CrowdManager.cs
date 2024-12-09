@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class CrowdManager : Pausable
@@ -10,12 +9,6 @@ public class CrowdManager : Pausable
 	[SerializeField] private float spawnCooldownDuration;
 	[SerializeField] private int nbSpawned = 10;
 	private bool canSpawn = true;
-
-	private bool obstacleSpawning;
-	private int nbObstacleMembers;
-	private float obstacleSpeed;
-	private Vector3 obstacleOrigin;
-	private Vector3 obstacleDirection;
 
 	private Vector3 CrowdSpawnPosition
 	{
@@ -32,7 +25,7 @@ public class CrowdManager : Pausable
 	{
 		if (paused) return;
 		SpawnCrowdMembers();
-		SpawnCrowdObstacles();
+		//SpawnCrowdObstacles();
 	}
 
 	private void OnDrawGizmos()
@@ -84,29 +77,29 @@ public class CrowdManager : Pausable
 		StartCoroutine(SpawnCooldown());
 	}
 
-	private void SpawnCrowdObstacles()
+	private IEnumerator SpawnCrowdObstacles(int length, Vector3 direction, float zSpread, float xPos, float zPos, float zBasePos, float zLength, float speed, int nb)
 	{
-		if (!obstacleSpawning) return;
-
-		for(int i=0; i<nbObstacleMembers; ++i)
+		for (int loop = 0; loop < length; ++loop)
 		{
-			var obstacle = PoolManager.Instance.SpawnElement(PoolType.CrowdObstacle, obstacleOrigin,
-										  Quaternion.LookRotation(obstacleDirection)) as CrowdObstacle;
-			obstacle.speed = obstacleSpeed;
+			for (int i = 0; i < nb; ++i)
+			{
+				float zPosModif = Mathf.Clamp(zPos + Random.Range(-zSpread, zSpread), 0, 1);
+				Vector3 obstaclePos = new Vector3(xPos, 0.01f, zBasePos + zLength * zPosModif);
+				var obstacle = PoolManager.Instance.SpawnElement(PoolType.CrowdObstacle, obstaclePos,
+					Quaternion.LookRotation(direction)) as CrowdObstacle;
+				obstacle.speed = speed;
+				yield return new WaitForEndOfFrame();
+			}
+			yield return new WaitForSeconds(0.5f);
 		}
 	}
 
-	private void SpawnCrowdObstacles(int nb, float length, float speed, Vector3 origin, Vector3 direction)
+	public void SpawnCrowdObstacles(CrowdData crowdData, float xPos, float zPos, float zBasePos, float zLength, Vector3 direction)
 	{
-		obstacleSpawning = true;
-		obstacleDirection = direction;
-		obstacleOrigin = origin;
-		obstacleSpeed = speed;
-		nbObstacleMembers = nb;
-		StartCoroutine(StopObstacleSpawn(length));
+		StartCoroutine(SpawnCrowdObstacles(crowdData.length, direction, crowdData.zSpread, xPos, zPos, zBasePos, zLength, crowdData.speed, crowdData.nb));
 	}
 
-	public void TMP_SpawnRandomObstacle()
+	/*public void TMP_SpawnRandomObstacle()
 	{
 		float x, z;
 		x = Random.Range(0, 2) == 0 ? crowdObstaclesBounds[0].position.x : crowdObstaclesBounds[1].position.x;
@@ -115,7 +108,7 @@ public class CrowdManager : Pausable
 		Vector3 direction = x < 0 ? Vector3.right : Vector3.left;
 		direction.z = Random.Range(-0.5f, 0.5f);
 		SpawnCrowdObstacles(Random.Range(2, 6), Random.Range(0.2f, 1f), Random.Range(50, 151), origin, direction);
-	}
+	}*/
 
 	private IEnumerator SpawnCooldown()
 	{
@@ -123,9 +116,9 @@ public class CrowdManager : Pausable
 		canSpawn = true;
 	}
 
-	private IEnumerator StopObstacleSpawn(float duration)
-	{
-		yield return new WaitForSeconds(duration);
-		obstacleSpawning = false;
-	}
+	// private IEnumerator StopObstacleSpawn(float duration)
+	// {
+	// 	yield return new WaitForSeconds(duration);
+	// 	obstacleSpawning = false;
+	// }
 }

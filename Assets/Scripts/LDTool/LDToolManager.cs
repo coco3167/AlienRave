@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,8 +11,8 @@ namespace LDTool
         
         [SerializeField] private float ennemyRepresentationSize = 1;
         [SerializeField] private Chapter chapterPrefab;
-        
-        public List<Chapter> chapters { get; private set; }
+
+        public List<Chapter> chapters { get; private set; } = new();
 
         public void AddChapter()
         {
@@ -35,7 +36,7 @@ namespace LDTool
             }
         }
 
-        private void InitializeChapters()
+        public void InitializeChapters()
         {
             chapters = new List<Chapter>();
             for (int loop = 0; loop < transform.childCount; loop++)
