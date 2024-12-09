@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject[] playerPrefabs;
 	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
-
+	[SerializeField] private PlayerAudioListener audioListener;
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
@@ -58,7 +58,8 @@ public class GameManager : MonoBehaviour
 		playerInput.onDeviceRegained += OnDeviceReconnected;
 
 		PlayerController ctrl = playerInput.GetComponent<PlayerController>();
-		if(nbPlayers++ == 0) playerInputManager.playerPrefab = playerPrefabs[1];
+		audioListener.AddPlayer(ctrl.transform);
+		if (nbPlayers++ == 0) playerInputManager.playerPrefab = playerPrefabs[1];
 	}
 
 	public void OnDeviceDisconnected(PlayerInput playerInput)
