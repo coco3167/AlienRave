@@ -6,10 +6,11 @@ using UnityEngine;
 public class SpawnData : ScriptableObject
 {
     [Serializable]
-    private struct EnnemiesSpawner
+    private struct EnemiesSpawner
     {
         public PoolType enemy;
         [Range(-1,1)] public float xPosEnemy;
+        public int nb;
     }
 
     [Serializable]
@@ -20,16 +21,22 @@ public class SpawnData : ScriptableObject
         public bool isLeft;
     }
     
-    [SerializeField] private List<EnnemiesSpawner> ennemiesSpawners;
+    [SerializeField] private List<EnemiesSpawner> enemiesSpawners;
     [SerializeField] private List<CrowdSpawner> crowdSpawners;
 
-    public int GetEnemiesCount() => ennemiesSpawners.Count;
+    public int GetEnemiesCount() => enemiesSpawners.Count;
     
-    public PoolType GetEnemyType(int index) => ennemiesSpawners[index].enemy;
-    public float GetEnemyXPos(int index) => ennemiesSpawners[index].xPosEnemy;
-    
-    public int GetCrowdCount() => crowdSpawners.Count;
+    public PoolType GetEnemyType(int index) => enemiesSpawners[index].enemy;
+    public float GetEnemyXPos(int index) => enemiesSpawners[index].xPosEnemy;
+
+    public int GetNbEnemies(int index) => enemiesSpawners[index].nb;
+
+
+	public int GetCrowdCount() => crowdSpawners.Count;
     public CrowdData GetCrowd(int index) => crowdSpawners[index].crowd;
     public float GetCrowdZPos(int index) => crowdSpawners[index].zPosCrowd;
     public bool GetIsLeft(int index) => crowdSpawners[index].isLeft;
+
+    public bool HasCrowdToSpawn => crowdSpawners != null;
+    public bool HasEnemiesToSpawn => enemiesSpawners != null;
 }

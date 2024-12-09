@@ -1254,6 +1254,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: crowdManager
+      value: 
+      objectReference: {fileID: 7905025885406376176}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: enemyPaths.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: 'enemyPaths.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6198526795288816193}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: 'enemyPaths.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4369695912571384879}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: 'enemyPaths.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6814174944235371089}
     - target: {fileID: 6540186684642686418, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
       propertyPath: m_Name
       value: AnimatorSpawner
@@ -1316,6 +1336,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[12].size
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[12].type
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[13].size
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[13].type
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[12].prefab
+      value: 
+      objectReference: {fileID: 5166619789670368940, guid: c96ad360cedae6b4c8fd2a453e2e3d2d, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[13].prefab
+      value: 
+      objectReference: {fileID: 1055357230450221409, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
     - target: {fileID: 7880679624227888944, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: m_Name
       value: PoolManager
