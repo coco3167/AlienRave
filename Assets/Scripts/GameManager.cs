@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 		tmpObstacleSPawnertimer -= Time.deltaTime;
 		if (tmpObstacleSPawnertimer <= 0)
 		{
-			tmp_crowdManager.TMP_SpawnRandomObstacle();
+			tmp_crowdManager.SpawnRandomObstacle();
 			tmpObstacleSPawnertimer = 3f;
 		}
 	}
