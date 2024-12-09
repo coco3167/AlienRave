@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Spawn Object" , menuName = "Scriptable Objects/Spawn Object")]
+[CreateAssetMenu(fileName = "New Spawn Object" , menuName = "Scriptable Objects/Spawn/Spawn Object")]
 public class SpawnData : ScriptableObject
 {
     [Serializable]

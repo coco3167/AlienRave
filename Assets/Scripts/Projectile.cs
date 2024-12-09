@@ -29,7 +29,6 @@ public class Projectile : Spawnable
 	protected virtual void Hit(IHarmable entity)
 	{
 		entity.Harm(data.damage);
-		gameObject.SetActive(false);
 		Despawn();
 	}
 }
