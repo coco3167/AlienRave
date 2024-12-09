@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e57519fcabbd342b60e34b57d0ebe1, type: 3}
-  m_Name: DrunkEnemy
+  m_Script: {fileID: 11500000, guid: 6cd4cba6d438d0f4a82015e66a2508e0, type: 3}
+  m_Name: SpawnDataTest
   m_EditorClassIdentifier: 
-  speed: 350
-  maxHealth: 1
-  damage: 1
-  poolType: 2
+  ennemiesSpawners:
+  - enemy: 0
+    xPosEnemy: 0
+  crowdSpawners:
+  - crowd: {fileID: 0}
+    zPosCrowd: 0
+    isLeft: 0
