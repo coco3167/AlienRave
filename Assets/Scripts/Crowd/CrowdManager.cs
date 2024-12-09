@@ -20,7 +20,7 @@ public class CrowdManager : Pausable
 	#endregion
 	#endregion
 
-	private bool canSpawn;
+	private bool canSpawn = true;
 
 	private Vector3 CrowdSpawnPosition
 	{
@@ -108,37 +108,14 @@ public class CrowdManager : Pausable
 		}
 	}
 
-	/// <summary> Permet d'initialiser les param�tre d'un bloc de foule obstacle pour lancer son apparition progressive.</summary>
-	/// <param name="nb"> Nombre d'�l�ment par interval. </param>
-	/// <param name="length"> Dur�e de l'apparition du bloc, �quivalent � la longueur de celui-ci. </param>
-	/// <param name="speed"> Vitesse des membres du bloc. </param>
-	/// <param name="origin"> Position d'origin des membres � leur apparition. </param>
-	/// <param name="direction"> Direction que devront prendre tous les membres du bloc. </param>
 	public void SpawnCrowdObstacles(CrowdData crowdData, float xPos, float zPos, float zBasePos, float zLength, Vector3 direction)
 	{
 		StartCoroutine(SpawnCrowdObstacles(crowdData.length, direction, crowdData.zSpread, xPos, zPos, zBasePos, zLength, crowdData.speed, crowdData.nb));
 	}
-
-	/*public void TMP_SpawnRandomObstacle()
-	{
-		float x, z;
-		x = Random.Range(0, 2) == 0 ? crowdObstaclesBounds[0].position.x : crowdObstaclesBounds[1].position.x;
-		z = Random.Range(crowdObstaclesBounds[0].position.z, crowdObstaclesBounds[1].position.z);
-		Vector3 origin = new(x, 0f, z);
-		Vector3 direction = x < 0 ? Vector3.right : Vector3.left;
-		direction.z = Random.Range(-0.5f, 0.5f);
-		SpawnCrowdObstacles(Random.Range(2, 6), Random.Range(0.2f, 1f), Random.Range(50, 151), origin, direction);
-	}*/
 
 	private IEnumerator SpawnCooldown()
 	{
 		yield return new WaitForSeconds(spawnCooldownDuration);
 		canSpawn = true;
 	}
-
-	// private IEnumerator StopObstacleSpawn(float duration)
-	// {
-	// 	yield return new WaitForSeconds(duration);
-	// 	obstacleSpawning = false;
-	// }
 }
