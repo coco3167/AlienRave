@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
@@ -30,14 +31,24 @@ public class PoolManager : MonoBehaviour
 		{
 			Queue<Spawnable> poolQueue = new();
 			Spawnable spawnable;
-			
-			for (int loop = 0; loop < pool.size; loop++)
+			if (pool.type == PoolType.CrowdMember)
 			{
-				spawnable = Instantiate(pool.prefab, transform).GetComponent<Spawnable>();
-				spawnable.Despawn();
-				poolQueue.Enqueue(spawnable);
+				foreach (Transform child in transform.GetChild(0))
+				{
+					if (!child.TryGetComponent(out spawnable)) continue;
+					spawnable.Despawn();
+					poolQueue.Enqueue(spawnable);
+				}
 			}
-			
+			else
+			{
+				for (int loop = 0; loop < pool.size; loop++)
+				{
+					spawnable = Instantiate(pool.prefab, transform).GetComponent<Spawnable>();
+					spawnable.Despawn();
+					poolQueue.Enqueue(spawnable);
+				}
+			}
 			poolDictionary.Add(pool.type, poolQueue);
 		}
 	}

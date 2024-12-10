@@ -8,6 +8,7 @@ public class CrowdMember : Scrolling
 
 	#region Paramètres
 
+	[SerializeField] private CrowdMemberTop top;
 	[Tooltip("Poids de la force appliquée pour éviter les joueurs")]
 	[SerializeField, Range(0, 10)] private float playerAvoidanceWeight;
 	[Tooltip("Poids de la force appliquée pour éviter les projectiles des joueurs")]
@@ -23,6 +24,11 @@ public class CrowdMember : Scrolling
 	Vector3 playerAvoid, projAvoid;
 	#endregion
 
+	protected override void Awake()
+	{
+		base.Awake();
+	}
+
 	private void OnDrawGizmos()
 	{
 		Vector3 origin = transform.position;
@@ -34,13 +40,21 @@ public class CrowdMember : Scrolling
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag.Contains("Player")) playerTransforms.Add(other.transform);
+		if (other.tag.Contains("Player"))
+		{
+			playerTransforms.Add(other.transform);
+			top.ToggleRagdoll(true);
+		}
 		else projectileTransforms.Add(other.transform);
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.tag.Contains("Player")) playerTransforms.Remove(other.transform);
+		if (other.tag.Contains("Player"))
+		{
+			playerTransforms.Remove(other.transform);
+			top.ToggleRagdoll(false);
+		}
 		else projectileTransforms.Remove(other.transform);
 	}
 
@@ -52,7 +66,7 @@ public class CrowdMember : Scrolling
 			return;
 		}
 
-		Vector3 scrolling = scrollSpeed * Vector3.back;
+		Vector3 scrolling = scrollSpeed/3 * Vector3.back;
 		playerAvoid = CalculateAwayVector(playerTransforms) * playerAvoidanceWeight;
 		projAvoid = CalculateAwayVector(projectileTransforms) * projAvoidanceWeight;
 		rb.linearVelocity = playerAvoid + projAvoid + scrolling * Time.deltaTime;
@@ -84,5 +98,13 @@ public class CrowdMember : Scrolling
 		base.Spawn();
 		playerTransforms.Clear();
 		projectileTransforms.Clear();
+		top.gameObject.SetActive(true);
+	}
+
+	public override void Despawn()
+	{
+		base.Despawn();
+		top.gameObject.SetActive(false);
+		top.ToggleRagdoll(false);
 	}
 }
