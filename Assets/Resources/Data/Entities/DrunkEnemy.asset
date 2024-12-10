@@ -15,3 +15,4 @@ MonoBehaviour:
   speed: 350
   maxHealth: 1
   damage: 1
+  poolType: 2

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LastingPowerUpData", menuName = "Scriptable Objects/LastingPowerUpData")]
+[CreateAssetMenu(fileName = "LastingPowerUpData", menuName = "Scriptable Objects/PowerUp/LastingPowerUpData")]
 public class LastingPowerUpData : PowerUpData
 {
 	public float duration;

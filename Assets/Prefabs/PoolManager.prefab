@@ -44,4 +44,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bddba369b497b94f92f3f8d404badc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: []
+  pools:
+  - type: 0
+    prefab: {fileID: 2561144086781544639, guid: a2cc96fabfc07ac47832807b76db17da, type: 3}
+    size: 50
+  - type: 1
+    prefab: {fileID: 1805633794432633542, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+    size: 50
+  - type: 3
+    prefab: {fileID: 2270941924006271527, guid: ac645434b7a14b0499bae04e8266e973, type: 3}
+    size: 50
+  - type: 2
+    prefab: {fileID: 3468280486771061936, guid: 83f6fa64d10cccb4dbfcb350f653fb9d, type: 3}
+    size: 50
+  - type: 9
+    prefab: {fileID: 1800271785486226644, guid: 817add3dbde68b64cb9ea6ebe4d360fa, type: 3}
+    size: 1000
+  - type: 10
+    prefab: {fileID: 1800271785486226644, guid: 11f47640a9cae934dbe2864f61e96620, type: 3}
+    size: 500
+  - type: 11
+    prefab: {fileID: 4210471361078100093, guid: 88a07bf05a4b10a459707f97dcd5396b, type: 3}
+    size: 5
+  - type: 12
+    prefab: {fileID: 1344007426568259355, guid: df75037f1896a8f44beee9682836f20d, type: 3}
+    size: 5
+  - type: 13
+    prefab: {fileID: 1157459363589284964, guid: 18520d27d9e1e6d4ba1be3bbbdb72773, type: 3}
+    size: 5
+  - type: 14
+    prefab: {fileID: 4369529562627996285, guid: 2e9a096624d560945a288ab8b289548c, type: 3}
+    size: 5
+  - type: 15
+    prefab: {fileID: 203591439130993825, guid: b88a661e2ac543b4fad60002b65582e3, type: 3}
+    size: 5
+  - type: 16
+    prefab: {fileID: 7400909573368870611, guid: e905c8ea20018b94283f6e8dab3757f0, type: 3}
+    size: 5
+  - type: 16
+    prefab: {fileID: 7400909573368870611, guid: e905c8ea20018b94283f6e8dab3757f0, type: 3}
+    size: 5
+  - type: 16
+    prefab: {fileID: 7400909573368870611, guid: e905c8ea20018b94283f6e8dab3757f0, type: 3}
+    size: 5
+  - type: 5
+    prefab: {fileID: 8312074981931040748, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+    size: 100
+  - type: 4
+    prefab: {fileID: 5997065229243784884, guid: 1dfc75dfaba70f74c996831eb0c8a40c, type: 3}
+    size: 100
