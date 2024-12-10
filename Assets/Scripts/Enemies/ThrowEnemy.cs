@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class ThrowEnemy : Enemy
 {
-	private Transform shootPoint;
+	protected Transform shootPoint;
 
-	private Vector3 moveDir;
-	private int nbProjectileShot;
-	private int nbSalvos;
+	protected Vector3 moveDir;
+	protected Vector3 scrollDir = Vector3.back;
+	protected int nbSalvos;
+	protected int nbProjectileShot;
 
-	private ThrowEnemyData Data => data as ThrowEnemyData;
+	protected ThrowEnemyData Data => data as ThrowEnemyData;
 
 	protected override void Awake()
 	{
@@ -28,11 +29,11 @@ public class ThrowEnemy : Enemy
 
 	protected override void Move()
 	{
-		rb.linearVelocity = ((Vector3.back * data.speed) +
+		rb.linearVelocity = ((scrollDir * data.speed) +
 							 (moveDir * Data.lateralSpeed)) * Time.deltaTime;
 	}
 
-	private void Shoot()
+	protected virtual void Shoot()
 	{
 		moveDir = Vector3.zero;
 		PoolManager.Instance.SpawnElement(Data.projectileType, shootPoint.position, shootPoint.rotation);
@@ -40,18 +41,23 @@ public class ThrowEnemy : Enemy
 		else StartCoroutine(ShootTimer(false));
 	}
 
-	private void EndSalvo()
+	protected virtual void EndSalvo()
 	{
 		StartCoroutine(ShootTimer(true));
 		nbProjectileShot = 0;
 
-		if (++nbSalvos < Data.nbSalvoBeforeMove) return;
+		if (++nbSalvos < Data.nbSalvoBeforeMove)
+		{
+			scrollDir = Vector3.back;
+			return;
+		}
 
 		moveDir = transform.position.x > 0 ? Vector3.left : Vector3.right;
+		scrollDir = Vector3.zero;
 		nbSalvos = 0;
 	}
 
-	private IEnumerator ShootTimer(bool restartSalvo)
+	protected IEnumerator ShootTimer(bool restartSalvo)
 	{
 		yield return new WaitForSeconds(restartSalvo ? Data.salvoCooldown : Data.shootCooldown);
 		Shoot();

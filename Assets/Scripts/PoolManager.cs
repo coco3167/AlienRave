@@ -72,5 +72,6 @@ public enum PoolType
 	CrowdMember, CrowdObstacle,
 	HealPowerUp, FireRatePowerUp, NbProjectilesPowerUp,
 	SpeedPowerUp, DamagePowerUp, InvulnerabilityPowerUp,
-	PinkFollowEnemy, GreenFollowEnemy
+	PinkFollowEnemy, GreenFollowEnemy,
+	GreenWaveProjectile, PinkWaveProjectile
 }
