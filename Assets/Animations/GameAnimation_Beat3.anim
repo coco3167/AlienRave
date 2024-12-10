@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GameAnimation
+  m_Name: GameAnimation_Beat3
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -31,7 +31,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.16666667
+    m_StopTime: 5.0666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -51,10 +51,10 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.16666667
+  - time: 5.0666666
     functionName: Spawn
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 7a59590a25c456d40ba0d119da24d552, type: 2}
+    objectReferenceParameter: {fileID: 11400000, guid: cd621d2d06ec20e4182dbbed55f98cc7, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

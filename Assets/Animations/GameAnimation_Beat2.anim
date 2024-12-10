@@ -1,0 +1,284 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GameAnimation_Beat2
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 52.083332
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events:
+  - time: 3.8166666
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: cbd105b4a5d921649b9d7179b68e43fa, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.366667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: ebccdc802edf9534796e27505295afd8, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 5
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 77733d16697c311498c4d8df72dc4dcd, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 5.5
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 6.016667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7.866667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 9653d8347e857d542b70a42baab97318, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 8.666667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: cbd105b4a5d921649b9d7179b68e43fa, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 9.3
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 10.033334
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 10.816667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: acf4ba78d9c14114988247ebc434e898, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 11.45
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: cbd105b4a5d921649b9d7179b68e43fa, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 13.016666
+    functionName: 
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 4634fc6cdcb38cc40b983a1f3fa82545, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 14.15
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 15.333333
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 16.966667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 7761bec2ca03d274a8510f89c6ad70ef, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 17.883333
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 77733d16697c311498c4d8df72dc4dcd, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 18.666666
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 7761bec2ca03d274a8510f89c6ad70ef, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 19.55
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: cbd105b4a5d921649b9d7179b68e43fa, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.166666
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 3a0f1fcc66c7a45478515a52f2220129, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 27.166666
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: ebccdc802edf9534796e27505295afd8, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 28.116667
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 29.85
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 7b2f2c67ee93dd04caf60837d196d4db, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 33.133335
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: ebccdc802edf9534796e27505295afd8, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 34.733334
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 36.866665
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 39.316666
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 40.583332
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 4634fc6cdcb38cc40b983a1f3fa82545, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 42.683334
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: e374b40724b4aba418ac6e9ae6440802, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 45.1
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 77733d16697c311498c4d8df72dc4dcd, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 45.866665
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: ced54bad0cc3b30468a009514bf7cfa8, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 46.7
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 26fd79375afa8144eafe700d9ad61fc1, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 49.4
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 52.083332
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: 26fd79375afa8144eafe700d9ad61fc1, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

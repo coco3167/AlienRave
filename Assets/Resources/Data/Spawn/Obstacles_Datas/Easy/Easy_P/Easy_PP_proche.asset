@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b14758a60e4fb489d398499863ddc0, type: 3}
-  m_Name: CrowdData
+  m_Script: {fileID: 11500000, guid: 6cd4cba6d438d0f4a82015e66a2508e0, type: 3}
+  m_Name: Easy_PP_proche
   m_EditorClassIdentifier: 
-  nb: 20
-  length: 5
-  speed: 400
-  zSpread: 0.025
+  enemiesSpawners:
+  - enemy: 6
+    xPosEnemy: -0.173
+    nb: 0
+    followMode: 0
+  - enemy: 6
+    xPosEnemy: 0.177
+    nb: 0
+    followMode: 0
+  crowdSpawners: []
