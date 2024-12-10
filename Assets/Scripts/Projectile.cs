@@ -19,12 +19,15 @@ public class Projectile : Spawnable
 	{
 		if (other.CompareTag(data.targetTag) || other.CompareTag("Hybrid"))
 		{
-			
 			Hit(other.GetComponentInParent<IHarmable>());
 			return;
 		}
 
-		if (other.CompareTag("Obstacle")) Despawn();
+		if (other.CompareTag("Obstacle"))
+		{
+			Despawn();
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.projectileObstacle, this.transform.position);
+		}
 	}
 
 	protected virtual void Hit(IHarmable entity)

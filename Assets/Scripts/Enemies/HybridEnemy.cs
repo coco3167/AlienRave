@@ -49,14 +49,20 @@ public class HybridEnemy : ThrowEnemy
 			greenHealth -= damage;
 			if (greenHealth <= 0) greenHealth = 0;
 			ui.TakeDamage(true, greenHealth);
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenHybridEnemyIsHurt, this.transform.position);
 		}
 		else
 		{
 			pinkHealth -= damage;
 			if (pinkHealth <= 0) pinkHealth = 0;
 			ui.TakeDamage(false, pinkHealth);
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkHybridEnemyIsHurt, this.transform.position);
 		}
 
-		if (pinkHealth == 0 && greenHealth == 0) Die();
+		if (pinkHealth == 0 && greenHealth == 0)
+		{
+			Die();
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyDeath, this.transform.position);
+		}
 	}
 }
