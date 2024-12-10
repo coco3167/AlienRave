@@ -6,8 +6,8 @@ public abstract class PowerUpData : ScriptableObject
 
 	public enum Type
 	{
-		Heal, FireRate, NbProjectiles, Homing,
-		Speed, Damage, Invulnerability, SlowMotion
+		Heal, FireRate, NbProjectiles,
+		Speed, Damage, Invulnerability
 	}
 	public Type type;
 

@@ -17,10 +17,6 @@ public class HybridEnemy : ThrowEnemy
 	{
 		base.Awake();
 		ui = GetComponentInChildren<HybridEnemyUI>();
-		ui.Initialize(data.maxHealth);
-		greenHealth = data.maxHealth / 2;
-		pinkHealth = data.maxHealth / 2;
-		print($"Green : {greenHealth} / Pink : {pinkHealth}");
 	}
 
 	protected override void Shoot()
@@ -64,5 +60,12 @@ public class HybridEnemy : ThrowEnemy
 			Die();
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyDeath, this.transform.position);
 		}
+	}
+
+	protected override void ResetLife()
+	{
+		greenHealth = data.maxHealth / 2;
+		pinkHealth = data.maxHealth / 2;
+		ui.Initialize(data.maxHealth);
 	}
 }

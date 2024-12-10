@@ -4,7 +4,5 @@ using UnityEngine;
 public class LastingPowerUpData : PowerUpData
 {
 	public float duration;
-
-	public Sprite sprite;
-	public override PowerUp PowerUp => new LastingPowerUp(value,type,duration,sprite);
+	public override PowerUp PowerUp => new LastingPowerUp(value,type,duration);
 }

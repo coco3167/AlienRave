@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,21 +14,24 @@ public class GameManager : MonoBehaviour
 	private enum ScreenState { Pause, Win, Lose, Disconnected }
 
 	[SerializeField] private GameObject[] playerPrefabs;
+	[SerializeField] private PlayerData[] playerDatas;
+
 	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
 	[SerializeField] private PlayerAudioListener audioListener;
 
 	private PlayerInputManager playerInputManager;
+	private PlayerController[] players = new PlayerController[2];
 	private int nbPlayers;
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
-	//private float tmpObstacleSPawnertimer = 2f;
-
 	public int score;
 
-	#region �v�nements
+	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
+
+	#region Événements
 
 	public delegate void TimeChange();
 	public event TimeChange OnPause;
@@ -38,18 +43,8 @@ public class GameManager : MonoBehaviour
 		instance = this;
 		playerInputManager = GetComponent<PlayerInputManager>();
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
-
+		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
-	}
-
-	private void Update()
-	{
-		// tmpObstacleSPawnertimer -= Time.deltaTime;
-		// if (tmpObstacleSPawnertimer <= 0)
-		// {
-		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
-		// 	tmpObstacleSPawnertimer = 3f;
-		// }
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -58,6 +53,7 @@ public class GameManager : MonoBehaviour
 		playerInput.onDeviceRegained += OnDeviceReconnected;
 
 		PlayerController ctrl = playerInput.GetComponent<PlayerController>();
+		players[nbPlayers] = ctrl;
 		audioListener.AddPlayer(ctrl.transform);
 		if (nbPlayers++ == 0) playerInputManager.playerPrefab = playerPrefabs[1];
 	}
@@ -73,10 +69,18 @@ public class GameManager : MonoBehaviour
 		// TODO R�activer l'input.
 	}
 
-	public void UpdatePowerUps(int playerIndex, Sprite sprite, float timer)
+	public void UpdatePowerUps(PowerUp powerUp, float timer = 0)
 	{
-		hud.UpdatePowerUpVisuals(playerIndex, sprite, timer);
-		// TODO Anims ?
+		switch(powerUp.type)
+		{
+			case PowerUpData.Type.FireRate:
+			case PowerUpData.Type.NbProjectiles: return;
+
+			case PowerUpData.Type.Heal: timer = 2f;
+				break;
+		}
+
+		hud.UpdatePowerUpVisuals(powerUp.type, timer);
 	}
 
 	public void UpdateScore(int amount)
@@ -88,26 +92,89 @@ public class GameManager : MonoBehaviour
 
 	public void Harm(int damage)
 	{
+		print(damage);
 		playersHealth -= damage;
-
-		if (playersHealth <= 0)
-		{
-			ShowUIScreen(ScreenState.Lose);
-			if (playersHealth < 0) playersHealth = 0;
-		}
-
-		hud.UpdateLifeVisuals(playersHealth);
+		print(playersHealth);
+		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
+		else hud.UpdateLifeVisuals(playersHealth);
 	}
+
+	#region Power Ups
 
 	public void Heal(int amount)
 	{
-		if(playersHealth == maxPlayersHealth) return;
+		if (playersHealth == maxPlayersHealth) return;
 
 		playersHealth += amount;
 		if (playersHealth > maxPlayersHealth) playersHealth = maxPlayersHealth;
 
 		hud.UpdateLifeVisuals(playersHealth);
+		hud.UpdatePowerUpVisuals(PowerUpData.Type.Heal, 2f);
 	}
+
+	public void IncreaseFireRate(float amount)
+	{
+		if (playerDatas[0].fireRate == 0.01f) return;
+
+		foreach (var data in playerDatas) data.fireRate -= amount;
+
+		if (playerDatas[0].fireRate <= 0.01f)
+			foreach (var data in playerDatas) data.fireRate = 0.01f;
+	}
+
+	public void IncreaseNbProjectiles(int amount)
+	{
+		if (playerDatas[0].nbProjectiles == 4) return;
+		foreach (var player in players) player.IncreaseShootPoints();
+	}
+
+	public void ChangeSpeed(float amount, float duration = -1)
+	{
+		foreach (var data in playerDatas) data.speed += amount;
+
+		if (duration > 0)
+		{
+			//hud.UpdatePowerUpVisuals(PowerUpData.Type.Speed, duration);
+			StartCoroutine(PowerUpTimer(duration));
+		}
+	}
+
+	public void ChangeDamage(int amount, float duration = -1)
+	{
+		foreach (var data in playerDatas) data.projectileData.damage += amount;
+
+		foreach (var player in players) player.ToggleFeedback(true, duration > 0);
+
+		if (duration > 0) StartCoroutine(PowerUpTimer(duration));
+	}
+
+	public void ToggleInvulnerability(float duration)
+	{
+		foreach (var player in players) player.ToggleFeedback(false, duration > 0);
+
+		if (duration < 0)
+		{
+			foreach (var data in playerDatas) data.invulnerabilityDuration = 0.2f;
+			return;
+		}
+
+		StartCoroutine(PowerUpTimer(duration));
+		hud.UpdatePowerUpVisuals(PowerUpData.Type.Invulnerability, duration);
+
+		for (int i=0; i<players.Length; ++i)
+		{
+			playerDatas[i].invulnerabilityDuration = duration;
+			players[i].Invulnerability();
+		}
+	}
+
+	public IEnumerator PowerUpTimer(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		LastingPowerUp powerUp = powerUps.Dequeue();
+		powerUp.Remove();
+	}
+	#endregion
 
 	public void Pause()
 	{
@@ -138,4 +205,6 @@ public class GameManager : MonoBehaviour
 	{
 	
 	}
+
+	
 }
