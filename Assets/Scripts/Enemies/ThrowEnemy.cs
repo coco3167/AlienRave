@@ -25,6 +25,7 @@ public class ThrowEnemy : Enemy
 	{
 		base.Spawn();
 		StartCoroutine(ShootTimer(true));
+		
 	}
 
 	protected override void Move()
@@ -37,6 +38,7 @@ public class ThrowEnemy : Enemy
 	{
 		moveDir = Vector3.zero;
 		PoolManager.Instance.SpawnElement(Data.projectileType, shootPoint.position, shootPoint.rotation);
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kisserEnemyKiss, this.transform.position);
 		if (++nbProjectileShot == Data.nbProjPerSalvo) EndSalvo();
 		else StartCoroutine(ShootTimer(false));
 	}
@@ -61,5 +63,25 @@ public class ThrowEnemy : Enemy
 	{
 		yield return new WaitForSeconds(restartSalvo ? Data.salvoCooldown : Data.shootCooldown);
 		Shoot();
+	}
+
+	protected override void Die()
+	{
+		base.Die();
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kisserEnemyDeath, this.transform.position);
+	}
+
+	public override void Harm(int damage, bool green = false)
+	{
+		base.Harm(damage, green);
+		if (CompareTag("EnemyGreen"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenKisserEnemyIsHurt, this.transform.position);
+		}
+		if (CompareTag("EnemyPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkKisserEnemyIsHurt, this.transform.position);
+		}
+		
 	}
 }
