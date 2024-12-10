@@ -9,6 +9,7 @@ TagManager:
   - EnemyPink
   - EnemyGreen
   - Obstacle
+  - Hybrid
   layers:
   - Default
   - TransparentFX
