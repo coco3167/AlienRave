@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 	#endregion
 
 	private enum ScreenState { Pause, Win, Lose, Disconnected }
-
+	[SerializeField] private PlayerData[] playerDatas;
 	[SerializeField] private GameObject[] playerPrefabs;
 	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
@@ -38,8 +38,9 @@ public class GameManager : MonoBehaviour
 		instance = this;
 		playerInputManager = GetComponent<PlayerInputManager>();
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
-
+		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
+
 	}
 
 	private void Update()
@@ -89,14 +90,8 @@ public class GameManager : MonoBehaviour
 	public void Harm(int damage)
 	{
 		playersHealth -= damage;
-
-		if (playersHealth <= 0)
-		{
-			ShowUIScreen(ScreenState.Lose);
-			if (playersHealth < 0) playersHealth = 0;
-		}
-
-		hud.UpdateLifeVisuals(playersHealth);
+		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
+		else hud.UpdateLifeVisuals(playersHealth);
 	}
 
 	public void Heal(int amount)

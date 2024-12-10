@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 2234077974183463948}
   - component: {fileID: 4011991190031094239}
   - component: {fileID: 903579860062264873}
+  - component: {fileID: 7579642141206552752}
   m_Layer: 0
   m_Name: GreenThrowEnemy
   m_TagString: EnemyGreen
@@ -80,7 +81,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0
   data: {fileID: 11400000, guid: 8a06b1d47cbe46c4d9cb9df7b6408042, type: 2}
-  targetTag: PlayerGreen
 --- !u!54 &903579860062264873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,6 +108,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!136 &7579642141206552752
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095916975825749743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7828695176063588116
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +142,6 @@ GameObject:
   - component: {fileID: 5190805210228588536}
   - component: {fileID: 7596699359790326495}
   - component: {fileID: 1601371065427103615}
-  - component: {fileID: 7679548069872271455}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: EnemyGreen
@@ -195,26 +217,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7679548069872271455
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7828695176063588116}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

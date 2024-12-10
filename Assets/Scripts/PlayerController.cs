@@ -107,7 +107,6 @@ public class PlayerController : Pausable, IHarmable
 		Sprite sprite = powerUp.Apply(data, this);
 		if(sprite != null)
 		{
-			print("should be showing now");
 			// Si le powerUp touche les deux joueur playerIndex = 2;
 			int index = powerUp.type == PowerUpData.Type.SlowMotion ? 2 : data.playerIndex;
 			GameManager.Instance.UpdatePowerUps(index, sprite, powerUpTimer);
@@ -127,7 +126,6 @@ public class PlayerController : Pausable, IHarmable
 		yield return new WaitForSeconds(duration);
 		LastingPowerUp powerUp = data.powerUps.Dequeue();
 		powerUp.Remove();
-		print("Fin de l'effet du powerUp");
 	}
 
 	private IEnumerator InvulnerabilityCooldown()
