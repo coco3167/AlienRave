@@ -1337,10 +1337,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[12].size
       value: 100
       objectReference: {fileID: 0}
@@ -1357,22 +1353,6 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[14].size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[14].type
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[15].size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[15].type
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[12].prefab
       value: 
       objectReference: {fileID: 5166619789670368940, guid: c96ad360cedae6b4c8fd2a453e2e3d2d, type: 3}
@@ -1380,14 +1360,6 @@ PrefabInstance:
       propertyPath: pools.Array.data[13].prefab
       value: 
       objectReference: {fileID: 1055357230450221409, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[14].prefab
-      value: 
-      objectReference: {fileID: 9133025759960232288, guid: b1ec78c21d4c59344a5f765e0b93662a, type: 3}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.data[15].prefab
-      value: 
-      objectReference: {fileID: 3862911119645795319, guid: 1f7a7cf7d8ba914458cffe80ec4229c5, type: 3}
     - target: {fileID: 7880679624227888944, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: m_Name
       value: PoolManager

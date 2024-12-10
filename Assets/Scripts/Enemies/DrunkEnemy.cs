@@ -30,4 +30,8 @@ public class DrunkEnemy : Enemy
 	{
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
 	}
+	protected override void Die()
+	{
+		base.Die();
+	}
 }
