@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_text
-      value: Relancer une Partie
+      value: Rejouer
       objectReference: {fileID: 0}
     - target: {fileID: 5019020346901725231, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_Name

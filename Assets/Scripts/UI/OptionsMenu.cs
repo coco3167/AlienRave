@@ -14,9 +14,9 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private Slider SFXSlider;
 
     void OnEnable()
-    {
-        EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
-    }
+         {
+             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
+         }
 
     public void Back()
     {
