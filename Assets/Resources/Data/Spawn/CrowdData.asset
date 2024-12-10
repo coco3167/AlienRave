@@ -15,4 +15,4 @@ MonoBehaviour:
   nb: 20
   length: 5
   speed: 250
-  zSpread: 0.025
+  zSpread: 1
