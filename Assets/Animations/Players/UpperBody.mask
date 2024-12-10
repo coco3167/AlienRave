@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/IK.bras.L
+    m_Weight: 1
+  - m_Path: Armature/IK.bras.L/IK.bras.L_end
+    m_Weight: 1
+  - m_Path: Armature/IK.bras.R
+    m_Weight: 1
+  - m_Path: Armature/IK.bras.R/IK.bras.R_end
+    m_Weight: 1
+  - m_Path: Armature/IK.legg.L
+    m_Weight: 0
+  - m_Path: Armature/IK.legg.L/IK.legg.L_end
+    m_Weight: 0
+  - m_Path: Armature/IK.legg.R
+    m_Weight: 0
+  - m_Path: Armature/IK.legg.R/IK.legg.R_end
+    m_Weight: 0
+  - m_Path: Armature/root
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.L
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.L/cuisse.L
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.L/cuisse.L/tibia.L
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.L/cuisse.L/tibia.L/pied.L
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.L/cuisse.L/tibia.L/pied.L/pied.L_end
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.R
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.R/cuisse.R
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.R/cuisse.R/tibia.R
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.R/cuisse.R/tibia.R/pied.R
+    m_Weight: 0
+  - m_Path: Armature/root/hanche.R/cuisse.R/tibia.R/pied.R/pied.R_end
+    m_Weight: 0
+  - m_Path: Armature/root/spine1
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.L
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.L/bicept.L
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.L/bicept.L/bras.L
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.L/bicept.L/bras.L/hand.L
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.L/bicept.L/bras.L/hand.L/hand.L_end
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.R
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.R/bicept.R
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.R/bicept.R/bras.R
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.R/bicept.R/bras.R/hand.R
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/epaul.R/bicept.R/bras.R/hand.R/hand.R_end
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/neck
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/neck/head
+    m_Weight: 1
+  - m_Path: Armature/root/spine1/spine1.001/spine1.002/neck/head/head_end
+    m_Weight: 1
+  - m_Path: Armature/target.bras.L
+    m_Weight: 1
+  - m_Path: Armature/target.bras.L/target.bras.L_end
+    m_Weight: 1
+  - m_Path: Armature/target.bras.R
+    m_Weight: 1
+  - m_Path: Armature/target.bras.R/target.bras.R_end
+    m_Weight: 1
+  - m_Path: Armature/target.leg.L
+    m_Weight: 0
+  - m_Path: Armature/target.leg.L/target.leg.L_end
+    m_Weight: 0
+  - m_Path: Armature/target.leg.R
+    m_Weight: 0
+  - m_Path: Armature/target.leg.R/target.leg.R_end
+    m_Weight: 0
+  - m_Path: SM_playerPink.002
+    m_Weight: 1
