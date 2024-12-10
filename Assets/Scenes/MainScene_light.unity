@@ -591,7 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b944c2ad33473d489367751c9dda07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpUIs: []
 --- !u!1 &473386884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9116671949989215893, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
@@ -611,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 400807687}
   transitionDuration: 1
-  preciseColorParameter: {r: 0.7610062, g: 0.114487655, b: 0, a: 0}
+  preciseColorParameter: {r: 0.509434, g: 0.1318138, b: 0.0656817, a: 0}
 --- !u!1 &595168507
 GameObject:
   m_ObjectHideFlags: 0
