@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    [HideInInspector] public UnityEvent backEvent = new();
+    
     [SerializeField] private GameObject firstSelectedGameobject;
 
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider voicesSlider;
     [SerializeField] private Slider SFXSlider;
 
-    void Start()
+    void OnEnable()
     {
         EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
     }
@@ -18,6 +21,8 @@ public class OptionsMenu : MonoBehaviour
     public void Back()
     {
         gameObject.SetActive(false);
+        backEvent.Invoke();
+        backEvent.RemoveAllListeners();
     }
 
     public void OnMusicVolumeChanged()
