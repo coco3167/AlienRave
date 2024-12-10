@@ -93,7 +93,7 @@ public class PlayerController : Pausable, IHarmable
 
 	protected override void Pause()
 	{
-		input.enabled = false;
+		// input.enabled = false;
 		// TODO Pause anims
 	}
 

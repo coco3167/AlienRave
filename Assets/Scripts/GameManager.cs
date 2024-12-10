@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private CrowdManager tmp_crowdManager;
 	[SerializeField] private PlayerAudioListener audioListener;
 	[SerializeField] private List<GameObject> menus;
+	[SerializeField] private bool needsForTwoPlayers;
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 		instance = this;
 		playerInputManager = GetComponent<PlayerInputManager>();
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
+		playerInputManager.playerJoinedEvent.AddListener(menus[0].GetComponent<UI.StartMenu>().OnPlayerJoined);
 		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
 
@@ -129,10 +131,14 @@ public class GameManager : MonoBehaviour
 		OnPause?.Invoke();
 	}
 
-	public void Play()
+	public bool Play()
 	{
+		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
+			return false;
+		
 		OnPlay?.Invoke();
 		HideUIScreen();
+		return true;
 	}
 
 	public void Restart(bool showMainMenu)

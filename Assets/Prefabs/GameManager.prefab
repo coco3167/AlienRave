@@ -686,7 +686,9 @@ MonoBehaviour:
   - {fileID: 5361178676867320395}
   - {fileID: 2714227897932708579}
   - {fileID: 6399999558407228043}
+  needsForTwoPlayers: 0
   maxPlayersHealth: 3
+  areUWinningSon: 1
   score: 0
 --- !u!114 &9164605542015038320
 MonoBehaviour:

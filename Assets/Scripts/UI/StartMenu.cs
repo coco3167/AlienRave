@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -7,6 +10,7 @@ namespace UI
     {
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private OptionsMenu optionsMenu;
+        [SerializeField] private List<Image> playerJoinImages;
         
         private void OnEnable()
         {
@@ -15,7 +19,10 @@ namespace UI
 
         public void PlayGame()
         {
-            GameManager.Instance.Play();
+            if(GameManager.Instance.Play())
+                return;
+            
+            // Add animation when 2 players are not connected
         }
 
         public void OpenOptions()
@@ -27,6 +34,11 @@ namespace UI
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        public void OnPlayerJoined(PlayerInput playerInput)
+        {
+            playerJoinImages[playerInput.playerIndex].enabled = true;
         }
 
         private void GetFocus()
