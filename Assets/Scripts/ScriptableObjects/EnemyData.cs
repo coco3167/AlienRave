@@ -7,6 +7,6 @@ public class EnemyData : ScriptableObject
 	public int maxHealth;
 	public int damage;
 
-	[Range(0, 1)]
-	public float powerUpDropChance;
+	public bool hasPowerUp;
+	public PoolType powerUpType;
 }

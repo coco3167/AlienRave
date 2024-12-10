@@ -1,8 +1,6 @@
 using PathCreation;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using static SpawnData;
 using Random = UnityEngine.Random;
@@ -43,7 +41,8 @@ namespace LDTool
 					{
 						Vector3 pos = enemySpawnPoint.position;
 						pos.x *= spawnObject.GetEnemyXPos(loop);
-						PoolManager.Instance.SpawnElement(type, pos, enemySpawnPoint.rotation);
+						var enemy  = PoolManager.Instance.SpawnElement(type, pos, enemySpawnPoint.rotation) as Enemy;
+						if (spawnObject.TryGetEnemyPowerUp(loop, out PoolType powerUpType)) enemy.AddPowerUp(powerUpType);
 					}
 				}
 			}

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8216410081356836220}
   - component: {fileID: 3310055247658504245}
   m_Layer: 0
-  m_Name: Icon_Heal
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.4, z: 0}
-  m_LocalScale: {x: 0.061751653, y: 0.061751653, z: 0.061751653}
+  m_LocalScale: {x: 0.15461308, y: 0.15461308, z: 0.15461308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3940059491701929058}
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4dbacfd5a07cb3418b1dc9ea9b89e5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da58c1de73ccdf64195fe2dab4f0a310, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -210,7 +210,6 @@ GameObject:
   - component: {fileID: 5882846919500415976}
   - component: {fileID: 3937200748425621711}
   - component: {fileID: 183038444557637188}
-  - component: {fileID: 8640200417364354938}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -286,29 +285,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8640200417364354938
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3268041717326653459}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &6823515070712515033
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 6823515070712515033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.88, y: 0, z: 4.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
