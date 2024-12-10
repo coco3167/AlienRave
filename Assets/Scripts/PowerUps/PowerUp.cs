@@ -1,8 +1,6 @@
-using UnityEngine;
-
 public abstract class PowerUp
 {
-	protected float value;
+	public float value;
 	public PowerUpData.Type type;
 
 	public PowerUp(float value, PowerUpData.Type type)
@@ -11,5 +9,5 @@ public abstract class PowerUp
 		this.type = type;
 	}
 
-	public abstract Sprite Apply(PlayerData playerData, PlayerController player);
+	public abstract void Apply();
 }

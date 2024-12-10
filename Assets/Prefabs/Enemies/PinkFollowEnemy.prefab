@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyPink
       objectReference: {fileID: 0}
+    - target: {fileID: 4002076156520942142, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ccc91e38e31c6e54ab8b12bd6ea59446, type: 2}
     - target: {fileID: 4957370601070668966, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

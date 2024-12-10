@@ -8,21 +8,15 @@ public class MeshTrail : MonoBehaviour
     [Header("Mesh related")]
     public float meshRefreshRate = 0.1f;
 
-    private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            isTrailActive = true;
+            // NANI ?!
             StartCoroutine(ActivateTrail(activeTime));
         }
     }
@@ -47,7 +41,5 @@ public class MeshTrail : MonoBehaviour
 
             yield return new WaitForSeconds(meshRefreshRate);
         }
-
-        isTrailActive = false;
     }
 }

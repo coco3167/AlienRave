@@ -17,7 +17,7 @@ public class LifeBarManager : MonoBehaviour
 	public void UpdateLife(int health)
 	{
 		// TODO anims ?
-		int i = 0;
+		int i = 1;
 		foreach(Image img in hpImgs) img.sprite = hpSprites[i++ > health ? 1 : 0];
 	}
 }

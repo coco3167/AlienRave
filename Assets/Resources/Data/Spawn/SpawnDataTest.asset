@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SpawnDataTest
   m_EditorClassIdentifier: 
   enemiesSpawners:
-  - enemy: 18
-    xPosEnemy: 0
-    nb: 10
+  - enemy: 8
+    xPosEnemy: -0.22
+    nb: 1
     followMode: 3
   crowdSpawners: []
