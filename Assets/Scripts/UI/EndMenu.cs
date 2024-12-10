@@ -19,7 +19,7 @@ namespace UI
         public void SetVictory()
         {
             if(GameManager.Instance.areUWinningSon)
-                titleText.text = "Victoire";
+                titleText.text = "Victory";
             else
                 titleText.text = "Game Over";
             

@@ -257,7 +257,6 @@ MonoBehaviour:
   firstSelectedGameobject: {fileID: 605982789175117380}
   titleText: {fileID: 4653722031655118715}
   scoreText: {fileID: 8760693156727187091}
-  mainMenu: {fileID: 7691828589603329857}
 --- !u!1001 &1518881894560875831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,7 +351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6161329465128690252, guid: a768b71b3284dd24ba635d8cb38f85aa, type: 3}
       propertyPath: m_text
-      value: Victoire
+      value: Victory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

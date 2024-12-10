@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1360207918957213640
+--- !u!1001 &3122769828024554317
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
+      value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UI.PauseScript, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_text
+      value: Controles
+      objectReference: {fileID: 0}
     - target: {fileID: 5019020346901725231, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_Name
-      value: RestartButton
+      value: ControlesButton
       objectReference: {fileID: 0}
     - target: {fileID: 5939072183663489212, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_Pivot.x

@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -31,13 +29,17 @@ namespace UI
         public void Restart()
         {
             GameManager.Instance.Restart(false);
-            Debug.LogWarning("Restart not implemented");
         }
 
         public void Options()
         {
             optionsMenu.SetActive(true);
             optionsEvent.AddListener(GetFocus);
+        }
+
+        public void Controls()
+        {
+            Debug.LogWarning("Controls menu not implemented");
         }
 
         public void StartMenu()

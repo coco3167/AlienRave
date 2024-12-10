@@ -7,24 +7,24 @@ namespace UI
 {
     public class OptionsMenu : MonoBehaviour
     {
-        [HideInInspector] public UnityEvent backEvent = new();
-    
         [SerializeField] private GameObject firstSelectedGameobject;
 
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider voicesSlider;
         [SerializeField] private Slider SFXSlider;
 
-        void OnEnable()
+        [HideInInspector] public UnityEvent backEvent;
+
+        void Start()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
         }
 
         public void Back()
         {
-            gameObject.SetActive(false);
             backEvent.Invoke();
             backEvent.RemoveAllListeners();
+            gameObject.SetActive(false);
         }
 
         public void OnMusicVolumeChanged()
