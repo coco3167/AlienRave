@@ -8,14 +8,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9015339970699632349, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/SFX/DrunkEnemy/PinkDrunkEnemy Sees
+      objectReference: {fileID: 0}
+    - target: {fileID: -9015339970699632349, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 1712929112
+      objectReference: {fileID: 0}
+    - target: {fileID: -9015339970699632349, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1229830383
+      objectReference: {fileID: 0}
+    - target: {fileID: -9015339970699632349, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -226418516
+      objectReference: {fileID: 0}
+    - target: {fileID: -9015339970699632349, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 137033826
+      objectReference: {fileID: 0}
     - target: {fileID: 279526424161552607, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
       propertyPath: m_TagString
       value: EnemyPink
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206951551310844444, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206951551310844444, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2206951551310844444, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3109315831661814162, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 21de6a26d6875eb40ab2ba994a7d9166, type: 2}
+    - target: {fileID: 7066288470201369218, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066288470201369218, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066288470201369218, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7066288470201369218, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7774553096085986958, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.748236
@@ -56,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052215299102395129, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ccc91e38e31c6e54ab8b12bd6ea59446, type: 2}
     - target: {fileID: 8312074981931040748, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
       propertyPath: m_Name
       value: PinkDrunkEnemy
@@ -69,7 +121,8 @@ PrefabInstance:
       value: PlayerPink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 279526424161552607, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2b55f51db2cdd47a671dee82797f09, type: 3}

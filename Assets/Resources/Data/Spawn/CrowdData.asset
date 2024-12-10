@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nb: 20
   length: 5
-  speed: 250
-  zSpread: 1
+  speed: 400
+  zSpread: 0.025

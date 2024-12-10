@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Enemy : Scrolling, IHarmable
 {
 	[SerializeField] protected EnemyData data;
+	protected Animator anim;
 	protected int health;
 
 	private bool IsDead => health <= 0;
@@ -11,6 +12,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		base.Awake();
 		health = data.maxHealth;
+		anim = GetComponentInChildren<Animator>();
 	}
 
 	public virtual void Harm(int damage, bool green = false)
@@ -23,8 +25,7 @@ public abstract class Enemy : Scrolling, IHarmable
 
 	protected virtual void Die()
 	{
-		rb.constraints = RigidbodyConstraints.None;
-		rb.useGravity = true;
+		ToggleRagdoll(true);
 		print($"{name} : ded");
 		DropPowerUp();
 	}
@@ -32,7 +33,15 @@ public abstract class Enemy : Scrolling, IHarmable
 	public override void Despawn()
 	{
 		base.Despawn();
-		// TODO Reset ragdoll
+		anim.enabled = true;
+		ToggleRagdoll(false);
+	}
+
+	public virtual void ToggleRagdoll(bool on)
+	{
+		rb.constraints = on ? RigidbodyConstraints.None : RigidbodyConstraints.FreezeRotation;
+		rb.useGravity = on;
+		if(anim != null) anim.enabled = !on;
 	}
 
 	public void DropPowerUp()
