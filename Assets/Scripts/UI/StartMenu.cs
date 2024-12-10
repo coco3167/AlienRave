@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -10,7 +9,6 @@ namespace UI
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private GameObject optionsMenu;
         private UnityEvent optionsEvent;
-        [SerializeField] private GameObject pauseMenu;
 
         private void Start()
         {
@@ -25,7 +23,7 @@ namespace UI
 
         public void PlayGame()
         {
-            pauseMenu.SetActive(true);
+            GameManager.Instance.Play();
             gameObject.SetActive(false);
         }
 

@@ -9,31 +9,31 @@ namespace UI
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private TextMeshProUGUI titleText;
         [SerializeField] private TextMeshProUGUI scoreText;
-        [SerializeField] private GameObject mainMenu;
     
         void OnEnable()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
+            SetVictory();
         }
 
-        public void SetVictory(bool isVictory, int score)
+        public void SetVictory()
         {
-            if(isVictory)
+            if(GameManager.Instance.areUWinningSon)
                 titleText.text = "Victoire";
             else
                 titleText.text = "Game Over";
             
-            scoreText.text = $"Score : {score}";
+            scoreText.text = $"Score : {GameManager.Instance.score}";
         }
 
         public void Restart()
         {
-            Debug.LogWarning("No restart implemented");
+            GameManager.Instance.Restart(false);
         }
 
         public void MainMenu()
         {
-            mainMenu.SetActive(true);
+            GameManager.Instance.Restart(true);
             gameObject.SetActive(false);
         }
     }

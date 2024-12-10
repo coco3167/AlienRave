@@ -11,7 +11,6 @@ namespace UI
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private GameObject optionsMenu;
         private UnityEvent optionsEvent;
-        [SerializeField] private GameObject startMenu;
         private void Start()
         {
             GetFocus();
@@ -25,17 +24,14 @@ namespace UI
 
         public void Back()
         {
+            GameManager.Instance.Play();
             gameObject.SetActive(false);
         }
 
         public void Restart()
         {
+            GameManager.Instance.Restart(false);
             Debug.LogWarning("Restart not implemented");
-        }
-
-        public void Inputs()
-        {
-            Debug.LogWarning("Inputs display not implemented");
         }
 
         public void Options()
@@ -46,8 +42,7 @@ namespace UI
 
         public void StartMenu()
         {
-            startMenu.SetActive(true);
-            gameObject.SetActive(false);
+            GameManager.Instance.Restart(true);
         }
 
         private void GetFocus()

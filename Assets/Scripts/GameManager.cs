@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,21 +11,25 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance => instance; // TODO faire un vrai singleton
 	#endregion
 
-	private enum ScreenState { Pause, Win, Lose, Disconnected }
+	private enum ScreenState { Start, Pause, Win, Lose, Disconnected }
 
 	[SerializeField] private GameObject[] playerPrefabs;
 	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
 	[SerializeField] private PlayerAudioListener audioListener;
+	[SerializeField] private List<GameObject> menus;
 
 	private PlayerInputManager playerInputManager;
 	private int nbPlayers;
+	
+	private static bool restart;
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
 	//private float tmpObstacleSPawnertimer = 2f;
 
+	public bool areUWinningSon = true;
 	public int score;
 
 	#region �v�nements
@@ -40,6 +46,14 @@ public class GameManager : MonoBehaviour
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
 
 		playersHealth = maxPlayersHealth;
+
+		if (restart)
+		{
+			restart = false;
+			return;
+		}
+
+		SetStartMenu();
 	}
 
 	private void Update()
@@ -92,6 +106,7 @@ public class GameManager : MonoBehaviour
 
 		if (playersHealth <= 0)
 		{
+			areUWinningSon = false;
 			ShowUIScreen(ScreenState.Lose);
 			if (playersHealth < 0) playersHealth = 0;
 		}
@@ -109,6 +124,12 @@ public class GameManager : MonoBehaviour
 		hud.UpdateLifeVisuals(playersHealth);
 	}
 
+	public void SetStartMenu()
+	{
+		ShowUIScreen(ScreenState.Start);
+		OnPause?.Invoke();
+	}
+
 	public void Pause()
 	{
 		ShowUIScreen(ScreenState.Pause);
@@ -121,21 +142,33 @@ public class GameManager : MonoBehaviour
 		HideUIScreen();
 	}
 
+	public void Restart(bool showMainMenu)
+	{
+		restart = !showMainMenu;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
 	private void ShowUIScreen(ScreenState state)
 	{
 		switch(state)
 		{
+			case ScreenState.Start:
+				menus[0].SetActive(true);
+				break;
 			case ScreenState.Pause:
+				menus[1].SetActive(true);
 				break;
 			case ScreenState.Win:
+				menus[2].SetActive(true);
 				break;
 			case ScreenState.Lose:
+				menus[2].SetActive(true);
 				break;
 		}
 	}
 
 	public void HideUIScreen()
 	{
-	
+		menus.ForEach(x => x.SetActive(false));
 	}
 }

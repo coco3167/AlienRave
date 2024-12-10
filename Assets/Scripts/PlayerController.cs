@@ -13,6 +13,7 @@ public class PlayerController : Pausable, IHarmable
 	private CharacterController ctrl;
 	private PlayerInput input;
 	private float powerUpTimer;
+	private bool pausing;
 
 	private bool canTakeDmg = true;
 
@@ -36,12 +37,14 @@ public class PlayerController : Pausable, IHarmable
 	{
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
 		if (shooting && shootTimer <= 0) Shoot();
+		if(pausing) SetPause();
 	}
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
 
 	public void OnShoot(InputAction.CallbackContext ctx) => shooting = ctx.performed;
-
+	
+	public void OnPause(InputAction.CallbackContext ctx) => pausing = ctx.performed;
 	public void IncreaseShootPoints()
 	{
 		if (data.nbProjectiles == 4) return;
@@ -72,6 +75,12 @@ public class PlayerController : Pausable, IHarmable
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
 		
 		shootTimer = data.fireRate;
+	}
+
+	private void SetPause()
+	{
+		pausing = false;
+		GameManager.Instance.Pause();
 	}
 
 	protected override void Pause()
