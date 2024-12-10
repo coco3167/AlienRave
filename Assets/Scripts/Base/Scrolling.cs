@@ -4,9 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public abstract class Scrolling : Spawnable
 {
-	public static float scrollSpeed = 400;
-
 	protected Rigidbody rb;
+	[SerializeField] protected float scrollSpeed;
 	protected bool scrolling = true;
 
 	protected virtual void Awake() => rb = GetComponent<Rigidbody>();
