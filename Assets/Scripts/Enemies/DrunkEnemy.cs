@@ -3,8 +3,14 @@ using UnityEngine;
 public class DrunkEnemy : Enemy
 {
 	[SerializeField, Range(0,1)] private float maxAngle;
-
+	[SerializeField] protected string targetTag;
 	private Vector3 walkDirection;
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (!other.CompareTag(targetTag)) return;
+		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
+	}
 
 	protected override void Awake()
 	{

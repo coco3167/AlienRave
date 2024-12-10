@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CrowdData", menuName = "Scriptable Objects/CrowdData")]
+[CreateAssetMenu(fileName = "CrowdData", menuName = "Scriptable Objects/Spawn/CrowdData")]
 public class CrowdData : ScriptableObject
 {
     public PoolType PoolType { get; private set; } = PoolType.CrowdObstacle;

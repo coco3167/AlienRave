@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ThrowEnemyData", menuName = "Scriptable Objects/ThrowEnemyData")]
+[CreateAssetMenu(fileName = "ThrowEnemyData", menuName = "Scriptable Objects/Entity/Enemy/ThrowEnemyData")]
 public class ThrowEnemyData : EnemyData
 {
 	public float shootCooldown = 1f;
