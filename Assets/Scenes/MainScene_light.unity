@@ -244,101 +244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261676583}
   m_CullTransparentMesh: 1
---- !u!1 &296089056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 296089058}
-  - component: {fileID: 296089057}
-  - component: {fileID: 296089059}
-  m_Layer: 0
-  m_Name: MusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &296089057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1961496942
-      Data2: 1331048661
-      Data3: -1891327314
-      Data4: 2066002183
-    Path: event:/Music/Music
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &296089058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9787583, y: -13.873195, z: 63.157616}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &296089059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -592237271
-      Data2: 1257739683
-      Data3: 1796911806
-      Data4: 210793111
-    Path: event:/Crowd/CrowdBackground
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &326727643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7586191970783341175, guid: f7435f27299406144997c61285852dd7, type: 3}
@@ -686,7 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b944c2ad33473d489367751c9dda07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpUIs: []
 --- !u!1 &473386884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9116671949989215893, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
@@ -706,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 400807687}
   transitionDuration: 1
-  preciseColorParameter: {r: 0.7610062, g: 0.114487655, b: 0, a: 0}
+  preciseColorParameter: {r: 0.509434, g: 0.1318138, b: 0.0656817, a: 0}
 --- !u!1 &595168507
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,197 +844,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &950946245
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 950946246}
-  - component: {fileID: 950946247}
-  m_Layer: 0
-  m_Name: FMODEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &950946246
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950946245}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 977276038}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &950946247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950946245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97f2e296e5c790c4d8bfcb7c5b15571d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <greenPlayerAttack>k__BackingField:
-    Guid:
-      Data1: 383526191
-      Data2: 1318498535
-      Data3: 313324197
-      Data4: 1723206823
-    Path: event:/SFX/GreenPlayer Character/GreenPlayer Attack
-  <greenPlayerIsHurt>k__BackingField:
-    Guid:
-      Data1: 425871298
-      Data2: 1083962495
-      Data3: 1770222228
-      Data4: 1709197929
-    Path: event:/SFX/GreenPlayer Character/GreenPlayer Hurt
-  <pinkPlayerAttack>k__BackingField:
-    Guid:
-      Data1: -175122094
-      Data2: 1271326138
-      Data3: 197988737
-      Data4: 796288223
-    Path: event:/SFX/PinkPlayer Character/PinkPlayer Attack
-  <pinkPlayerIsHurt>k__BackingField:
-    Guid:
-      Data1: -2058479171
-      Data2: 1193270488
-      Data3: 626139029
-      Data4: -664785294
-    Path: event:/SFX/PinkPlayer Character/PinkPlayer Hurt
-  <greenDrunkEnemySeesPlayer>k__BackingField:
-    Guid:
-      Data1: -1367939910
-      Data2: 1085699805
-      Data3: -85402698
-      Data4: -1709072873
-    Path: event:/SFX/DrunkEnemy/GreenDrunkEnemy Sees
-  <greenDrunkEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: -1946033080
-      Data2: 1156321423
-      Data3: -98679666
-      Data4: -384345311
-    Path: event:/SFX/DrunkEnemy/GreenDrunkEnemy Hurt
-  <pinkDrunkEnemySeesPlayer>k__BackingField:
-    Guid:
-      Data1: 1712929112
-      Data2: 1229830383
-      Data3: -226418516
-      Data4: 137033826
-    Path: event:/SFX/DrunkEnemy/PinkDrunkEnemy Sees
-  <pinkDrunkEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: 1789846285
-      Data2: 1172060985
-      Data3: 420077984
-      Data4: 1387295665
-    Path: event:/SFX/DrunkEnemy/PinkDrunkEnemy Hurt
-  <drunkEnemyChenille>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <kisserEnemyDeath>k__BackingField:
-    Guid:
-      Data1: -62997314
-      Data2: 1252596478
-      Data3: -2126864224
-      Data4: -1500380564
-    Path: event:/SFX/KisserEnemy/KisserEnemy Dies
-  <greenKisserEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: -1635463028
-      Data2: 1082916386
-      Data3: -290579265
-      Data4: -932747635
-    Path: event:/SFX/KisserEnemy/GreenKisserEnemy Hurt
-  <pinkKisserEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: 2132108955
-      Data2: 1207946850
-      Data3: 282132399
-      Data4: -105375625
-    Path: event:/SFX/KisserEnemy/PinkKisserEnemy Hurt
-  <hybridEnemyBurp>k__BackingField:
-    Guid:
-      Data1: -556239314
-      Data2: 1307917544
-      Data3: 680324535
-      Data4: 1362737679
-    Path: event:/SFX/HybridEnemy/HybridEnemy Burps
-  <greenHybridEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: -721865366
-      Data2: 1139376342
-      Data3: -158174048
-      Data4: 2064625489
-    Path: event:/SFX/HybridEnemy/pinkHybridEnemy Hurt
-  <pinkHybridEnemyIsHurt>k__BackingField:
-    Guid:
-      Data1: -721865366
-      Data2: 1139376342
-      Data3: -158174048
-      Data4: 2064625489
-    Path: event:/SFX/HybridEnemy/pinkHybridEnemy Hurt
-  <hybridEnemyDeath>k__BackingField:
-    Guid:
-      Data1: -1086408646
-      Data2: 1095874106
-      Data3: -1196156531
-      Data4: 1774088946
-    Path: event:/SFX/HybridEnemy/HybridEnemy Dies
-  <projectileObstacle>k__BackingField:
-    Guid:
-      Data1: -1763888454
-      Data2: 1230939158
-      Data3: 1994752681
-      Data4: 1180258058
-    Path: event:/SFX/Projectile Misses
-  <kisserEnemyKiss>k__BackingField:
-    Guid:
-      Data1: -327761767
-      Data2: 1099077872
-      Data3: 1643285168
-      Data4: -981116851
-    Path: event:/SFX/KisserEnemy/Kisses
-  <crowd2D>k__BackingField:
-    Guid:
-      Data1: -592237271
-      Data2: 1257739683
-      Data3: 1796911806
-      Data4: 210793111
-    Path: event:/Crowd/CrowdBackground
-  <crowdGroup>k__BackingField:
-    Guid:
-      Data1: -534780936
-      Data2: 1281149308
-      Data3: -149002314
-      Data4: 365937731
-    Path: event:/Crowd/CrowdGroup
-  <music>k__BackingField:
-    Guid:
-      Data1: 1961496942
-      Data2: 1331048661
-      Data3: -1891327314
-      Data4: 2066002183
-    Path: event:/Music/Music
 --- !u!1 &965953469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +961,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 977276038}
-  - component: {fileID: 977276040}
+  - component: {fileID: 977276037}
+  - component: {fileID: 977276036}
+  - component: {fileID: 977276035}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1256,6 +971,83 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &977276035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977276034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Emitters: []
+  TriggerEvent: 0
+--- !u!114 &977276036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977276034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1961496942
+      Data2: 1331048661
+      Data3: -1891327314
+      Data4: 2066002183
+    Path: event:/Music/Music1
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &977276037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977276034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -592237271
+      Data2: 1257739683
+      Data3: 1796911806
+      Data4: 210793111
+    Path: event:/Crowd/CrowdBackground
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &977276038
 Transform:
   m_ObjectHideFlags: 0
@@ -1268,22 +1060,9 @@ Transform:
   m_LocalPosition: {x: 6.9787583, y: -13.873195, z: 63.157616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 950946246}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &977276040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977276034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7f1ba57fbf4f544a89b5322aef421c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1243119429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2121,5 @@ SceneRoots:
   - {fileID: 1243119432}
   - {fileID: 1409949063}
   - {fileID: 977276038}
-  - {fileID: 296089058}
   - {fileID: 1843075153}
   - {fileID: 895528001310317170}
