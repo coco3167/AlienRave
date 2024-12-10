@@ -672,12 +672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9349118b084b3e44861ea147eacb579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDatas:
-  - {fileID: 11400000, guid: c66c0092815ef2a49935a39e99264477, type: 2}
-  - {fileID: 11400000, guid: 32f2dea64ea4e214ca7b3e892e4872e6, type: 2}
   playerPrefabs:
   - {fileID: 8166040892525687113, guid: 1478796547c0ba946bbaab03c8fc897f, type: 3}
   - {fileID: 4855437416236835894, guid: 4c967cda5ffc39849a1c80bf169ddb67, type: 3}
+  playerDatas:
+  - {fileID: 11400000, guid: c66c0092815ef2a49935a39e99264477, type: 2}
+  - {fileID: 11400000, guid: 32f2dea64ea4e214ca7b3e892e4872e6, type: 2}
   hud: {fileID: 0}
   tmp_crowdManager: {fileID: 7905025885406376176}
   audioListener: {fileID: 0}
@@ -1296,13 +1296,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6540186684642686418, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6434279695943559410}
   m_SourcePrefab: {fileID: 100100000, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
 --- !u!4 &485985814987328170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2520067952291660269, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
   m_PrefabInstance: {fileID: 2614205398139407175}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9116671949989215893 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6540186684642686418, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+  m_PrefabInstance: {fileID: 2614205398139407175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6434279695943559410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9116671949989215893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca4a8c32f0e93459fb6b8485be3166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionalLight: {fileID: 0}
+  transitionDuration: 1
+  preciseColorParameter: {r: 0.7610062, g: 0.114487655, b: 0, a: 0}
 --- !u!1001 &4888497237657049686
 PrefabInstance:
   m_ObjectHideFlags: 0
