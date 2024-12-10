@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerPink
   m_EditorClassIdentifier: 
   playerIndex: 1
-  speed: 50
-  fireRate: 0.1
-  nbProjectiles: 3
+  speed: 5
+  fireRate: 0.2
+  nbProjectiles: 2
   invulnerabilityDuration: 0.2
   projType: 0
   projectileData: {fileID: 11400000, guid: 55434a11446cad14da242a3b9cb973b1, type: 2}

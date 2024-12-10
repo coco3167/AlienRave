@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : Pausable, IHarmable
 {
 	[SerializeField] private PlayerData data;
+	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -13,7 +14,6 @@ public class PlayerController : Pausable, IHarmable
 	private CharacterController ctrl;
 	private Animator anim;
 	private PlayerInput input;
-	private float powerUpTimer;
 
 	private bool canTakeDmg = true;
 
@@ -50,9 +50,7 @@ public class PlayerController : Pausable, IHarmable
 
 	public void IncreaseShootPoints()
 	{
-		if (data.nbProjectiles == 4) return;
 		Transform shootParent = transform.GetChild(0);
-
 		shootPoints = ++data.nbProjectiles switch
 		{
 			2 => new Transform[] { shootParent.GetChild(1), shootParent.GetChild(2) },
@@ -102,30 +100,20 @@ public class PlayerController : Pausable, IHarmable
 		Invulnerability();
 	}
 
-	public void PickUpPowerUp(PowerUp powerUp)
+	public void PickUpPowerUp(PowerUp powerUp) => powerUp.Apply();
+
+	public void ToggleFeedback(bool damage, bool on)
 	{
-		Sprite sprite = powerUp.Apply(data, this);
-		if(sprite != null)
-		{
-			// Si le powerUp touche les deux joueur playerIndex = 2;
-			int index = powerUp.type == PowerUpData.Type.SlowMotion ? 2 : data.playerIndex;
-			GameManager.Instance.UpdatePowerUps(index, sprite, powerUpTimer);
-		}
+		var feedback = powerUpFeedbacks[damage ? 0 : 1];
+		print(feedback.name);
+		if (on) feedback.Play();
+		else feedback.Stop();
 	}
 
 	public void Invulnerability()
 	{
 		canTakeDmg = false;
 		StartCoroutine(InvulnerabilityCooldown());
-		// TODO Anims / effets visuels ?
-	}
-
-	public IEnumerator PowerUpTimer(float duration)
-	{
-		powerUpTimer = duration;
-		yield return new WaitForSeconds(duration);
-		LastingPowerUp powerUp = data.powerUps.Dequeue();
-		powerUp.Remove();
 	}
 
 	private IEnumerator InvulnerabilityCooldown()
