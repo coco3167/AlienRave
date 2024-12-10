@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 109172183389104122}
   - component: {fileID: 5357319224890185052}
   m_Layer: 0
-  m_Name: Icon_Heal
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.4, z: 0}
-  m_LocalScale: {x: 0.061751653, y: 0.061751653, z: 0.061751653}
+  m_LocalScale: {x: 0.20168558, y: 0.20168558, z: 0.20168558}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6237835219669834155}
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4dbacfd5a07cb3418b1dc9ea9b89e5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a166564b9909dc447a926651c4840c68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
