@@ -13,7 +13,7 @@ public abstract class Enemy : Scrolling, IHarmable
 		health = data.maxHealth;
 	}
 
-	public virtual void Harm(int damage)
+	public virtual void Harm(int damage, bool green = false)
 	{
 		if(IsDead) return;
 		health -= damage;

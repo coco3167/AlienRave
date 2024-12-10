@@ -1,14 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HybridEnemy : ThrowEnemy
 {
-	private PoolType RandomProjectileType => Random.Range(0, 2) == 0 ? 
-												PoolType.GreenWaveProjectile : 
+	private HybridEnemyUI ui;
+	private int greenHealth;
+	private int pinkHealth;
+
+	private PoolType RandomProjectileType => Random.Range(0, 2) == 0 ?
+												PoolType.GreenWaveProjectile :
 												PoolType.PinkWaveProjectile;
 
 	private Color RandomColor => Random.Range(0, 2) == 0 ? new Color(1, 0, 1) : new Color(0, 1, 0);
+
+	protected override void Awake()
+	{
+		base.Awake();
+		ui = GetComponentInChildren<HybridEnemyUI>();
+		ui.Initialize(data.maxHealth);
+		greenHealth = data.maxHealth / 2;
+		pinkHealth = data.maxHealth / 2;
+		print($"Green : {greenHealth} / Pink : {pinkHealth}");
+	}
 
 	protected override void Shoot()
 	{
@@ -24,5 +37,26 @@ public class HybridEnemy : ThrowEnemy
 	{
 		yield return new WaitForSeconds(Data.salvoCooldown);
 		EndSalvo();
+	}
+
+	public override void Harm(int damage, bool green = false)
+	{
+		print($"Hybrid poc -> green : {green} -> {damage}");
+		if ((green && greenHealth == 0) || (!green && pinkHealth == 0)) return;
+
+		if (green)
+		{
+			greenHealth -= damage;
+			if (greenHealth <= 0) greenHealth = 0;
+			ui.TakeDamage(true, greenHealth);
+		}
+		else
+		{
+			pinkHealth -= damage;
+			if (pinkHealth <= 0) pinkHealth = 0;
+			ui.TakeDamage(false, pinkHealth);
+		}
+
+		if (pinkHealth == 0 && greenHealth == 0) Die();
 	}
 }

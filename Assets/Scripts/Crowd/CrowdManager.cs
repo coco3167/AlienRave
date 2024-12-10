@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary> Script g�rant les diff�rents types de foule pr�sents dans le niveau. </summary>
 public class CrowdManager : Pausable
@@ -97,8 +99,11 @@ public class CrowdManager : Pausable
 		{
 			for (int i = 0; i < nb; ++i)
 			{
-				float zPosModif = Mathf.Clamp(zPos + Random.Range(-zSpread, zSpread), 0, 1);
-				Vector3 obstaclePos = new Vector3(xPos, 0.01f, zBasePos + zLength * zPosModif);
+				float zPosModif = zPos + Random.Range(-zSpread, zSpread); // gets pos noise, maybe <-1 or >1
+				zPosModif -= (float)Math.Truncate(zPosModif)*(zPosModif % 1); // repartition of <-1 and >1 back between -1 and 1
+				float zRealPos = Mathf.Lerp(zBasePos, zLength, zPosModif);
+				Vector3 obstaclePos = new Vector3(xPos, 0.01f, zRealPos);
+				
 				var obstacle = PoolManager.Instance.SpawnElement(PoolType.CrowdObstacle, obstaclePos,
 					Quaternion.LookRotation(direction)) as CrowdObstacle;
 				obstacle.speed = speed;
