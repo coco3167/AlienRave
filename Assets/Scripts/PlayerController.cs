@@ -11,6 +11,7 @@ public class PlayerController : Pausable, IHarmable
 	private Transform[] shootPoints;
 	private float shootTimer;
 	private CharacterController ctrl;
+	private Animator anim;
 	private PlayerInput input;
 	private float powerUpTimer;
 
@@ -20,6 +21,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		input = GetComponent<PlayerInput>();
 		ctrl = GetComponent<CharacterController>();
+		anim = GetComponentInChildren<Animator>();
 		shootPoints = new Transform[] { transform.GetChild(0).GetChild(0) };
 		shootTimer = data.fireRate;
 	}
@@ -40,7 +42,11 @@ public class PlayerController : Pausable, IHarmable
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
 
-	public void OnShoot(InputAction.CallbackContext ctx) => shooting = ctx.performed;
+	public void OnShoot(InputAction.CallbackContext ctx)
+	{
+		shooting = ctx.performed;
+		anim.SetBool("Shoot", shooting);
+	}
 
 	public void IncreaseShootPoints()
 	{
@@ -70,6 +76,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		foreach(var shootPoint in shootPoints)
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
+
 		
 		shootTimer = data.fireRate;
 	}
@@ -90,6 +97,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		if (!canTakeDmg) return;
 		print($"{name} poc");
+		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
 		Invulnerability();
 	}
