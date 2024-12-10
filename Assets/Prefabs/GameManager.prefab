@@ -1259,6 +1259,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7905025885406376176}
     - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: enemySpawnPoint
+      value: 
+      objectReference: {fileID: 6524163012290002336}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
       propertyPath: enemyPaths.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1274,6 +1278,14 @@ PrefabInstance:
       propertyPath: 'enemyPaths.Array.data[2]'
       value: 
       objectReference: {fileID: 6814174944235371089}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: 'crowdSpawnPoint.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6164144794380841402}
+    - target: {fileID: 4178834857402796629, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
+      propertyPath: 'crowdSpawnPoint.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7346278960364449199}
     - target: {fileID: 6540186684642686418, guid: 8954a6c6d4fd0fa449ecadceacc186c4, type: 3}
       propertyPath: m_Name
       value: AnimatorSpawner
