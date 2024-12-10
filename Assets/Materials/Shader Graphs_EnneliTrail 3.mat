@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Trail 1
+  m_Name: Shader Graphs_EnneliTrail 3
   m_Shader: {fileID: -6465566751694194690, guid: bb561a52426ea454781dfd9fa2f46a1a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -59,8 +59,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color1: {r: 0, g: 10.680627, b: 0.12455754, a: 1}
-    - _Color2: {r: 0.99215686, g: 0, b: 0.05331948, a: 1}
+    - _Color1: {r: 0.7801897, g: 2.128755, b: 0.6575735, a: 1}
+    - _Color2: {r: 1, g: 0.57462025, b: 0, a: 1}
     - _MainTexSpeed: {r: -0.1, g: 0, b: 0, a: 0}
     - _Speed: {r: -0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
