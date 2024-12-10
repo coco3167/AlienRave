@@ -1337,10 +1337,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
-      propertyPath: pools.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[12].size
       value: 100
       objectReference: {fileID: 0}

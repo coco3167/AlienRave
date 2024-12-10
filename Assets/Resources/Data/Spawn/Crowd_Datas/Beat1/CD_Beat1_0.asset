@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CD_Beat1_0
   m_EditorClassIdentifier: 
   nb: 30
-  length: 2
-  speed: 475.3
+  length: 1
+  speed: 350
   zSpread: 0.037
