@@ -15,7 +15,7 @@ namespace UI
 
         [HideInInspector] public UnityEvent backEvent;
 
-        void Start()
+        void OnEnable()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
         }

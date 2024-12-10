@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace UI
@@ -7,15 +6,8 @@ namespace UI
     public class StartMenu : MonoBehaviour
     {
         [SerializeField] private GameObject firstSelectedGameobject;
-        [SerializeField] private GameObject optionsMenu;
-        private UnityEvent optionsEvent;
-
-        private void Start()
-        {
-            GetFocus();
-            optionsEvent = optionsMenu.GetComponent<OptionsMenu>().backEvent;
-        }
-
+        [SerializeField] private OptionsMenu optionsMenu;
+        
         private void OnEnable()
         {
             GetFocus();
@@ -24,13 +16,12 @@ namespace UI
         public void PlayGame()
         {
             GameManager.Instance.Play();
-            gameObject.SetActive(false);
         }
 
         public void OpenOptions()
         {
-            optionsMenu.SetActive(true);
-            optionsEvent.AddListener(GetFocus);
+            optionsMenu.backEvent.AddListener(GetFocus);
+            optionsMenu.gameObject.SetActive(true);
         }
     
         public void QuitGame()

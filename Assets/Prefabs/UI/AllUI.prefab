@@ -431,6 +431,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2211852502293520518, guid: 74d35758ba145a44c9f66bd65e2313a7, type: 3}
   m_PrefabInstance: {fileID: 3255807221199504684}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4271092103153807076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1615390155224050632, guid: 74d35758ba145a44c9f66bd65e2313a7, type: 3}
+  m_PrefabInstance: {fileID: 3255807221199504684}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6752393659436018488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a70987b79a7ec40800a931190c4edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6752393659436018488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8114256359743499796, guid: 74d35758ba145a44c9f66bd65e2313a7, type: 3}
@@ -730,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 5859865604619696954, guid: 6859ceb792e5be4419715ebfcabf5ee1, type: 3}
       propertyPath: optionsMenu
       value: 
-      objectReference: {fileID: 6752393659436018488}
+      objectReference: {fileID: 4271092103153807076}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
