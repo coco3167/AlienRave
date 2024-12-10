@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5c9b2168c7075eb4eb91d306262b9b9b, type: 3}
+        m_Texture: {fileID: 2800000, guid: c637fd4d9e4a3e14a961dc24a610ffff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -45,7 +45,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _SpeedScroll: {r: -0.5, g: 0, b: 0, a: 0}
+    - _SpeedScroll: {r: -0.03, g: 0.03, b: 0, a: 0}
+    - _TillingSize: {r: 5, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &4032687313786073478
