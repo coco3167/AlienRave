@@ -41,7 +41,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		rb.constraints = on ? RigidbodyConstraints.None : RigidbodyConstraints.FreezeRotation;
 		rb.useGravity = on;
-		anim.enabled = !on;
+		if(anim != null) anim.enabled = !on;
 	}
 
 	public void DropPowerUp()
