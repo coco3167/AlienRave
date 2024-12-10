@@ -611,7 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionalLight: {fileID: 400807687}
   transitionDuration: 1
-  preciseColorParameter: {r: 0.509434, g: 0.1318138, b: 0.0656817, a: 0}
+  preciseColorParameter: {r: 0.7610062, g: 0.114487655, b: 0, a: 0}
 --- !u!1 &595168507
 GameObject:
   m_ObjectHideFlags: 0
