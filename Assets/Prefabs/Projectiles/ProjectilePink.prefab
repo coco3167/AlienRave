@@ -60,6 +60,26 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: 55434a11446cad14da242a3b9cb973b1, type: 2}
+    - target: {fileID: 9138438907445074279, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/SFX/PinkPlayer Character/PinkPlayer Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138438907445074279, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: -175122094
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138438907445074279, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1271326138
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138438907445074279, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 197988737
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138438907445074279, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 796288223
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
