@@ -10,8 +10,13 @@ public class PowerUpPickup : Scrolling
 		Despawn();
 	}
 
-	protected override void Move()
+	protected override bool Move()
 	{
+		if (!base.Move())
+			return false;
+		
 		rb.linearVelocity = scrollSpeed * Time.deltaTime * Vector3.back;
+		
+		return true;
 	}
 }

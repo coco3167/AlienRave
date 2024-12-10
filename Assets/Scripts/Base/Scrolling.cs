@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// <summary> Classe mère de tous les éléments défilant à l'écran. </summary>
+/// <summary> Classe mï¿½re de tous les ï¿½lï¿½ments dï¿½filant ï¿½ l'ï¿½cran. </summary>
 [RequireComponent(typeof(Rigidbody))]
 public abstract class Scrolling : Spawnable
 {
@@ -10,13 +10,21 @@ public abstract class Scrolling : Spawnable
 
 	protected virtual void Awake() => rb = GetComponent<Rigidbody>();
 
-	private void FixedUpdate()
+	protected void FixedUpdate()
 	{
-		if (!scrolling || paused) return;
 		Move();
 	}
 
-	protected abstract void Move();
+	protected virtual bool Move()
+	{
+		if (paused)
+		{
+			rb.linearVelocity = Vector3.zero;
+			return false;
+		}
+
+		return true;
+	}
 
 	public override void Despawn()
 	{

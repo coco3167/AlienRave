@@ -9,6 +9,8 @@ namespace LDTool
 {
 	public class LevelAnimationSpawner : MonoBehaviour
 	{
+		[SerializeField] private Animator animator;
+		
 		[SerializeField] private Transform enemySpawnPoint;
 		[SerializeField] private List<Transform> crowdSpawnPoint;
 		[SerializeField] private CrowdManager crowdManager;
@@ -20,6 +22,9 @@ namespace LDTool
 		private void Start()
 		{
 			zLength = Mathf.Abs(crowdSpawnPoint[0].position.z - crowdSpawnPoint[1].position.z);
+
+			GameManager.Instance.OnPause += Pause;
+			GameManager.Instance.OnPlay += Play;
 		}
 
 		public void Spawn(SpawnData spawnObject)
@@ -74,6 +79,10 @@ namespace LDTool
 				if (followMode == FollowMode.Random) type = RandomFollowEnemy;
 
 				yield return new WaitForSeconds(0.2f);
+				
+				while (!animator.enabled)
+					yield return new WaitForEndOfFrame();
+				
 				FollowEnemy enemy = PoolManager.Instance.SpawnElement(type,
 							path.GetPointAtDistance(0),
 							path.GetRotationAtDistance(0)) as FollowEnemy;
@@ -85,6 +94,18 @@ namespace LDTool
 
 		private PoolType RandomFollowEnemy => 
 			Random.Range(0, 2) == 0 ? PoolType.PinkFollowEnemy : PoolType.GreenFollowEnemy;
+
+		private void Pause()
+		{
+			Debug.Log("not animating");
+			animator.enabled = false;
+		}
+
+		private void Play()
+		{			
+			Debug.Log("animating");
+			animator.enabled = true;
+		}
 		
 		public void EndLevel()
 		{

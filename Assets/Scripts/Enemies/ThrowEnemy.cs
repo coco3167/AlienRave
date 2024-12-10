@@ -27,10 +27,13 @@ public class ThrowEnemy : Enemy
 		StartCoroutine(ShootTimer(true));
 	}
 
-	protected override void Move()
+	protected override bool Move()
 	{
+		if (!base.Move())
+			return false;
 		rb.linearVelocity = ((scrollDir * data.speed) +
 							 (moveDir * Data.lateralSpeed)) * Time.deltaTime;
+		return true;
 	}
 
 	protected virtual void Shoot()

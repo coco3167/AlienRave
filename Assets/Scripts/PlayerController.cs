@@ -14,7 +14,7 @@ public class PlayerController : Pausable, IHarmable
 	private Animator anim;
 	private PlayerInput input;
 	private float powerUpTimer;
-	private bool pausing;
+	private bool pausing, isPaused;
 
 	private bool canTakeDmg = true;
 
@@ -39,7 +39,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
 		if (shooting && shootTimer <= 0) Shoot();
-		if(pausing) SetPause();
+		if (pausing && !isPaused) SetPause();
 	}
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
@@ -87,7 +87,7 @@ public class PlayerController : Pausable, IHarmable
 
 	private void SetPause()
 	{
-		pausing = false;
+		isPaused = true;
 		GameManager.Instance.Pause();
 	}
 
@@ -99,6 +99,7 @@ public class PlayerController : Pausable, IHarmable
 
 	protected override void Play()
 	{
+		isPaused = false;
 		input.enabled = true;
 		// TODO Play anims
 	}

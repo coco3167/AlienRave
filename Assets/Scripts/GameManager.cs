@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -48,7 +49,10 @@ public class GameManager : MonoBehaviour
 		playerInputManager.playerJoinedEvent.AddListener(menus[0].GetComponent<UI.StartMenu>().OnPlayerJoined);
 		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
+	}
 
+	private void Start()
+	{
 		if (restart)
 		{
 			restart = false;
