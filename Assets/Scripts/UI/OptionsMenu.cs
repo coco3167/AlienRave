@@ -41,10 +41,5 @@ namespace UI
         {
             Debug.LogWarning("SFX volume change not implemented");
         }
-
-        public void ChangeInput()
-        {
-            Debug.LogWarning("Input change not implemented");
-        }
     }
 }

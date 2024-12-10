@@ -86,5 +86,10 @@ namespace LDTool
 
 		private PoolType RandomFollowEnemy => 
 			Random.Range(0, 2) == 0 ? PoolType.PinkFollowEnemy : PoolType.GreenFollowEnemy;
+		
+		public void EndLevel()
+		{
+			GameManager.Instance.WinLevel();
+		}
 	}
 }

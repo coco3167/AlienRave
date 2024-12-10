@@ -106,7 +106,6 @@ public class GameManager : MonoBehaviour
 
 		if (playersHealth <= 0)
 		{
-			areUWinningSon = false;
 			ShowUIScreen(ScreenState.Lose);
 			if (playersHealth < 0) playersHealth = 0;
 		}
@@ -148,6 +147,11 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
+	public void WinLevel()
+	{
+		ShowUIScreen(ScreenState.Win);
+	}
+
 	private void ShowUIScreen(ScreenState state)
 	{
 		switch(state)
@@ -159,9 +163,13 @@ public class GameManager : MonoBehaviour
 				menus[1].SetActive(true);
 				break;
 			case ScreenState.Win:
+				areUWinningSon = true;
+				OnPause?.Invoke();
 				menus[2].SetActive(true);
 				break;
 			case ScreenState.Lose:
+				areUWinningSon = false;
+				OnPause?.Invoke();
 				menus[2].SetActive(true);
 				break;
 		}
