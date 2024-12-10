@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -87,7 +86,7 @@ public class PlayerController : Pausable, IHarmable
 		// TODO Play anims
 	}
 
-	public void Harm(int damage)
+	public void Harm(int damage, bool green = false)
 	{
 		if (!canTakeDmg) return;
 		print($"{name} poc");

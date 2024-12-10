@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Spawn Object" , menuName = "Scriptable Objects/Spawn Object")]
+[CreateAssetMenu(fileName = "New Spawn Object" , menuName = "Scriptable Objects/Spawn/Spawn Object")]
 public class SpawnData : ScriptableObject
 {
     [Serializable]
@@ -11,6 +11,8 @@ public class SpawnData : ScriptableObject
         public PoolType enemy;
         [Range(-1,1)] public float xPosEnemy;
         public int nb;
+        
+        public FollowMode followMode;
     }
 
     [Serializable]
@@ -31,6 +33,8 @@ public class SpawnData : ScriptableObject
 
     public int GetNbEnemies(int index) => enemiesSpawners[index].nb;
 
+    public FollowMode GetEnemyFollowMode(int index) => enemiesSpawners[index].followMode;
+
 
 	public int GetCrowdCount() => crowdSpawners.Count;
     public CrowdData GetCrowd(int index) => crowdSpawners[index].crowd;
@@ -39,4 +43,6 @@ public class SpawnData : ScriptableObject
 
     public bool HasCrowdToSpawn => crowdSpawners != null;
     public bool HasEnemiesToSpawn => enemiesSpawners != null;
+
+	public enum FollowMode { PinkOnly, GreenOnly, Alternate, Random }
 }

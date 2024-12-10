@@ -2,7 +2,9 @@ using PathCreation;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static SpawnData;
 using Random = UnityEngine.Random;
 
 namespace LDTool
@@ -31,7 +33,9 @@ namespace LDTool
 					PoolType type = spawnObject.GetEnemyType(loop);
 					if (type == PoolType.GreenFollowEnemy || type == PoolType.PinkFollowEnemy)
 					{
-						StartCoroutine(SpawnFollowEnemies(type,
+						var followMode = spawnObject.GetEnemyFollowMode(loop);
+
+						StartCoroutine(SpawnFollowEnemies(followMode,
 							enemyPaths[Random.Range(0, enemyPaths.Count)].path,
 							spawnObject.GetNbEnemies(loop)));
 					}
@@ -57,11 +61,19 @@ namespace LDTool
 			}
 		}
 
-		public IEnumerator SpawnFollowEnemies(PoolType type, VertexPath path, int nb)
+		public IEnumerator SpawnFollowEnemies(FollowMode followMode, VertexPath path, int nb)
 		{
+			PoolType type = RandomFollowEnemy;
+			if (followMode == FollowMode.PinkOnly) type = PoolType.PinkFollowEnemy;
+			if (followMode == FollowMode.GreenOnly) type = PoolType.GreenFollowEnemy;
+
 			int nbSpawned = 0;
 			while(nbSpawned < nb)
 			{
+				if(followMode == FollowMode.Alternate)
+					type = type == PoolType.PinkFollowEnemy ? PoolType.GreenFollowEnemy : PoolType.PinkFollowEnemy;
+				if (followMode == FollowMode.Random) type = RandomFollowEnemy;
+
 				yield return new WaitForSeconds(0.2f);
 				FollowEnemy enemy = PoolManager.Instance.SpawnElement(type,
 							path.GetPointAtDistance(0),
@@ -71,5 +83,8 @@ namespace LDTool
 			}
 			yield return null;
 		}
+
+		private PoolType RandomFollowEnemy => 
+			Random.Range(0, 2) == 0 ? PoolType.PinkFollowEnemy : PoolType.GreenFollowEnemy;
 	}
 }

@@ -62,7 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5095916975825749743, guid: b01009995a2500d4b9bb46237bd82557, type: 3}
       propertyPath: m_Name
-      value: PinkThrowEnemy Variant
+      value: PinkThrowEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095916975825749743, guid: b01009995a2500d4b9bb46237bd82557, type: 3}
+      propertyPath: m_TagString
+      value: EnemyPink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828695176063588116, guid: b01009995a2500d4b9bb46237bd82557, type: 3}
+      propertyPath: m_TagString
+      value: EnemyPink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

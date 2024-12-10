@@ -17,8 +17,9 @@ public class Projectile : Spawnable
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag(data.targetTag))
+		if (other.CompareTag(data.targetTag) || other.CompareTag("Hybrid"))
 		{
+			
 			Hit(other.GetComponentInParent<IHarmable>());
 			return;
 		}
@@ -28,8 +29,7 @@ public class Projectile : Spawnable
 
 	protected virtual void Hit(IHarmable entity)
 	{
-		entity.Harm(data.damage);
-		gameObject.SetActive(false);
+		entity.Harm(data.damage, data.targetTag.Contains("Green"));
 		Despawn();
 	}
 }
