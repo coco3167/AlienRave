@@ -23,6 +23,4 @@ public class PlayerAudioListener : MonoBehaviour
 		playerTransforms.Add(playerTransform);
 		if (playerTransforms.Count == 2) running = true;
 	}
-
-
 }

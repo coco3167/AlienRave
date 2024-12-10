@@ -4,7 +4,6 @@ public abstract class Enemy : Scrolling, IHarmable
 {
 	[SerializeField] protected EnemyData data;
 	protected int health;
-	[SerializeField] protected string targetTag;
 
 	private bool IsDead => health <= 0;
 
@@ -12,12 +11,6 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		base.Awake();
 		health = data.maxHealth;
-	}
-
-	private void OnTriggerEnter(Collider other)
-	{
-		if (!other.CompareTag(targetTag)) return;
-		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
 	}
 
 	public virtual void Harm(int damage)

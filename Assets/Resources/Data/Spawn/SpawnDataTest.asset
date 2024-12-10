@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd4cba6d438d0f4a82015e66a2508e0, type: 3}
   m_Name: SpawnDataTest
   m_EditorClassIdentifier: 
-  ennemiesSpawners:
-  - enemy: 0
+  enemiesSpawners:
+  - enemy: 18
     xPosEnemy: 0
-  crowdSpawners:
-  - crowd: {fileID: 0}
-    zPosCrowd: 0
-    isLeft: 0
+    nb: 10
+    followMode: 3
+  crowdSpawners: []
