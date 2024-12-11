@@ -1,56 +1,38 @@
-using UnityEngine;
-
 public class LastingPowerUp : PowerUp
 {
-	private PlayerData playerData;
 	private readonly float duration;
-	public Sprite sprite;
 
-	public LastingPowerUp(float value, PowerUpData.Type type, float duration, Sprite sprite) : base(value, type)
+	public LastingPowerUp(float value, PowerUpData.Type type, float duration) : base(value, type)
 	{
 		this.duration = duration;
-		this.sprite = sprite;
 	}
 
-	public override Sprite Apply(PlayerData playerData, PlayerController player)
+	public override void Apply()
 	{
-		this.playerData = playerData;
-
+		GameManager gameManager = GameManager.Instance;
 		switch (type)
 		{
-			case PowerUpData.Type.Speed: playerData.speed += value;
+			case PowerUpData.Type.Speed: gameManager.ChangeSpeed(value, duration);
 				break;
-
-			case PowerUpData.Type.Damage: playerData.projectileData.damage += (int)value;
+			case PowerUpData.Type.Damage: gameManager.ChangeDamage((int)value, duration);
 				break;
-
-			case PowerUpData.Type.Invulnerability:  playerData.invulnerabilityDuration += duration;
-				player.Invulnerability();
-				break;
-
-			case PowerUpData.Type.SlowMotion: //TODO todo?
+			case PowerUpData.Type.Invulnerability: gameManager.ToggleInvulnerability(duration);
 				break;
 		}
 
-		playerData.powerUps.Enqueue(this);
-		player.StartCoroutine(player.PowerUpTimer(duration));
-		return sprite;
+		gameManager.powerUps.Enqueue(this);
 	}
 
 	public void Remove()
 	{
+		GameManager gameManager = GameManager.Instance;
 		switch (type)
 		{
-			case PowerUpData.Type.Speed:playerData.speed -= value;
+			case PowerUpData.Type.Speed: gameManager.ChangeSpeed(-value);
 				break;
-
-			case PowerUpData.Type.Damage: playerData.projectileData.damage -= (int)value;
+			case PowerUpData.Type.Damage: gameManager.ChangeDamage(-(int)value);
 				break;
-
-			case PowerUpData.Type.Invulnerability: playerData.invulnerabilityDuration -= duration;
-				break;
-
-			case PowerUpData.Type.SlowMotion:
+			case PowerUpData.Type.Invulnerability: gameManager.ToggleInvulnerability(-1);
 				break;
 		}
 	}
