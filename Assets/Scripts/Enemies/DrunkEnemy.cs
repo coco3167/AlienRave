@@ -4,6 +4,7 @@ public class DrunkEnemy : Enemy
 	[SerializeField, Range(0,1)] private float maxAngle;
 	[SerializeField] protected string targetTag;
 	private Vector3 walkDirection;
+	private bool switchDirection;
 
 	private void OnTriggerEnter(Collider other)
 	{
@@ -41,6 +42,13 @@ public class DrunkEnemy : Enemy
 			return false;
 		
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
+		print(transform.position.x);
+		if ((transform.position.x >= 10 || transform.position.x <= -10) && !switchDirection)
+		{
+			switchDirection = true;
+			walkDirection.x = -walkDirection.x;
+		}
+			
 		return true;
 	}
 
