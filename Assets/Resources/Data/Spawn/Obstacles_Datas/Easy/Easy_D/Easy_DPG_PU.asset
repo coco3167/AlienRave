@@ -10,37 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cd4cba6d438d0f4a82015e66a2508e0, type: 3}
-  m_Name: Medium_DG
+  m_Name: Easy_DPG_PU
   m_EditorClassIdentifier: 
   enemiesSpawners:
   - enemy: 5
-    xPosEnemy: -0.883
+    xPosEnemy: 0
     nb: 0
-    followMode: 0
+    followMode: 1
     hasPowerUp: 0
     powerUpType: 0
   - enemy: 5
-    xPosEnemy: -0.418
+    xPosEnemy: -0.478
     nb: 0
-    followMode: 0
-    hasPowerUp: 0
-    powerUpType: 0
+    followMode: 1
+    hasPowerUp: 1
+    powerUpType: 14
   - enemy: 5
-    xPosEnemy: 0.084
+    xPosEnemy: 0.709
+    nb: 0
+    followMode: 1
+    hasPowerUp: 0
+    powerUpType: 0
+  - enemy: 4
+    xPosEnemy: 0.604
     nb: 0
     followMode: 0
     hasPowerUp: 0
-    powerUpType: 0
-  - enemy: 5
-    xPosEnemy: 0.467
+    powerUpType: 16
+  - enemy: 4
+    xPosEnemy: -0.726
     nb: 0
     followMode: 0
-    hasPowerUp: 0
-    powerUpType: 0
-  - enemy: 5
-    xPosEnemy: 0.798
+    hasPowerUp: 1
+    powerUpType: 12
+  - enemy: 4
+    xPosEnemy: -0.022
     nb: 0
     followMode: 0
-    hasPowerUp: 0
-    powerUpType: 0
+    hasPowerUp: 1
+    powerUpType: 11
   crowdSpawners: []
