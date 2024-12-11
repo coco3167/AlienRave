@@ -58,13 +58,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.7166667
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 7a59590a25c456d40ba0d119da24d552, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 5.0833335
     functionName: Spawn
     data: 
