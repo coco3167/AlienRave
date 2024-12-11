@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -8,6 +9,8 @@ namespace UI
     {
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private GameObject optionsMenu;
+        [SerializeField] private GameObject controlsMenu;
+        [SerializeField] private GameObject controlsBackButton;
         private UnityEvent optionsEvent;
         private void Start()
         {
@@ -39,7 +42,14 @@ namespace UI
 
         public void Controls()
         {
-            Debug.LogWarning("Controls menu not implemented");
+            controlsMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(controlsBackButton);
+        }
+
+        public void BackControls()
+        {
+            controlsMenu.SetActive(false);
+            GetFocus();
         }
 
         public void StartMenu()
