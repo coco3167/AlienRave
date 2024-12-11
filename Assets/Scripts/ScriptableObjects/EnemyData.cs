@@ -6,7 +6,4 @@ public class EnemyData : ScriptableObject
 	public float speed;
 	public int maxHealth;
 	public int damage;
-
-	public bool hasPowerUp;
-	public PoolType powerUpType;
 }

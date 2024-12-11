@@ -4,6 +4,8 @@ using UnityEngine;
 public abstract class Enemy : Scrolling, IHarmable
 {
 	[SerializeField] protected EnemyData data;
+	protected PoolType powerUpType;
+	protected bool hasPowerUp;
 	protected Animator anim;
 	protected int health;
 
@@ -15,12 +17,17 @@ public abstract class Enemy : Scrolling, IHarmable
 		anim = GetComponentInChildren<Animator>();
 	}
 
-	public void AddPowerUp(PoolType powerUpType) => data.powerUpType = powerUpType;
+	public void AddPowerUp(PoolType powerUpType)
+	{
+		hasPowerUp = true;
+		this.powerUpType = powerUpType;
+	}
 
 	public virtual void Harm(int damage, bool green = false)
 	{
 		if(IsDead) return;
 		health -= damage;
+		print($"{name} -> poc");
 		if (health <= 0) Die();
 	}
 
@@ -38,6 +45,7 @@ public abstract class Enemy : Scrolling, IHarmable
 		base.Despawn();
 		ToggleRagdoll(false);
 	}
+
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -53,7 +61,7 @@ public abstract class Enemy : Scrolling, IHarmable
 
 	public void DropPowerUp()
 	{
-		if (!data.hasPowerUp) return;
-		PoolManager.Instance.SpawnElement(data.powerUpType, transform.position, Quaternion.identity);
+		if (!hasPowerUp) return;
+		PoolManager.Instance.SpawnElement(powerUpType, transform.position, Quaternion.identity);
 	}
 }

@@ -50,9 +50,7 @@ namespace LDTool
 						Vector3 pos = enemySpawnPoint.position;
 						pos.x *= spawnObject.GetEnemyXPos(loop);
 						var enemy  = PoolManager.Instance.SpawnElement(type, pos, enemySpawnPoint.rotation) as Enemy;
-						bool tmp = spawnObject.TryGetEnemyPowerUp(loop, out PoolType powerUpType);
-						print(tmp);
-						if (tmp) enemy.AddPowerUp(powerUpType);
+						if (spawnObject.TryGetEnemyPowerUp(loop, out PoolType powerUpType)) enemy.AddPowerUp(powerUpType);
 					}
 				}
 			}

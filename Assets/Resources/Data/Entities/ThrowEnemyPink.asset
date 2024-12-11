@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: ThrowEnemyPink
   m_EditorClassIdentifier: 
   speed: 350
-  maxHealth: 8
+  maxHealth: 5
   damage: 1
-  hasPowerUp: 0
-  powerUpType: 0
   shootCooldown: 1
   salvoCooldown: 1.5
   nbProjPerSalvo: 3
