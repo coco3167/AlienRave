@@ -1,10 +1,14 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : Scrolling, IHarmable
 {
 	[SerializeField] protected EnemyData data;
+	[SerializeField] protected float freezeTime;
+	protected PoolType powerUpType;
+	protected bool hasPowerUp;
 	protected Animator anim;
+	protected SkinnedMeshRenderer renderer;
 	protected int health;
 
 	private bool IsDead => health <= 0;
@@ -13,15 +17,36 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		base.Awake();
 		anim = GetComponentInChildren<Animator>();
+		renderer = GetComponentInChildren<SkinnedMeshRenderer>();
 	}
 
-	public void AddPowerUp(PoolType powerUpType) => data.powerUpType = powerUpType;
+	protected override void Pause()
+	{
+		base.Pause();
+		anim.enabled = false;
+	}
+
+	protected override void Play()
+	{
+		base.Play();
+		anim.enabled = true;
+	}
+
+	public void AddPowerUp(PoolType powerUpType)
+	{
+		hasPowerUp = true;
+		this.powerUpType = powerUpType;
+	}
 
 	public virtual void Harm(int damage, bool green = false)
 	{
 		if(IsDead) return;
 		health -= damage;
-		if (health <= 0) Die();
+		print($"{name} -> poc");
+
+		StartCoroutine(FreezeFrame());
+		
+		// if (health <= 0) Die();
 	}
 
 	protected virtual void Die()
@@ -39,6 +64,7 @@ public abstract class Enemy : Scrolling, IHarmable
 		base.Despawn();
 		ToggleRagdoll(false);
 	}
+
 	public override void Spawn()
 	{
 		base.Spawn();
@@ -54,7 +80,26 @@ public abstract class Enemy : Scrolling, IHarmable
 
 	public void DropPowerUp()
 	{
-		if (!data.hasPowerUp) return;
-		PoolManager.Instance.SpawnElement(data.powerUpType, transform.position, Quaternion.identity);
+		if (!hasPowerUp) return;
+		PoolManager.Instance.SpawnElement(powerUpType, transform.position, Quaternion.identity);
+	}
+
+	protected virtual IEnumerator FreezeFrame()
+	{ 
+		Pause();
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 1);
+		}
+		yield return new WaitForSeconds(freezeTime);
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 0);
+		}
+		
+		if (health <= 0) Die();
+		
+		if(!paused)
+			Play();
 	}
 }
