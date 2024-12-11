@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Enemy : Scrolling, IHarmable
 {
 	[SerializeField] protected EnemyData data;
-	[SerializeField] protected float freezeTime = .2f;
+	protected float freezeTime = .2f;
 	protected PoolType powerUpType;
 	protected bool hasPowerUp;
 	protected SkinnedMeshRenderer renderer;
