@@ -69,16 +69,6 @@ public class GameManager : MonoBehaviour
 		SetStartMenu();
 	}
 
-	private void Update()
-	{
-		// tmpObstacleSPawnertimer -= Time.deltaTime;
-		// if (tmpObstacleSPawnertimer <= 0)
-		// {
-		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
-		// 	tmpObstacleSPawnertimer = 3f;
-		// }
-	}
-
 	public void OnPlayerJoined(PlayerInput playerInput)
 	{
 		playerInput.onDeviceLost += OnDeviceDisconnected;
@@ -239,6 +229,7 @@ public class GameManager : MonoBehaviour
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
+		EnvironmentManager.Instance.started = true;
 		return true;
 	}
 
