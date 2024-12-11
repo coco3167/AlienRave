@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// <summary> Script gérant le comportement d'un membre d'un bloc de foule obstacle. </summary>
+/// <summary> Script gï¿½rant le comportement d'un membre d'un bloc de foule obstacle. </summary>
 public class CrowdObstacle : Spawnable
 {
 	[HideInInspector] public float speed;
@@ -10,7 +10,11 @@ public class CrowdObstacle : Spawnable
 
 	private void Update()
 	{
-		if (paused) return;
+		if (paused)
+		{
+			rb.linearVelocity = Vector3.zero;
+			return;
+		}
 		rb.linearVelocity = speed * Time.deltaTime * transform.forward;
 	}
 }

@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2333502669818488630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276364998594565927}
+  - component: {fileID: 3739680395312533404}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276364998594565927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333502669818488630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.9787583, y: -13.873195, z: 63.157616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 816595622151138301}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3739680395312533404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333502669818488630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7f1ba57fbf4f544a89b5322aef421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3252820245851455979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816595622151138301}
+  - component: {fileID: 4641204307233176773}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816595622151138301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252820245851455979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 276364998594565927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4641204307233176773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252820245851455979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f2e296e5c790c4d8bfcb7c5b15571d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <greenPlayerAttack>k__BackingField:
+    Guid:
+      Data1: 383526191
+      Data2: 1318498535
+      Data3: 313324197
+      Data4: 1723206823
+    Path: event:/SFX/GreenPlayer Character/GreenPlayer Attack
+  <greenPlayerIsHurt>k__BackingField:
+    Guid:
+      Data1: 425871298
+      Data2: 1083962495
+      Data3: 1770222228
+      Data4: 1709197929
+    Path: event:/SFX/GreenPlayer Character/GreenPlayer Hurt
+  <pinkPlayerAttack>k__BackingField:
+    Guid:
+      Data1: -175122094
+      Data2: 1271326138
+      Data3: 197988737
+      Data4: 796288223
+    Path: event:/SFX/PinkPlayer Character/PinkPlayer Attack
+  <pinkPlayerIsHurt>k__BackingField:
+    Guid:
+      Data1: -2058479171
+      Data2: 1193270488
+      Data3: 626139029
+      Data4: -664785294
+    Path: event:/SFX/PinkPlayer Character/PinkPlayer Hurt
+  <greenDrunkEnemySeesPlayer>k__BackingField:
+    Guid:
+      Data1: -1367939910
+      Data2: 1085699805
+      Data3: -85402698
+      Data4: -1709072873
+    Path: event:/SFX/DrunkEnemy/GreenDrunkEnemy Sees
+  <greenDrunkEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: -1946033080
+      Data2: 1156321423
+      Data3: -98679666
+      Data4: -384345311
+    Path: event:/SFX/DrunkEnemy/GreenDrunkEnemy Hurt
+  <pinkDrunkEnemySeesPlayer>k__BackingField:
+    Guid:
+      Data1: 1712929112
+      Data2: 1229830383
+      Data3: -226418516
+      Data4: 137033826
+    Path: event:/SFX/DrunkEnemy/PinkDrunkEnemy Sees
+  <pinkDrunkEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: 1789846285
+      Data2: 1172060985
+      Data3: 420077984
+      Data4: 1387295665
+    Path: event:/SFX/DrunkEnemy/PinkDrunkEnemy Hurt
+  <drunkEnemyChenille>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <kisserEnemyDeath>k__BackingField:
+    Guid:
+      Data1: -62997314
+      Data2: 1252596478
+      Data3: -2126864224
+      Data4: -1500380564
+    Path: event:/SFX/KisserEnemy/KisserEnemy Dies
+  <greenKisserEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: -1635463028
+      Data2: 1082916386
+      Data3: -290579265
+      Data4: -932747635
+    Path: event:/SFX/KisserEnemy/GreenKisserEnemy Hurt
+  <pinkKisserEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: 2132108955
+      Data2: 1207946850
+      Data3: 282132399
+      Data4: -105375625
+    Path: event:/SFX/KisserEnemy/PinkKisserEnemy Hurt
+  <hybridEnemyBurp>k__BackingField:
+    Guid:
+      Data1: -556239314
+      Data2: 1307917544
+      Data3: 680324535
+      Data4: 1362737679
+    Path: event:/SFX/HybridEnemy/HybridEnemy Burps
+  <greenHybridEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: -721865366
+      Data2: 1139376342
+      Data3: -158174048
+      Data4: 2064625489
+    Path: event:/SFX/HybridEnemy/pinkHybridEnemy Hurt
+  <pinkHybridEnemyIsHurt>k__BackingField:
+    Guid:
+      Data1: -721865366
+      Data2: 1139376342
+      Data3: -158174048
+      Data4: 2064625489
+    Path: event:/SFX/HybridEnemy/pinkHybridEnemy Hurt
+  <hybridEnemyDeath>k__BackingField:
+    Guid:
+      Data1: -1086408646
+      Data2: 1095874106
+      Data3: -1196156531
+      Data4: 1774088946
+    Path: event:/SFX/HybridEnemy/HybridEnemy Dies
+  <projectileObstacle>k__BackingField:
+    Guid:
+      Data1: -1763888454
+      Data2: 1230939158
+      Data3: 1994752681
+      Data4: 1180258058
+    Path: event:/SFX/Projectile Misses
+  <kisserEnemyKiss>k__BackingField:
+    Guid:
+      Data1: -327761767
+      Data2: 1099077872
+      Data3: 1643285168
+      Data4: -981116851
+    Path: event:/SFX/KisserEnemy/Kisses
+  <crowd2D>k__BackingField:
+    Guid:
+      Data1: -592237271
+      Data2: 1257739683
+      Data3: 1796911806
+      Data4: 210793111
+    Path: event:/Crowd/CrowdBackground
+  <crowdGroup>k__BackingField:
+    Guid:
+      Data1: -534780936
+      Data2: 1281149308
+      Data3: -149002314
+      Data4: 365937731
+    Path: event:/Crowd/CrowdGroup
+  <music>k__BackingField:
+    Guid:
+      Data1: 1961496942
+      Data2: 1331048661
+      Data3: -1891327314
+      Data4: 2066002183
+    Path: event:/Music/Music

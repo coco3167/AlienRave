@@ -5091,7 +5091,8 @@ PrefabInstance:
       value: 796288223
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4388902591884004530, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1950461071303540295, guid: b9c0083d802303b47b3a09cd1dcc8be9, type: 3}
       insertIndex: -1
@@ -5166,7 +5167,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 20549d96fc708204d9c05442afc1b386, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 21de6a26d6875eb40ab2ba994a7d9166, type: 2}
+      objectReference: {fileID: 2100000, guid: dc8cb6e11fa62dd4dae09432fd55a308, type: 2}
     - target: {fileID: 919132149155446097, guid: 20549d96fc708204d9c05442afc1b386, type: 3}
       propertyPath: m_Name
       value: Mesh

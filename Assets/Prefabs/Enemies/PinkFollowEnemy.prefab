@@ -17,6 +17,10 @@ PrefabInstance:
       value: PinkFollowEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1055357230450221409, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055357230450221409, guid: 8f1b70ccf7271c646acf1967025a5231, type: 3}
       propertyPath: m_TagString
       value: EnemyPink
       objectReference: {fileID: 0}
