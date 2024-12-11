@@ -143,7 +143,6 @@ public class PlayerController : Pausable, IHarmable
 	public void ToggleFeedback(bool damage, bool on)
 	{
 		var feedback = powerUpFeedbacks[damage ? 0 : 1];
-		print(feedback.name);
 		if (on) feedback.Play();
 		else feedback.Stop();
 	}
