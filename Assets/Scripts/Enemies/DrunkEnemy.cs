@@ -7,16 +7,8 @@ public class DrunkEnemy : Enemy
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (!other.CompareTag(targetTag)) return;
+		if (paused || !other.CompareTag(targetTag)) return;
 		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
-		if (other.CompareTag("EnemyGreen"))
-		{
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
-		}
-		if (CompareTag("EnemyPink"))
-		{
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, this.transform.position);
-		}
 	}
 
 	protected override void Awake()
@@ -51,6 +43,20 @@ public class DrunkEnemy : Enemy
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
 		return true;
 	}
+
+	public override void Harm(int damage, bool green = false)
+	{
+		base.Harm(damage, green);
+		if (CompareTag("EnemyGreen"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
+		}
+		if (CompareTag("EnemyPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, this.transform.position);
+		}
+	}
+
 	protected override void Die()
 	{
 		base.Die();

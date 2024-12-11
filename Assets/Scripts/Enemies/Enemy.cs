@@ -85,21 +85,22 @@ public abstract class Enemy : Scrolling, IHarmable
 	}
 
 	protected virtual IEnumerator FreezeFrame()
-	{ 
+	{
 		Pause();
 		foreach (Material material in renderer.materials)
 		{
 			material.SetFloat("_IsBlackWhite", 1);
 		}
+
 		yield return new WaitForSeconds(freezeTime);
 		foreach (Material material in renderer.materials)
 		{
 			material.SetFloat("_IsBlackWhite", 0);
 		}
-		
+
 		if (health <= 0) Die();
-		
-		if(!paused)
+
+		if (!paused)
 			Play();
 	}
 }

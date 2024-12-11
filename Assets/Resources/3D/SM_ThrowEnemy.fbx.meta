@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: face
-    second: {fileID: 7952672690730763922, guid: ab296ade1a580a4448801322b05c6b94, type: 3}
+    second: {fileID: 2100000, guid: 1411558be415c0f4fb59629efa906921, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
