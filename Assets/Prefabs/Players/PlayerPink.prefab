@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: tmp_ProjPrefab
       value: 
       objectReference: {fileID: 2561144086781544639, guid: a2cc96fabfc07ac47832807b76db17da, type: 3}
+    - target: {fileID: 6927254707449766073, guid: 1478796547c0ba946bbaab03c8fc897f, type: 3}
+      propertyPath: mat
+      value: 
+      objectReference: {fileID: 2100000, guid: 34c2a5ed6abec2c4f9fad34202243539, type: 2}
     - target: {fileID: 8166040892525687113, guid: 1478796547c0ba946bbaab03c8fc897f, type: 3}
       propertyPath: m_Name
       value: PlayerPink

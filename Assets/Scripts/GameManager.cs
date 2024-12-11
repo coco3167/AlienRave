@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
 
 		if (duration > 0)
 		{
-			//hud.UpdatePowerUpVisuals(PowerUpData.Type.Speed, duration);
+			foreach (var player in players) player.ToggleSpeedFeedback();
 			StartCoroutine(PowerUpTimer(duration));
 		}
 	}
