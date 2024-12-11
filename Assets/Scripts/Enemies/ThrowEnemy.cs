@@ -48,9 +48,9 @@ public class ThrowEnemy : Enemy
 		else StartCoroutine(ShootTimer(false));
 	}
 
-	protected virtual void EndSalvo()
+	protected virtual void EndSalvo(bool hybrid = false)
 	{
-		anim.SetBool("Shooting", false);
+		if(!hybrid) anim.SetBool("Shooting", false);
 		StartCoroutine(ShootTimer(true));
 		nbProjectileShot = 0;
 

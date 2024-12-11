@@ -5,25 +5,18 @@ public class MeshTrail : MonoBehaviour
 {
     public float activeTime = 2;
 
-    [Header("Mesh")]
+    [Header("Mesh related")]
     public float meshRefreshRate = 0.1f;
-    public float meshDestroyDelay = 3f;
-    public Transform positionToSpawn;
 
-    [Header("Shader")]
-    public Material mat;
-    public string shaderVarRef;
-    public float shaderVarRate = 0.1f;
-    public float shaderVarRefresh = 0.05f;
-
-    private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
 
-     void Update()
+
+    // Update is called once per frame
+    void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isTrailActive)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            isTrailActive = true;
+            // NANI ?!
             StartCoroutine(ActivateTrail(activeTime));
         }
     }
@@ -42,38 +35,11 @@ public class MeshTrail : MonoBehaviour
             for (int i = 0; i<skinnedMeshRenderers.Length; i++)
             {
                 GameObject gObj = new GameObject();
-                gObj.transform.SetPositionAndRotation(positionToSpawn.position, positionToSpawn.rotation);
 
-                MeshRenderer mr = gObj.AddComponent<MeshRenderer>();
-                MeshFilter mf = gObj.AddComponent<MeshFilter>();
-
-                Mesh mesh = new Mesh();
-                skinnedMeshRenderers[i].BakeMesh(mesh);
-
-                mf.mesh = mesh;
-                mr.material = mat;
-
-                StartCoroutine(AnimateMaterialfloat(mr.material, 0, shaderVarRate, shaderVarRefresh));
-
-                Destroy(gObj, meshDestroyDelay);
+                
             }
 
             yield return new WaitForSeconds(meshRefreshRate);
-        }
-
-        isTrailActive = false;
-    }
-
-    IEnumerator AnimateMaterialfloat(Material mat, float goal, float rate, float refreshRate)
-    {
-        float valueToAnimate = mat.GetFloat(shaderVarRef);
-
-        while (valueToAnimate > goal)
-        {
-            valueToAnimate -= rate;
-            mat.SetFloat(shaderVarRef, valueToAnimate);
-
-            yield return new WaitForSeconds(refreshRate);
         }
     }
 }
