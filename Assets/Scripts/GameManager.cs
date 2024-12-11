@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using FMOD.Studio;
-using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -218,7 +216,6 @@ public class GameManager : MonoBehaviour
 	public void SetStartMenu()
 	{
 		// TODO Change Fmod state to Start
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -227,7 +224,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
+		// TODO Change Fmod state to Pause
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -238,7 +235,7 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		// TODO Change Fmod state to currentState
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
@@ -287,6 +284,7 @@ public class GameManager : MonoBehaviour
 	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
 	{
 		musicState = newMusicState;
-		AudioManager.Instance.SetMusicParameter("LevelState", "musicState");
+		//FMODEvents.Instance.
+		// TODO change Fmod state
 	}
 }

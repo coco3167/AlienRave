@@ -7,7 +7,7 @@ public class DrunkEnemy : Enemy
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (!other.CompareTag(targetTag)) return;
+		if (paused || !other.CompareTag(targetTag)) return;
 		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
 	}
 

@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: tmp_ProjPrefab
       value: 
       objectReference: {fileID: 2561144086781544639, guid: a2cc96fabfc07ac47832807b76db17da, type: 3}
+    - target: {fileID: 7009782643443865641, guid: 1478796547c0ba946bbaab03c8fc897f, type: 3}
+      propertyPath: m_TagString
+      value: PlayerGreen
+      objectReference: {fileID: 0}
     - target: {fileID: 8166040892525687113, guid: 1478796547c0ba946bbaab03c8fc897f, type: 3}
       propertyPath: m_Name
       value: PlayerPink
