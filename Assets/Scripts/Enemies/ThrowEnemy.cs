@@ -40,6 +40,7 @@ public class ThrowEnemy : Enemy
 	{
 		anim.SetBool("Shooting", true);
 		anim.SetBool("Moving", false);
+
 		moveDir = Vector3.zero;
 		PoolManager.Instance.SpawnElement(Data.projectileType, shootPoint.position, shootPoint.rotation);
 		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kisserEnemyKiss, transform.position);

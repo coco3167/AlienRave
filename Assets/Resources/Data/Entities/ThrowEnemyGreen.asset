@@ -18,7 +18,7 @@ MonoBehaviour:
   hasPowerUp: 0
   powerUpType: 0
   shootCooldown: 1
-  salvoCooldown: 2
+  salvoCooldown: 1.5
   nbProjPerSalvo: 3
   nbSalvoBeforeMove: 2
   lateralSpeed: 100
