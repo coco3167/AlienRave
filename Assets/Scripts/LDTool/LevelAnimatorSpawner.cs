@@ -10,9 +10,12 @@ namespace LDTool
 	public class LevelAnimationSpawner : MonoBehaviour
 	{
 		public enum MusicState
-		{
-			StartMenu, Pause, Chapter1, Chapter2, Chapter3
-		}
+     	{
+     		StartMenu, Pause, Chapter1, Chapter2, Chapter3
+     	}
+		#region Attributs
+
+		
 		
 		[SerializeField] private Animator animator;
 		
@@ -23,7 +26,8 @@ namespace LDTool
 		[SerializeField] private List<PathCreator> enemyPaths;
 
 		private float zLength;
-		
+		#endregion
+
 		private void Start()
 		{
 			zLength = Mathf.Abs(crowdSpawnPoint[0].position.z - crowdSpawnPoint[1].position.z);

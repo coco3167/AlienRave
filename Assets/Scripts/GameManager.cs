@@ -122,6 +122,11 @@ public class GameManager : MonoBehaviour
 		// TODO Anims ?
 	}
 
+	public int GetFinalScore()
+	{
+		return (playersHealth+1) * score;
+	}
+
 	public void Harm(int damage)
 	{
 		print(damage);

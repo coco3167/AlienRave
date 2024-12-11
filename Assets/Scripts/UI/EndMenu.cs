@@ -23,7 +23,7 @@ namespace UI
             else
                 titleText.text = "Game Over";
             
-            scoreText.text = $"Score : {GameManager.Instance.score}";
+            scoreText.text = $"Score : {GameManager.Instance.GetFinalScore()}";
         }
 
         public void Restart()
