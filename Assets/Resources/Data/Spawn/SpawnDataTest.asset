@@ -13,16 +13,10 @@ MonoBehaviour:
   m_Name: SpawnDataTest
   m_EditorClassIdentifier: 
   enemiesSpawners:
-  - enemy: 6
+  - enemy: 8
     xPosEnemy: -0.47
     nb: 1
     followMode: 3
-    hasPowerUp: 1
+    hasPowerUp: 0
     powerUpType: 11
-  - enemy: 7
-    xPosEnemy: 0.28
-    nb: 1
-    followMode: 3
-    hasPowerUp: 1
-    powerUpType: 12
   crowdSpawners: []
