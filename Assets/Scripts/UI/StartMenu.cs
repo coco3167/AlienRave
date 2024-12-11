@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -15,12 +13,12 @@ namespace UI
         [SerializeField] private List<Image> playerJoinImages;
         [SerializeField] private Image backgroundImage;
 
-        private Sprite[] UI_AnimList;
+        private Sprite[] UIAnimList;
         private int animIndex;
 
         private void Awake()
         {
-            UI_AnimList = Resources.LoadAll<Sprite>("UI_Anim");
+            UIAnimList = Resources.LoadAll<Sprite>("StartMenu_Anim");
         }
 
         private void OnEnable()
@@ -30,9 +28,9 @@ namespace UI
 
         private void FixedUpdate()
         {
-            backgroundImage.sprite = UI_AnimList[animIndex];
+            backgroundImage.sprite = UIAnimList[animIndex];
             animIndex++;
-            animIndex %= UI_AnimList.Length;
+            animIndex %= UIAnimList.Length;
         }
 
         public void PlayGame()
