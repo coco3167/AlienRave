@@ -251,7 +251,7 @@ MonoBehaviour:
   - {fileID: 6164144794380841402}
   - {fileID: 7346278960364449199}
   spawnCooldownDuration: 0.1
-  nbSpawned: 2
+  nbSpawned: 3
 --- !u!1 &1645517082246230497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1614,14 @@ PrefabInstance:
       propertyPath: pools.Array.data[21].type
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 1800271785486226644, guid: 27b6766d2e6ce5f44af34d1e3e222be8, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 1800271785486226644, guid: 514eab14e0cabe94db1105191358dab4, type: 3}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[12].prefab
       value: 
