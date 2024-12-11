@@ -9,6 +9,11 @@ namespace LDTool
 {
 	public class LevelAnimationSpawner : MonoBehaviour
 	{
+		public enum MusicState
+		{
+			StartMenu, Pause, Chapter1, Chapter2, Chapter3
+		}
+		
 		[SerializeField] private Animator animator;
 		
 		[SerializeField] private Transform enemySpawnPoint;
@@ -108,6 +113,11 @@ namespace LDTool
 		public void EndLevel()
 		{
 			GameManager.Instance.WinLevel();
+		}
+
+		public void ChangeMusic(MusicState newMusicState)
+		{
+			musicState = newMusicState;
 		}
 	}
 }
