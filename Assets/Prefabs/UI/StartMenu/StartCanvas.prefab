@@ -867,6 +867,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
       objectReference: {fileID: 0}
+    - target: {fileID: 8163819883662842272, guid: b4e83781afed74d43856485ae5d177f1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6308729651072582251, guid: 4460a6fd777ceb741b0a64e6a915b667, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1000,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenOptions
       objectReference: {fileID: 0}
+    - target: {fileID: 8432565611524107184, guid: 702e3f8e2e09cd945b52ac781eddc751, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6308729651072582251, guid: 4460a6fd777ceb741b0a64e6a915b667, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1151,6 +1159,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5859865604619696954}
+    - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5019020346901725231, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_Name
       value: JouerButton

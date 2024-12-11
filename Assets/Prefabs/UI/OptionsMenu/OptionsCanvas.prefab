@@ -833,8 +833,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6356030101603870393, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
+      propertyPath: m_fontSizeBase
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7347748638339284496, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_Name

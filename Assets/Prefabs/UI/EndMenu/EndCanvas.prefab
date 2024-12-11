@@ -479,12 +479,16 @@ PrefabInstance:
       value: 'SCORE : 9999999'
       objectReference: {fileID: 0}
     - target: {fileID: 6161329465128690252, guid: a768b71b3284dd24ba635d8cb38f85aa, type: 3}
-      propertyPath: m_fontSize
-      value: 50
+      propertyPath: m_fontSizeBase
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 6161329465128690252, guid: a768b71b3284dd24ba635d8cb38f85aa, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 50
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161329465128690252, guid: a768b71b3284dd24ba635d8cb38f85aa, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -675,6 +679,10 @@ PrefabInstance:
     - target: {fileID: 2185063200217526733, guid: 7865d344d8b580945a2f9d6716ea7ed3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UI.EndMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823208682632760760, guid: 7865d344d8b580945a2f9d6716ea7ed3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4651021366830843764, guid: 7865d344d8b580945a2f9d6716ea7ed3, type: 3}
       propertyPath: m_Pivot.x
