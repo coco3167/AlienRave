@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 	private int nbPlayers;
 	
 	private static bool restart;
+	private bool isPlaying;
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
@@ -213,6 +214,9 @@ public class GameManager : MonoBehaviour
 
 	public void Pause()
 	{
+		if(!isPlaying)
+			return;
+		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
 	}
@@ -222,6 +226,7 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
+		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
 		return true;
