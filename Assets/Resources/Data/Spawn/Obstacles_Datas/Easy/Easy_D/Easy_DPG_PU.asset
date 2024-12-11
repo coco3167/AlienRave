@@ -41,7 +41,7 @@ MonoBehaviour:
     xPosEnemy: -0.726
     nb: 0
     followMode: 0
-    hasPowerUp: 0
+    hasPowerUp: 1
     powerUpType: 12
   - enemy: 4
     xPosEnemy: -0.022

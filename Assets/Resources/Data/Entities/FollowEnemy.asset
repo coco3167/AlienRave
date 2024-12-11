@@ -15,6 +15,4 @@ MonoBehaviour:
   speed: 5
   maxHealth: 1
   damage: 1
-  scoreValue: 100
-  hasPowerUp: 0
-  powerUpType: 0
+  powerUpDropChance: 0

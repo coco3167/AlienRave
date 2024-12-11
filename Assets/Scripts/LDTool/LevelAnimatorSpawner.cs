@@ -9,14 +9,8 @@ namespace LDTool
 {
 	public class LevelAnimationSpawner : MonoBehaviour
 	{
-		public enum MusicState
-     	{
-     		StartMenu, Pause, Chapter1, Chapter2, Chapter3
-     	}
 		#region Attributs
 
-		
-		
 		[SerializeField] private Animator animator;
 		
 		[SerializeField] private Transform enemySpawnPoint;
@@ -56,7 +50,9 @@ namespace LDTool
 						Vector3 pos = enemySpawnPoint.position;
 						pos.x *= spawnObject.GetEnemyXPos(loop);
 						var enemy  = PoolManager.Instance.SpawnElement(type, pos, enemySpawnPoint.rotation) as Enemy;
-						if (spawnObject.TryGetEnemyPowerUp(loop, out PoolType powerUpType)) enemy.AddPowerUp(powerUpType);
+						bool tmp = spawnObject.TryGetEnemyPowerUp(loop, out PoolType powerUpType);
+						print(tmp);
+						if (tmp) enemy.AddPowerUp(powerUpType);
 					}
 				}
 			}
@@ -117,11 +113,6 @@ namespace LDTool
 		public void EndLevel()
 		{
 			GameManager.Instance.WinLevel();
-		}
-
-		public void ChangeMusic(MusicState newMusicState)
-		{
-			GameManager.Instance.ChangeMainMusicState(newMusicState);
 		}
 	}
 }

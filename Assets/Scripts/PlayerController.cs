@@ -123,7 +123,6 @@ public class PlayerController : Pausable, IHarmable
 	public void Harm(int damage, bool green = false)
 	{
 		if (!canTakeDmg) return;
-		if ((green && tag.Contains("Pink")) || (!green && tag.Contains("Green"))) return;
 		print($"{name} poc");
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);

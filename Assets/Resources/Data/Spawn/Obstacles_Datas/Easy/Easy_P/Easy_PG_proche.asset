@@ -17,6 +17,8 @@ MonoBehaviour:
     xPosEnemy: -0.277
     nb: 0
     followMode: 0
-    hasPowerUp: 0
-    powerUpType: 0
+  - enemy: 7
+    xPosEnemy: 0.192
+    nb: 0
+    followMode: 0
   crowdSpawners: []

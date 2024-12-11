@@ -19,17 +19,9 @@ public class CrowdMember : Scrolling
 	private readonly List<Transform> playerTransforms = new();
 	private readonly List<Transform> projectileTransforms = new();
 
-	private Animator anim;
-
 	// Uniquement visuel pour le OnDrawGizmos.
 	Vector3 playerAvoid, projAvoid;
 	#endregion
-
-	protected override void Awake()
-	{
-		base.Awake();
-		anim = GetComponentInChildren<Animator>();
-	}
 
 	private void OnDrawGizmos()
 	{
@@ -42,21 +34,13 @@ public class CrowdMember : Scrolling
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.tag.Contains("Player"))
-		{
-			playerTransforms.Add(other.transform);
-			anim.SetBool("Moving", true);
-		}
+		if (other.tag.Contains("Player")) playerTransforms.Add(other.transform);
 		else projectileTransforms.Add(other.transform);
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.tag.Contains("Player"))
-		{
-			playerTransforms.Remove(other.transform);
-			anim.SetBool("Moving", false);
-		}
+		if (other.tag.Contains("Player")) playerTransforms.Remove(other.transform);
 		else projectileTransforms.Remove(other.transform);
 	}
 
