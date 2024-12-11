@@ -123,7 +123,6 @@ public class PlayerController : Pausable, IHarmable
 	public void Harm(int damage, bool green = false)
 	{
 		if (!canTakeDmg) return;
-		if ((green && tag.Contains("Pink")) || (!green && tag.Contains("Green"))) return;
 		print($"{name} poc");
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
@@ -144,7 +143,6 @@ public class PlayerController : Pausable, IHarmable
 	public void ToggleFeedback(bool damage, bool on)
 	{
 		var feedback = powerUpFeedbacks[damage ? 0 : 1];
-		print(feedback.name);
 		if (on) feedback.Play();
 		else feedback.Stop();
 	}
