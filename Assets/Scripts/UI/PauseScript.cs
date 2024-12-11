@@ -44,7 +44,7 @@ namespace UI
         public void Back()
         {
             GameManager.Instance.Play();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         public void Restart()

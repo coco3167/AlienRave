@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -252,24 +253,51 @@ public class GameManager : MonoBehaviour
 				menus[0].SetActive(true);
 				break;
 			case ScreenState.Pause:
-				menus[1].SetActive(true);
+				StartCoroutine(TransitionStateScreen(1));
 				break;
 			case ScreenState.Win:
 				areUWinningSon = true;
 				OnPause?.Invoke();
-				menus[2].SetActive(true);
+				StartCoroutine(TransitionStateScreen(2));
 				break;
 			case ScreenState.Lose:
 				areUWinningSon = false;
 				OnPause?.Invoke();
-				menus[2].SetActive(true);
+				StartCoroutine(TransitionStateScreen(2));
 				break;
 		}
 	}
 
+	// ReSharper disable Unity.PerformanceAnalysis
+	private IEnumerator TransitionStateScreen(int index, bool appearing = true)
+	{
+		CanvasGroup group = menus[index].GetComponent<CanvasGroup>();
+		
+		group.alpha = appearing ? 0 : 1;
+		if(appearing)
+			menus[index].SetActive(true);
+
+		float difference = (appearing ? 1 : -1) * .08f;
+		
+		while (appearing ? group.alpha < 1 : group.alpha > 0)
+		{
+			Debug.Log(group.alpha);
+			group.alpha = Mathf.Clamp01(group.alpha + difference);
+			yield return new WaitForSeconds(.001f);
+		}
+		
+		if(!appearing)
+			menus[index].SetActive(false);
+	}
+
 	public void HideUIScreen()
 	{
-		menus.ForEach(x => x.SetActive(false));
+		for (int loop = 0; loop < menus.Count; loop++)
+		{
+			if (menus[loop].activeSelf)
+				StartCoroutine(TransitionStateScreen(loop, false));
+		}
+		// menus.ForEach(x => x.SetActive(false));
 	}
 
 	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
