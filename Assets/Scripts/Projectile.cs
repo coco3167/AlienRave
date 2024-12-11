@@ -15,6 +15,7 @@ public class Projectile : Spawnable
 		if (other.CompareTag(data.targetTag) || other.CompareTag("Hybrid"))
 		{
 			Hit(other.GetComponent<IHarmable>());
+			PoolManager
 			if (other.CompareTag("EnemyGreen"))
 			{
 				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
