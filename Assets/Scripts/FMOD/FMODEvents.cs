@@ -42,8 +42,6 @@ public class FMODEvents : MonoBehaviour
     [field : Header("Music")]
     [field : SerializeField] public EventReference music { get; private set; }
     
-    [field : Header("Parameters")]
-    [field : SerializeField] private string musicStateName = "MusicState";
     public static FMODEvents Instance { get; private set;}
     private void Awake()
     {
