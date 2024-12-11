@@ -31,7 +31,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 52.083332
+    m_StopTime: 54.033333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -272,6 +272,13 @@ AnimationClip:
     functionName: Spawn
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: 26fd79375afa8144eafe700d9ad61fc1, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 54.033333
+    functionName: Spawn
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: cd621d2d06ec20e4182dbbed55f98cc7, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
