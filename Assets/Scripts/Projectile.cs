@@ -4,11 +4,6 @@ public class Projectile : Spawnable
 {
 	[SerializeField] protected ProjectileData data;
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawRay(transform.position, transform.forward * 10);
-	}
-
 	private void Update()
 	{
 		if (paused) return;
@@ -19,8 +14,7 @@ public class Projectile : Spawnable
 	{
 		if (other.CompareTag(data.targetTag) || other.CompareTag("Hybrid"))
 		{
-			
-			Hit(other.GetComponentInParent<IHarmable>());
+			Hit(other.GetComponent<IHarmable>());
 			return;
 		}
 

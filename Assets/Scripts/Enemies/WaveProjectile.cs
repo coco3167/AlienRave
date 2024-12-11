@@ -22,6 +22,7 @@ public class WaveProjectile : Spawnable
 			int j = i++;
 			trigger.OnHit += () => HidePoint(j);
 			lines.Add(child.GetComponent<LineRenderer>());
+			AudioManager.Instance.PlayOneShot (FMODEvents.Instance.hybridEnemyBurp, transform.position);
 		}
 	}
 

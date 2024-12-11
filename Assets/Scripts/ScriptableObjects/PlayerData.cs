@@ -11,5 +11,12 @@ public class PlayerData : ScriptableObject
 	public float invulnerabilityDuration = 0.2f;
 	public PoolType projType;
 	public ProjectileData projectileData;
-	public Queue<LastingPowerUp> powerUps = new();
+
+	public void ResetData()
+	{
+		speed = 5f;
+		fireRate = 0.2f;
+		nbProjectiles = 1;
+		invulnerabilityDuration = 0.2f;
+	}
 }
