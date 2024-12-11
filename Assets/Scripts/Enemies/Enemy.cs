@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : Scrolling, IHarmable
@@ -6,6 +7,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected PoolType powerUpType;
 	protected bool hasPowerUp;
 	protected Animator anim;
+	protected SkinnedMeshRenderer renderer;
 	protected int health;
 
 	private bool IsDead => health <= 0;
@@ -14,6 +16,19 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		base.Awake();
 		anim = GetComponentInChildren<Animator>();
+		renderer = GetComponentInChildren<SkinnedMeshRenderer>();
+	}
+
+	protected override void Pause()
+	{
+		base.Pause();
+		anim.enabled = false;
+	}
+
+	protected override void Play()
+	{
+		base.Play();
+		anim.enabled = true;
 	}
 
 	public void AddPowerUp(PoolType powerUpType)
@@ -27,7 +42,10 @@ public abstract class Enemy : Scrolling, IHarmable
 		if(IsDead) return;
 		health -= damage;
 		print($"{name} -> poc");
-		if (health <= 0) Die();
+
+		StartCoroutine(FreezeFrame());
+		
+		// if (health <= 0) Die();
 	}
 
 	protected virtual void Die()
@@ -63,5 +81,22 @@ public abstract class Enemy : Scrolling, IHarmable
 	{
 		if (!hasPowerUp) return;
 		PoolManager.Instance.SpawnElement(powerUpType, transform.position, Quaternion.identity);
+	}
+
+	protected virtual IEnumerator FreezeFrame()
+	{ 
+		Pause();
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 1);
+		}
+		yield return new WaitForSeconds(.2f);
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 0);
+		}
+		
+		if (health <= 0) Die();
+		Play();
 	}
 }

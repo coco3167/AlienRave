@@ -3,9 +3,17 @@ using UnityEngine;
 
 public class FollowEnemy : Enemy
 {
+	[SerializeField] protected string targetTag;
+	
 	private VertexPath path;
 	private float dstTravelled;
 
+	private void OnTriggerEnter(Collider other)
+	{
+		if (paused || !other.CompareTag(targetTag)) return;
+		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
+	}
+	
 	protected override bool Move()
 	{
 		if (paused)

@@ -58,12 +58,30 @@ public class HybridEnemy : ThrowEnemy
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkHybridEnemyIsHurt, transform.position);
 		}
 
+		StartCoroutine(FreezeFrame());
+	}
+
+	protected override IEnumerator FreezeFrame()
+	{
+		Pause();
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 1);
+		}
+		yield return new WaitForSeconds(.2f);
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_IsBlackWhite", 0);
+		}
+		Play();
+		
 		if (pinkHealth == 0 && greenHealth == 0)
 		{
 			Die();
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyDeath, transform.position);
 		}
 	}
+
 
 	protected override void ResetLife()
 	{

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0
   data: {fileID: 11400000, guid: 0981d7c19afe99a459c8bd16dca2d703, type: 2}
+  targetTag: PlayerGreen
 --- !u!54 &680233917220568642
 Rigidbody:
   m_ObjectHideFlags: 0
