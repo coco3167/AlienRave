@@ -17,11 +17,11 @@ public class Projectile : Spawnable
 			Hit(other.GetComponent<IHarmable>());
 			if (other.CompareTag("EnemyGreen"))
 			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
+				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, transform.position);
 			}
 			if (CompareTag("EnemyPink"))
 			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, this.transform.position);
+				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, transform.position);
 			}
 			return;
 		}
