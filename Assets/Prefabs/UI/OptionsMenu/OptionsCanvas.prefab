@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 7781326857940555625}
   - component: {fileID: 6835833441188155009}
   - component: {fileID: 588947933215434997}
+  - component: {fileID: 2626154801975852094}
   - component: {fileID: 1615390155224050632}
   m_Layer: 5
   m_Name: OptionsCanvas
@@ -245,6 +246,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &2626154801975852094
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114256359743499796}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &1615390155224050632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +274,7 @@ MonoBehaviour:
   musicSlider: {fileID: 3200688032720230215}
   voicesSlider: {fileID: 8756071748588612140}
   SFXSlider: {fileID: 7098658315159539437}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: 5657853471054553495}
   backEvent:
     m_PersistentCalls:
       m_Calls: []

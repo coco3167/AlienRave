@@ -60,7 +60,7 @@ namespace UI
         public void MainMenu()
         {
             GameManager.Instance.Restart(true);
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
         }
     }
 }
