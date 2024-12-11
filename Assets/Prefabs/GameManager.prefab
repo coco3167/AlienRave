@@ -920,6 +920,7 @@ Transform:
   - {fileID: 8085413808371965311}
   - {fileID: 3760237001246524367}
   - {fileID: 159549933938420361}
+  - {fileID: 5494946508180754822}
   - {fileID: 3461508812921179245}
   m_Father: {fileID: 3910007013865632714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1296,6 +1297,72 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 21, y: 5, z: 1}
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!1 &9095212005578091525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5494946508180754822}
+  - component: {fileID: 7789536290571050494}
+  - component: {fileID: 1137098204079691669}
+  m_Layer: 12
+  m_Name: ProjectileLimit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5494946508180754822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095212005578091525}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 32.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3851801637393145129}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7789536290571050494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095212005578091525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21, y: 5, z: 1}
+  m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &1137098204079691669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095212005578091525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff941f781745b54ebdee24fc749a37b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2614205398139407175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1540,7 +1607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.size
-      value: 22
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[12].size
@@ -1615,6 +1682,38 @@ PrefabInstance:
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[22].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[22].type
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[23].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[23].type
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[24].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[24].type
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[25].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[25].type
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: pools.Array.data[4].prefab
       value: 
       objectReference: {fileID: 1800271785486226644, guid: 27b6766d2e6ce5f44af34d1e3e222be8, type: 3}
@@ -1654,6 +1753,22 @@ PrefabInstance:
       propertyPath: pools.Array.data[21].prefab
       value: 
       objectReference: {fileID: 7486319110834944081, guid: efa6f0b1e2bef2c47b6fac4a73637bb6, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[22].prefab
+      value: 
+      objectReference: {fileID: 2225746883757269547, guid: 29e148247eedf404c86bd44e75e8a5f6, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[23].prefab
+      value: 
+      objectReference: {fileID: 8110457784245557398, guid: 6a5e03535bfd8f84da03b689b1e1ef2e, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[24].prefab
+      value: 
+      objectReference: {fileID: 682116213988683613, guid: 1b7055f1f7210bf4684f135ec8f9a9fb, type: 3}
+    - target: {fileID: 3167467311777195548, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
+      propertyPath: pools.Array.data[25].prefab
+      value: 
+      objectReference: {fileID: 1692520703141350348, guid: a63f6a77e9880af42ba81c65b03b704d, type: 3}
     - target: {fileID: 7880679624227888944, guid: 601d6ecb71f85574ea8ca960f4a91771, type: 3}
       propertyPath: m_Name
       value: PoolManager
