@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d63d871b106f54caab2ad79cab4b9e, type: 3}
   m_Name: HybridEnemy
   m_EditorClassIdentifier: 
-  speed: 100
-  maxHealth: 20
+  speed: 200
+  maxHealth: 100
   damage: 1
-  powerUpDropChance: 0
+  scoreValue: 2000
   shootCooldown: 1
   salvoCooldown: 3
   nbProjPerSalvo: 3
