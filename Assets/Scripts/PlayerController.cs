@@ -7,6 +7,7 @@ public class PlayerController : Pausable, IHarmable
 	[SerializeField] private PlayerData data;
 	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
 	[SerializeField] private ParticleSystem shootFeedback;
+	[SerializeField] private MeshTrail speedTrail;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -27,6 +28,7 @@ public class PlayerController : Pausable, IHarmable
 		anim = GetComponentInChildren<Animator>();
 		shootPoints = new Transform[] { transform.GetChild(0).GetChild(0) };
 		shootTimer = data.fireRate;
+		speedTrail = GetComponentInChildren<MeshTrail>();
 	}
 
 	private void FixedUpdate()
@@ -148,6 +150,8 @@ public class PlayerController : Pausable, IHarmable
 		if (on) feedback.Play();
 		else feedback.Stop();
 	}
+
+	public void ToggleSpeedFeedback() => StartCoroutine(speedTrail.ActivateTrail());
 
 	public void Invulnerability()
 	{
