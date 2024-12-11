@@ -12,7 +12,7 @@ public class WavePointTrigger : MonoBehaviour
 	{
 		if (other.CompareTag("Obstacle") || other.tag.Contains("Player"))
 		{
-			if (other.CompareTag(targetTag)) other.GetComponent<IHarmable>().Harm(damage);
+			if (other.CompareTag(targetTag)) other.GetComponent<IHarmable>().Harm(damage, targetTag.Contains("Green"));
 			OnHit?.Invoke();
 			gameObject.SetActive(false);
 		}
