@@ -8,6 +8,7 @@ public class PlayerController : Pausable, IHarmable
 	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
 	[SerializeField] private ParticleSystem shootFeedback;
 	private MeshTrail speedTrail;
+	private SkinnedMeshRenderer renderer;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -29,6 +30,7 @@ public class PlayerController : Pausable, IHarmable
 		shootPoints = new Transform[] { transform.GetChild(0).GetChild(0) };
 		shootTimer = data.fireRate;
 		speedTrail = GetComponentInChildren<MeshTrail>();
+		renderer = GetComponentInChildren<SkinnedMeshRenderer>();
 	}
 
 	private void FixedUpdate()
@@ -161,7 +163,15 @@ public class PlayerController : Pausable, IHarmable
 
 	private IEnumerator InvulnerabilityCooldown()
 	{
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_Flicker", 1f);
+		}
 		yield return new WaitForSeconds(data.invulnerabilityDuration);
 		canTakeDmg = true;
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_Flicker", 0);
+		}
 	}
 }
