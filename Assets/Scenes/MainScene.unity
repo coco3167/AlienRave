@@ -1785,6 +1785,18 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 400807687}
+    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: preciseColorParameter.b
+      value: 0.057849612
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: preciseColorParameter.g
+      value: 0.15920003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: preciseColorParameter.r
+      value: 0.735849
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
