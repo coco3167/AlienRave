@@ -270,7 +270,6 @@ GameObject:
   - component: {fileID: 2510046196245942567}
   - component: {fileID: 7249247840707618523}
   - component: {fileID: 364689090315109507}
-  - component: {fileID: 4442447799191518009}
   m_Layer: 6
   m_Name: PlayerGreen
   m_TagString: PlayerGreen
@@ -447,26 +446,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &4442447799191518009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166040892525687113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3db71bd2e85b848b7b907c055cd994, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeTime: 2
-  meshRefreshRate: 0.1
-  meshDestroyDelay: 1
-  positionToSpawn: {fileID: 0}
-  mat: {fileID: 2100000, guid: a69bc9b3e1cb237479dd10d7c5212c54, type: 2}
-  shaderVarRef: _Alpha
-  shaderVarRate: 0.1
-  shaderVarRefresh: 0.05
 --- !u!1 &8787493617767757844
 GameObject:
   m_ObjectHideFlags: 0

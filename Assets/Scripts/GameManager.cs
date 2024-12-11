@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 	private static bool restart;
 	private bool isPlaying;
 
+	private LDTool.LevelAnimationSpawner.MusicState musicState;
+
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
@@ -120,6 +122,11 @@ public class GameManager : MonoBehaviour
 		// TODO Anims ?
 	}
 
+	public int GetFinalScore()
+	{
+		return (playersHealth+1) * score;
+	}
+
 	public void Harm(int damage)
 	{
 		print(damage);
@@ -208,6 +215,7 @@ public class GameManager : MonoBehaviour
 
 	public void SetStartMenu()
 	{
+		// TODO Change Fmod state to Start
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -216,6 +224,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
+		// TODO Change Fmod state to Pause
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -226,6 +235,7 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
+		// TODO Change Fmod state to currentState
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
@@ -269,5 +279,12 @@ public class GameManager : MonoBehaviour
 	public void HideUIScreen()
 	{
 		menus.ForEach(x => x.SetActive(false));
+	}
+
+	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
+	{
+		musicState = newMusicState;
+		FMODEvents.Instance.
+		// TODO change Fmod state
 	}
 }
