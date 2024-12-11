@@ -19,18 +19,11 @@ public class MeshTrail : MonoBehaviour
     private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
 
-    void Update()
+    public IEnumerator ActivateTrail()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isTrailActive)
-        {
-            isTrailActive = true;
-            StartCoroutine(ActivateTrail(activeTime));
-        }
-    }
+        float timeActive = activeTime;
 
-    IEnumerator ActivateTrail(float timeActive)
-    {
-        while (timeActive > 0)
+		while (timeActive > 0)
         {
             timeActive -= meshRefreshRate;
 
