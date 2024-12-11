@@ -1,3 +1,5 @@
+using System;
+using FMOD.Studio;
 using UnityEngine;
 using FMODUnity;
 using Unity.VisualScripting;
@@ -41,20 +43,16 @@ public class FMODEvents : MonoBehaviour
     
     [field : Header("Music")]
     [field : SerializeField] public EventReference music { get; private set; }
+    [field : SerializeField] public EventReference gameStatus { get; private set; }
     
     [field : Header("Parameters")]
-    [field : SerializeField] private string musicStateName = "MusicState";
+    [field : SerializeField] private string musicStateParameterName = "LevelState";
+    [field : SerializeField] private string pauseParameterName = "GameStatus";
+    
     public static FMODEvents Instance { get; private set;}
     private void Awake()
     {
         Instance = this;
     }
     
-    
-
-
-
-
-
-
 }
