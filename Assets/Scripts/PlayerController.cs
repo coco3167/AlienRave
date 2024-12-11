@@ -29,6 +29,8 @@ public class PlayerController : Pausable, IHarmable
 
 	private void FixedUpdate()
 	{
+		if(isPaused)
+			return;
 		//Vector2 moveInput = controls.Movement.Direction.ReadValue<Vector2>();
 		Vector3 velocity = data.speed * new Vector3(moveInput.x, 0, moveInput.y);
 		Vector3 motion = transform.right * velocity.x + transform.forward * velocity.z;
@@ -46,6 +48,10 @@ public class PlayerController : Pausable, IHarmable
 
 	public void OnShoot(InputAction.CallbackContext ctx)
 	{
+		if (isPaused)
+		{
+			return;
+		}
 		shooting = ctx.performed;
 		anim.SetBool("Shoot", shooting);
 	}
@@ -87,21 +93,21 @@ public class PlayerController : Pausable, IHarmable
 
 	private void SetPause()
 	{
-		isPaused = true;
 		GameManager.Instance.Pause();
 	}
 
 	protected override void Pause()
 	{
 		// input.enabled = false;
-		// TODO Pause anims
+		isPaused = true;
+		anim.enabled = false;
 	}
 
 	protected override void Play()
 	{
 		isPaused = false;
-		input.enabled = true;
-		// TODO Play anims
+		// input.enabled = true;
+		anim.enabled = true;
 	}
 
 	public void Harm(int damage, bool green = false)

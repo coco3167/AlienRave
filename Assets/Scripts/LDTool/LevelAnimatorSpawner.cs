@@ -97,13 +97,11 @@ namespace LDTool
 
 		private void Pause()
 		{
-			Debug.Log("not animating");
 			animator.enabled = false;
 		}
 
 		private void Play()
 		{			
-			Debug.Log("animating");
 			animator.enabled = true;
 		}
 		
