@@ -43,9 +43,13 @@ public class DrunkEnemy : Enemy
 		}
 	}
 
-	protected override void Move()
+	protected override bool Move()
 	{
+		if (!base.Move())
+			return false;
+		
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
+		return true;
 	}
 	protected override void Die()
 	{

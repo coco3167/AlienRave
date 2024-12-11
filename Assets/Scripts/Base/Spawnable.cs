@@ -1,4 +1,4 @@
-/// <summary> Classe mère de tous les éléments pouvant être instanciés dans la scène. </summary>
+/// <summary> Classe mÃ¨re de tous les Ã©lÃ©ments pouvant Ãªtre instanciÃ©s dans la scÃ¨ne. </summary>
 public abstract class Spawnable : Pausable
 {
 	public virtual void Spawn()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,22 +12,28 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance => instance; // TODO faire un vrai singleton
 	#endregion
 
-	private enum ScreenState { Pause, Win, Lose, Disconnected }
-
+	private enum ScreenState { Start, Pause, Win, Lose, Disconnected }
 	[SerializeField] private GameObject[] playerPrefabs;
 	[SerializeField] private PlayerData[] playerDatas;
 
 	[SerializeField] private HUDManager hud;
 	[SerializeField] private CrowdManager tmp_crowdManager;
 	[SerializeField] private PlayerAudioListener audioListener;
+	[SerializeField] private List<GameObject> menus;
+	[SerializeField] private bool needsForTwoPlayers;
 
 	private PlayerInputManager playerInputManager;
 	private PlayerController[] players = new PlayerController[2];
 	private int nbPlayers;
+	
+	private static bool restart;
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
+	//private float tmpObstacleSPawnertimer = 2f;
+
+	public bool areUWinningSon = true;
 	public int score;
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
@@ -43,8 +50,30 @@ public class GameManager : MonoBehaviour
 		instance = this;
 		playerInputManager = GetComponent<PlayerInputManager>();
 		playerInputManager.playerJoinedEvent.AddListener(OnPlayerJoined);
+		playerInputManager.playerJoinedEvent.AddListener(menus[0].GetComponent<UI.StartMenu>().OnPlayerJoined);
 		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
+	}
+
+	private void Start()
+	{
+		if (restart)
+		{
+			restart = false;
+			return;
+		}
+
+		SetStartMenu();
+	}
+
+	private void Update()
+	{
+		// tmpObstacleSPawnertimer -= Time.deltaTime;
+		// if (tmpObstacleSPawnertimer <= 0)
+		// {
+		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
+		// 	tmpObstacleSPawnertimer = 3f;
+		// }
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -176,35 +205,64 @@ public class GameManager : MonoBehaviour
 	}
 	#endregion
 
+	public void SetStartMenu()
+	{
+		ShowUIScreen(ScreenState.Start);
+		OnPause?.Invoke();
+	}
+
 	public void Pause()
 	{
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
 	}
 
-	public void Play()
+	public bool Play()
 	{
+		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
+			return false;
+		
 		OnPlay?.Invoke();
 		HideUIScreen();
+		return true;
+	}
+
+	public void Restart(bool showMainMenu)
+	{
+		restart = !showMainMenu;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void WinLevel()
+	{
+		ShowUIScreen(ScreenState.Win);
 	}
 
 	private void ShowUIScreen(ScreenState state)
 	{
 		switch(state)
 		{
+			case ScreenState.Start:
+				menus[0].SetActive(true);
+				break;
 			case ScreenState.Pause:
+				menus[1].SetActive(true);
 				break;
 			case ScreenState.Win:
+				areUWinningSon = true;
+				OnPause?.Invoke();
+				menus[2].SetActive(true);
 				break;
 			case ScreenState.Lose:
+				areUWinningSon = false;
+				OnPause?.Invoke();
+				menus[2].SetActive(true);
 				break;
 		}
 	}
 
 	public void HideUIScreen()
 	{
-	
+		menus.ForEach(x => x.SetActive(false));
 	}
-
-	
 }
