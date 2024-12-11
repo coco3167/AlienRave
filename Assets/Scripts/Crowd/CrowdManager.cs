@@ -99,6 +99,9 @@ public class CrowdManager : Pausable
 		{
 			for (int i = 0; i < nb; ++i)
 			{
+				while (paused)
+					yield return new WaitForEndOfFrame();
+				
 				float zPosModif = zPos + Random.Range(-zSpread, zSpread); // gets pos noise, maybe <-1 or >1
 				zPosModif -= (float)Math.Truncate(zPosModif)*(zPosModif % 1); // repartition of <-1 and >1 back between -1 and 1
 				float zRealPos = Mathf.Lerp(zBasePos, zLength, zPosModif);

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : Pausable, IHarmable
 {
 	[SerializeField] private PlayerData data;
+	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -14,6 +15,7 @@ public class PlayerController : Pausable, IHarmable
 	private Animator anim;
 	private PlayerInput input;
 	private float powerUpTimer;
+	private bool pausing, isPaused;
 
 	private bool canTakeDmg = true;
 
@@ -28,6 +30,8 @@ public class PlayerController : Pausable, IHarmable
 
 	private void FixedUpdate()
 	{
+		if(isPaused)
+			return;
 		//Vector2 moveInput = controls.Movement.Direction.ReadValue<Vector2>();
 		Vector3 velocity = data.speed * new Vector3(moveInput.x, 0, moveInput.y);
 		Vector3 motion = transform.right * velocity.x + transform.forward * velocity.z;
@@ -38,21 +42,26 @@ public class PlayerController : Pausable, IHarmable
 	{
 		if(shootTimer > 0) shootTimer -= Time.deltaTime;
 		if (shooting && shootTimer <= 0) Shoot();
+		if (pausing && !isPaused) SetPause();
 	}
 
 	public void OnMove(InputAction.CallbackContext ctx) => moveInput = ctx.ReadValue<Vector2>();
 
 	public void OnShoot(InputAction.CallbackContext ctx)
 	{
+		if (isPaused)
+		{
+			return;
+		}
 		shooting = ctx.performed;
 		anim.SetBool("Shoot", shooting);
 	}
-
+	
+	public void OnPause(InputAction.CallbackContext ctx) => pausing = ctx.performed;
+	
 	public void IncreaseShootPoints()
 	{
-		if (data.nbProjectiles == 4) return;
 		Transform shootParent = transform.GetChild(0);
-
 		shootPoints = ++data.nbProjectiles switch
 		{
 			2 => new Transform[] { shootParent.GetChild(1), shootParent.GetChild(2) },
@@ -81,16 +90,23 @@ public class PlayerController : Pausable, IHarmable
 		shootTimer = data.fireRate;
 	}
 
+	private void SetPause()
+	{
+		GameManager.Instance.Pause();
+	}
+
 	protected override void Pause()
 	{
-		input.enabled = false;
-		// TODO Pause anims
+		// input.enabled = false;
+		isPaused = true;
+		anim.enabled = false;
 	}
 
 	protected override void Play()
 	{
-		input.enabled = true;
-		// TODO Play anims
+		isPaused = false;
+		// input.enabled = true;
+		anim.enabled = true;
 	}
 
 	public void Harm(int damage, bool green = false)
@@ -102,32 +118,20 @@ public class PlayerController : Pausable, IHarmable
 		Invulnerability();
 	}
 
-	public void PickUpPowerUp(PowerUp powerUp)
+	public void PickUpPowerUp(PowerUp powerUp) => powerUp.Apply();
+
+	public void ToggleFeedback(bool damage, bool on)
 	{
-		Sprite sprite = powerUp.Apply(data, this);
-		if(sprite != null)
-		{
-			print("should be showing now");
-			// Si le powerUp touche les deux joueur playerIndex = 2;
-			int index = powerUp.type == PowerUpData.Type.SlowMotion ? 2 : data.playerIndex;
-			GameManager.Instance.UpdatePowerUps(index, sprite, powerUpTimer);
-		}
+		var feedback = powerUpFeedbacks[damage ? 0 : 1];
+		print(feedback.name);
+		if (on) feedback.Play();
+		else feedback.Stop();
 	}
 
 	public void Invulnerability()
 	{
 		canTakeDmg = false;
 		StartCoroutine(InvulnerabilityCooldown());
-		// TODO Anims / effets visuels ?
-	}
-
-	public IEnumerator PowerUpTimer(float duration)
-	{
-		powerUpTimer = duration;
-		yield return new WaitForSeconds(duration);
-		LastingPowerUp powerUp = data.powerUps.Dequeue();
-		powerUp.Remove();
-		print("Fin de l'effet du powerUp");
 	}
 
 	private IEnumerator InvulnerabilityCooldown()

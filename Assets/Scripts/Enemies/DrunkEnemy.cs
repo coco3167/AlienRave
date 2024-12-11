@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class DrunkEnemy : Enemy
 {
 	[SerializeField, Range(0,1)] private float maxAngle;
@@ -10,6 +9,14 @@ public class DrunkEnemy : Enemy
 	{
 		if (!other.CompareTag(targetTag)) return;
 		other.transform.GetComponentInParent<IHarmable>().Harm(data.damage);
+		if (other.CompareTag("EnemyGreen"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
+		}
+		if (CompareTag("EnemyPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, this.transform.position);
+		}
 	}
 
 	protected override void Awake()
@@ -24,11 +31,25 @@ public class DrunkEnemy : Enemy
 		base.Spawn();
 		walkDirection = Vector3.back;
 		walkDirection.x = Random.Range(-maxAngle, maxAngle);
+		
+		if (CompareTag("EnemyGreen"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemySeesPlayer, this.transform.position);
+		}
+
+		if (CompareTag("EnemyPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemySeesPlayer, this.transform.position);
+		}
 	}
 
-	protected override void Move()
+	protected override bool Move()
 	{
+		if (!base.Move())
+			return false;
+		
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
+		return true;
 	}
 	protected override void Die()
 	{

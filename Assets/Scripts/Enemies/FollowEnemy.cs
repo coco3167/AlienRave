@@ -6,9 +6,12 @@ public class FollowEnemy : Enemy
 	private VertexPath path;
 	private float dstTravelled;
 
-	protected override void Move()
+	protected override bool Move()
 	{
-		if (path == null) return;
+		if (paused)
+			return false;
+
+		if (path == null) return true;
 
 		dstTravelled += data.speed * Time.deltaTime;
 		Vector3 pos = path.GetPointAtDistance(dstTravelled);
@@ -16,6 +19,8 @@ public class FollowEnemy : Enemy
 		transform.SetPositionAndRotation(pos, rot);
 
 		if (dstTravelled >= path.length) Despawn();
+
+		return true;
 	}
 
 	public void StartFollowing(VertexPath path) => this.path = path;

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-/// <summary> Classe mère de tous les éléments sur lesquels
-/// il est nécessaire d'agir lors de la mise en pause du jeu. </summary>
+/// <summary> Classe mï¿½re de tous les ï¿½lï¿½ments sur lesquels
+/// il est nï¿½cessaire d'agir lors de la mise en pause du jeu. </summary>
 public abstract class Pausable : MonoBehaviour
 {
 	protected bool paused;
@@ -12,7 +12,13 @@ public abstract class Pausable : MonoBehaviour
 		GameManager.Instance.OnPlay += Play;
 	}
 
-	protected virtual void Pause() => paused = true;
+	protected virtual void Pause()
+	{
+		paused = true;
+	}
 
-	protected virtual void Play() => paused = false;
+	protected virtual void Play()
+	{
+		paused = false;
+	}
 }

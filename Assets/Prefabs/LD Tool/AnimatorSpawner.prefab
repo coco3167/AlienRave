@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441984fd2f2a13047af10c3dc15e32fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7687251522878486965}
   enemySpawnPoint: {fileID: 0}
   crowdSpawnPoint:
   - {fileID: 0}

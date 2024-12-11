@@ -15,7 +15,7 @@ MonoBehaviour:
   playerIndex: 0
   speed: 5
   fireRate: 0.2
-  nbProjectiles: 1
+  nbProjectiles: 2
   invulnerabilityDuration: 0.2
   projType: 1
   projectileData: {fileID: 11400000, guid: fdda4ff33f0360e4681231d62d85a266, type: 2}

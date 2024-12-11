@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary> Script gérant le comportement d'un membre de la foule défilante. </summary>
+/// <summary> Script gï¿½rant le comportement d'un membre de la foule dï¿½filante. </summary>
 public class CrowdMember : Scrolling
 {
 	#region Attributs
 
-	#region Paramètres
+	#region Paramï¿½tres
 
-	[Tooltip("Poids de la force appliquée pour éviter les joueurs")]
+	[Tooltip("Poids de la force appliquï¿½e pour ï¿½viter les joueurs")]
 	[SerializeField, Range(0, 10)] private float playerAvoidanceWeight;
-	[Tooltip("Poids de la force appliquée pour éviter les projectiles des joueurs")]
+	[Tooltip("Poids de la force appliquï¿½e pour ï¿½viter les projectiles des joueurs")]
 	[SerializeField, Range(0, 10)] private float projAvoidanceWeight;
-	[Tooltip("Poids de la force appliquée pour rester au centre du niveau")]
+	[Tooltip("Poids de la force appliquï¿½e pour rester au centre du niveau")]
 	[SerializeField, Range(0, 10)] private float centerCohesionWeight;
 	#endregion
 
@@ -44,23 +44,22 @@ public class CrowdMember : Scrolling
 		else projectileTransforms.Remove(other.transform);
 	}
 
-	protected override void Move()
+	protected override bool Move()
 	{
-		if (paused)
-		{
-			rb.linearVelocity = Vector3.zero;
-			return;
-		}
+		if(!base.Move())
+			return false;
 
 		Vector3 scrolling = scrollSpeed * Vector3.back;
 		playerAvoid = CalculateAwayVector(playerTransforms) * playerAvoidanceWeight;
 		projAvoid = CalculateAwayVector(projectileTransforms) * projAvoidanceWeight;
 		rb.linearVelocity = playerAvoid + projAvoid + scrolling * Time.deltaTime;
+
+		return true;
 	}
 
-	/// <summary> Permet de calculer la direction d'évitement en fonction d'une liste d'objets à éviter. </summary>
-	/// <param name="list"> Les objets à éviter. </param>
-	/// <returns> La direction d'évitement la plus directe. </returns>
+	/// <summary> Permet de calculer la direction d'ï¿½vitement en fonction d'une liste d'objets ï¿½ ï¿½viter. </summary>
+	/// <param name="list"> Les objets ï¿½ ï¿½viter. </param>
+	/// <returns> La direction d'ï¿½vitement la plus directe. </returns>
 	private Vector3 CalculateAwayVector(List<Transform> list)
 	{
 		Vector3 origin = transform.position;
@@ -75,7 +74,7 @@ public class CrowdMember : Scrolling
 		}
 		averageDst /= list.Count;
 
-		// Ajout d'un poids inversement proportionnel à la distance moyenne.
+		// Ajout d'un poids inversement proportionnel ï¿½ la distance moyenne.
 		return awayVector * (1 / averageDst);
 	}
 
