@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: ThrowEnemyGreen
   m_EditorClassIdentifier: 
   speed: 350
-  maxHealth: 8
+  maxHealth: 5
   damage: 1
+  scoreValue: 300
   hasPowerUp: 0
   powerUpType: 0
   shootCooldown: 1
-  salvoCooldown: 2
+  salvoCooldown: 1.5
   nbProjPerSalvo: 3
   nbSalvoBeforeMove: 2
   lateralSpeed: 100

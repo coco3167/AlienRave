@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerPinkProjectile
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 10
+  speed: 20
   targetTag: EnemyPink

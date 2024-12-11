@@ -498,7 +498,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.18030682, g: 0.10976614, b: 0.46540874, a: 1}
+  m_Color: {r: 0.19975774, g: 0.1073533, b: 0.57861626, a: 1}
   m_Intensity: 2.7
   m_Range: 10
   m_SpotAngle: 30
@@ -1737,6 +1737,14 @@ PrefabInstance:
       propertyPath: audioListener
       value: 
       objectReference: {fileID: 326727643}
+    - target: {fileID: 2509381696475723118, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: areUWinningSon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509381696475723118, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: needsForTwoPlayers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2853314701369332577, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1785,17 +1793,9 @@ PrefabInstance:
       propertyPath: directionalLight
       value: 
       objectReference: {fileID: 400807687}
-    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
-      propertyPath: preciseColorParameter.b
-      value: 0.057849612
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
-      propertyPath: preciseColorParameter.g
-      value: 0.15920003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434279695943559410, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
-      propertyPath: preciseColorParameter.r
-      value: 0.735849
+    - target: {fileID: 7905025885406376176, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: nbSpawned
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

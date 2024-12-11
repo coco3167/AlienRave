@@ -40,6 +40,7 @@ public class ThrowEnemy : Enemy
 	{
 		anim.SetBool("Shooting", true);
 		anim.SetBool("Moving", false);
+
 		moveDir = Vector3.zero;
 		PoolManager.Instance.SpawnElement(Data.projectileType, shootPoint.position, shootPoint.rotation);
 		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kisserEnemyKiss, transform.position);
@@ -47,9 +48,9 @@ public class ThrowEnemy : Enemy
 		else StartCoroutine(ShootTimer(false));
 	}
 
-	protected virtual void EndSalvo()
+	protected virtual void EndSalvo(bool hybrid = false)
 	{
-		anim.SetBool("Shooting", false);
+		if(!hybrid) anim.SetBool("Shooting", false);
 		StartCoroutine(ShootTimer(true));
 		nbProjectileShot = 0;
 

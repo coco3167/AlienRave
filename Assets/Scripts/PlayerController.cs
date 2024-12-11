@@ -83,10 +83,21 @@ public class PlayerController : Pausable, IHarmable
 
 	public void Shoot()
 	{
-		foreach(var shootPoint in shootPoints)
+		foreach (var shootPoint in shootPoints)
+		{
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
+			if (CompareTag("PlayerGreen"))
+			{
+				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
+			}
 
-		
+			if (CompareTag("PlayerPink"))
+			{
+				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerAttack, this.transform.position);
+			}
+			
+		}
+
 		shootTimer = data.fireRate;
 	}
 
@@ -116,6 +127,15 @@ public class PlayerController : Pausable, IHarmable
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
 		Invulnerability();
+		if (CompareTag("PlayerGreen"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerIsHurt, this.transform.position);
+		}
+
+		if (CompareTag("PlayerPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerIsHurt, this.transform.position);
+		}
 	}
 
 	public void PickUpPowerUp(PowerUp powerUp) => powerUp.Apply();

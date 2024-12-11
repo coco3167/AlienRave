@@ -9,6 +9,8 @@ namespace LDTool
 {
 	public class LevelAnimationSpawner : MonoBehaviour
 	{
+		#region Attributs
+
 		[SerializeField] private Animator animator;
 		
 		[SerializeField] private Transform enemySpawnPoint;
@@ -18,7 +20,8 @@ namespace LDTool
 		[SerializeField] private List<PathCreator> enemyPaths;
 
 		private float zLength;
-		
+		#endregion
+
 		private void Start()
 		{
 			zLength = Mathf.Abs(crowdSpawnPoint[0].position.z - crowdSpawnPoint[1].position.z);
