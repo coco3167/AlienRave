@@ -22,7 +22,6 @@ public class WaveProjectile : Spawnable
 			int j = i++;
 			trigger.OnHit += () => HidePoint(j);
 			lines.Add(child.GetComponent<LineRenderer>());
-			AudioManager.Instance.PlayOneShot (FMODEvents.Instance.hybridEnemyBurp, transform.position);
 		}
 	}
 
@@ -76,6 +75,7 @@ public class WaveProjectile : Spawnable
 		radius = data.minRadius;
 		foreach (Transform point in points) point.gameObject.SetActive(true);
 		foreach (LineRenderer line in lines) line.enabled = true;
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyBurp, transform.position);
 	}
 
 	/*private ParticleSystem[] waveParticles;
