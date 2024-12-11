@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 	private static bool restart;
 	private bool isPlaying;
 
+	private LDTool.LevelAnimationSpawner.MusicState musicState;
+
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
 
@@ -65,16 +67,6 @@ public class GameManager : MonoBehaviour
 		}
 
 		SetStartMenu();
-	}
-
-	private void Update()
-	{
-		// tmpObstacleSPawnertimer -= Time.deltaTime;
-		// if (tmpObstacleSPawnertimer <= 0)
-		// {
-		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
-		// 	tmpObstacleSPawnertimer = 3f;
-		// }
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -118,6 +110,11 @@ public class GameManager : MonoBehaviour
 		score += amount;
 		hud.UpdateScore(score);
 		// TODO Anims ?
+	}
+
+	public int GetFinalScore()
+	{
+		return (playersHealth+1) * score;
 	}
 
 	public void Harm(int damage)
@@ -208,6 +205,7 @@ public class GameManager : MonoBehaviour
 
 	public void SetStartMenu()
 	{
+		// TODO Change Fmod state to Start
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -216,6 +214,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
+		// TODO Change Fmod state to Pause
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -226,9 +225,11 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
+		// TODO Change Fmod state to currentState
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
+		EnvironmentManager.Instance.started = true;
 		return true;
 	}
 
@@ -269,5 +270,11 @@ public class GameManager : MonoBehaviour
 	public void HideUIScreen()
 	{
 		menus.ForEach(x => x.SetActive(false));
+	}
+
+	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
+	{
+		musicState = newMusicState;
+		// TODO change Fmod state
 	}
 }
