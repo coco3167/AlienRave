@@ -14,8 +14,8 @@ public class Projectile : Spawnable
 	{
 		if (other.CompareTag(data.targetTag) || other.CompareTag("Hybrid"))
 		{
+			Feedback(true, other.transform);
 			Hit(other.GetComponent<IHarmable>());
-			PoolManager
 			if (other.CompareTag("EnemyGreen"))
 			{
 				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
@@ -27,12 +27,34 @@ public class Projectile : Spawnable
 			return;
 		}
 
-		if (other.CompareTag("Obstacle")) Despawn();
+		if (other.CompareTag("Obstacle"))
+		{
+			Feedback(false, other.transform);
+			Despawn();
+		}
 	}
 
 	protected virtual void Hit(IHarmable entity)
 	{
 		entity.Harm(data.damage, data.targetTag.Contains("Green"));
 		Despawn();
+	}
+
+	public void Feedback(bool hit, Transform receiver)
+	{
+		PoolType feedbackType;
+		if (hit)
+		{
+			feedbackType = data.targetTag.Contains("Green") ?
+					PoolType.FeedbackHitGreen : PoolType.FeedbackHitPink;
+		}
+		else
+		{
+			feedbackType = data.targetTag.Contains("Green") ?
+					PoolType.FeedbackNoHitGreen : PoolType.FeedbackNoHitPink;
+		}
+
+		var feedbackTransform = PoolManager.Instance.SpawnElement(feedbackType, transform.position, transform.rotation).transform;
+		feedbackTransform.parent = receiver;
 	}
 }

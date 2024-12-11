@@ -17,7 +17,6 @@ public class EnvironmentManager : MonoBehaviour
 	}
 
 	[SerializeField] private float respawnTimer;
-	private PoolType chunkType = PoolType.EnvironmentChunk;
 	public Transform spawnPoint;
 
 	public void SpawnChunk()

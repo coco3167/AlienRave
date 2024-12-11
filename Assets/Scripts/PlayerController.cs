@@ -6,6 +6,7 @@ public class PlayerController : Pausable, IHarmable
 {
 	[SerializeField] private PlayerData data;
 	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
+	[SerializeField] private ParticleSystem shootFeedback;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -85,6 +86,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		foreach (var shootPoint in shootPoints)
 		{
+			shootFeedback.Play();
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
 			if (CompareTag("PlayerGreen"))
 			{
