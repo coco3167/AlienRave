@@ -27,6 +27,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected virtual void Die()
 	{
 		//ToggleRagdoll(true);
+		GameManager.Instance.UpdateScore(data.scoreValue);
 		DropPowerUp();
 		Despawn();
 	}

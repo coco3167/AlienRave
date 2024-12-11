@@ -15,7 +15,9 @@ MonoBehaviour:
   speed: 100
   maxHealth: 20
   damage: 1
-  powerUpDropChance: 0
+  scoreValue: 2000
+  hasPowerUp: 0
+  powerUpType: 0
   shootCooldown: 1
   salvoCooldown: 3
   nbProjPerSalvo: 3
