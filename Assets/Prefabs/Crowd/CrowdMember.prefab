@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 400
-  playerAvoidanceWeight: 6
+  playerAvoidanceWeight: 3
   projAvoidanceWeight: 4
-  centerCohesionWeight: 0.05
+  centerCohesionWeight: 0.1
 --- !u!136 &8904025669709602680
 CapsuleCollider:
   m_ObjectHideFlags: 0
