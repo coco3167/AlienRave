@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -39,6 +40,9 @@ public class GameManager : MonoBehaviour
 
 	public bool areUWinningSon = true;
 	public int score;
+	private int multi = 1;
+	private float multiLastingTime = 2f;
+	private Coroutine multiResetCoroutine;
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
 
@@ -108,9 +112,21 @@ public class GameManager : MonoBehaviour
 
 	public void UpdateScore(int amount)
 	{
-		score += amount;
+		score += amount*multi;
+		multi++;
+		if (!multiResetCoroutine.IsUnityNull())
+			StopCoroutine(multiResetCoroutine);
+		multiResetCoroutine = StartCoroutine(ResetMulti());
 		hud.UpdateScore(score);
+		hud.UpdateMulti(multi);
 		// TODO Anims ?
+	}
+
+	private IEnumerator ResetMulti()
+	{
+		yield return new WaitForSeconds(multiLastingTime);
+		multi = 1;
+		hud.UpdateMulti(multi);
 	}
 
 	public int GetFinalScore()

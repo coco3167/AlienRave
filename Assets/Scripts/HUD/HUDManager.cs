@@ -5,14 +5,14 @@ using System.Collections;
 public class HUDManager : MonoBehaviour
 {
 	private LifeBarManager lifeBar;
-	private TextMeshProUGUI scoreTxt;
+	[SerializeField] private TextMeshProUGUI scoreTxt;
+	[SerializeField] private TextMeshProUGUI multiTxt;
 
 	[SerializeField] private PowerUpUI[] powerUpUIs;
 
 	private void Awake()
 	{
 		lifeBar = GetComponentInChildren<LifeBarManager>();
-		scoreTxt = GetComponentInChildren<TextMeshProUGUI>();
 	}
 
 	public void UpdateLifeVisuals(int health) => lifeBar.UpdateLife(health);
@@ -37,4 +37,6 @@ public class HUDManager : MonoBehaviour
 	}
 
 	public void UpdateScore(int score) => scoreTxt.text = $"Score : {score}";
+
+	public void UpdateMulti(int multi) => multiTxt.text = $"X{multi}";
 }
