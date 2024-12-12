@@ -38,8 +38,6 @@ namespace UI
         {
             if(GameManager.Instance.Play())
             {
-				tutoScreen.SetActive(true);
-				if(GameManager.Instance.tuto) EventSystem.current.SetSelectedGameObject(null);
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIClickButton, this.transform.position);
 				return;
 			}
