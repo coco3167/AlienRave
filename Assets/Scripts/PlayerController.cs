@@ -34,6 +34,13 @@ public class PlayerController : Pausable, IHarmable
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
 		Pause();
+		
+	}
+
+	protected override void Start()
+	{
+		base.Start();
+		GameManager.Instance.OnPlayerInstantiated(tag.Contains("Green"));
 	}
 
 	private void FixedUpdate()
@@ -120,6 +127,7 @@ public class PlayerController : Pausable, IHarmable
 
 	protected override void Play()
 	{
+		print($"{name} -> play");
 		isPaused = false;
 		// input.enabled = true;
 		anim.enabled = true;
@@ -157,18 +165,25 @@ public class PlayerController : Pausable, IHarmable
 	public void Invulnerability(bool isFromHarm = false)
 	{
 		canTakeDmg = false;
-		if(isFromHarm)
-			StartCoroutine(InvulnerabilityCooldown());
+		StartCoroutine(InvulnerabilityCooldown(isFromHarm));
 	}
 
-	private IEnumerator InvulnerabilityCooldown()
+	private IEnumerator InvulnerabilityCooldown(bool isFromHarm)
 	{
-		foreach (Material material in rend.materials)
+		if (isFromHarm)
 		{
-			material.SetFloat("_Flicker", 1f);
+			foreach (Material material in rend.materials)
+			{
+				material.SetFloat("_Flicker", 1f);
+			}
 		}
+
 		yield return new WaitForSeconds(data.invulnerabilityDuration);
 		canTakeDmg = true;
+		
+		if (!isFromHarm)
+			yield break;
+		
 		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Flicker", 0);

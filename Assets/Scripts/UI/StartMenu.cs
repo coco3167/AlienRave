@@ -24,7 +24,7 @@ namespace UI
 
         private void OnEnable()
         {
-            GetFocus();
+            //GetFocus();
         }
 
         private void FixedUpdate()
@@ -65,7 +65,7 @@ namespace UI
             playerJoinImages[playerInput.playerIndex].enabled = true;
         }
 
-        private void GetFocus()
+        public void GetFocus()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
         }

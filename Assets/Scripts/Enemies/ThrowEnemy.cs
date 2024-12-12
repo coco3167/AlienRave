@@ -10,6 +10,9 @@ public class ThrowEnemy : Enemy
 	protected int nbSalvos;
 	protected int nbProjectileShot;
 
+	protected bool pausedSalvo;
+	private IEnumerator shootCoroutine;
+
 	protected ThrowEnemyData Data => data as ThrowEnemyData;
 
 	protected override void Awake()
@@ -31,6 +34,7 @@ public class ThrowEnemy : Enemy
 	{
 		if (!base.Move())
 			return false;
+
 		rb.linearVelocity = ((scrollDir * data.speed) +
 							 (moveDir * Data.lateralSpeed)) * Time.deltaTime;
 		return true;
@@ -40,7 +44,6 @@ public class ThrowEnemy : Enemy
 	{
 		anim.SetBool("Shooting", true);
 		anim.SetBool("Moving", false);
-
 		moveDir = Vector3.zero;
 		PoolManager.Instance.SpawnElement(Data.projectileType, shootPoint.position, shootPoint.rotation);
 		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kisserEnemyKiss, transform.position);
@@ -69,7 +72,8 @@ public class ThrowEnemy : Enemy
 	protected IEnumerator ShootTimer(bool restartSalvo)
 	{
 		yield return new WaitForSeconds(restartSalvo ? Data.salvoCooldown : Data.shootCooldown);
-		Shoot();
+		if(pauseStack >= 1) pausedSalvo = true;
+		else Shoot();
 	}
 
 	protected override void Die()
@@ -92,5 +96,11 @@ public class ThrowEnemy : Enemy
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkKisserEnemyIsHurt,transform.position);
 		}
 		
+	}
+
+	protected override void Play()
+	{
+		base.Play();
+		if (pausedSalvo) Shoot();
 	}
 }
