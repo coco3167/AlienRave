@@ -132,7 +132,7 @@ public class PlayerController : Pausable, IHarmable
 		print($"{name} poc");
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
-		Invulnerability();
+		Invulnerability(true);
 		if (CompareTag("PlayerGreen"))
 		{
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerIsHurt, this.transform.position);
@@ -155,10 +155,11 @@ public class PlayerController : Pausable, IHarmable
 
 	public void ToggleSpeedFeedback() => StartCoroutine(speedTrail.ActivateTrail());
 
-	public void Invulnerability()
+	public void Invulnerability(bool isFromHarm = false)
 	{
 		canTakeDmg = false;
-		StartCoroutine(InvulnerabilityCooldown());
+		if(isFromHarm)
+			StartCoroutine(InvulnerabilityCooldown());
 	}
 
 	private IEnumerator InvulnerabilityCooldown()
