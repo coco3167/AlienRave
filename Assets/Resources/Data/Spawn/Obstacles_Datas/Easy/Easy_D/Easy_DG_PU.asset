@@ -30,5 +30,5 @@ MonoBehaviour:
     nb: 0
     followMode: 0
     hasPowerUp: 1
-    powerUpType: 13
+    powerUpType: 15
   crowdSpawners: []

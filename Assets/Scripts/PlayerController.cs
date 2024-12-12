@@ -6,6 +6,9 @@ public class PlayerController : Pausable, IHarmable
 {
 	[SerializeField] private PlayerData data;
 	[SerializeField] private ParticleSystem[] powerUpFeedbacks = new ParticleSystem[2];
+	[SerializeField] private ParticleSystem shootFeedback;
+	private MeshTrail speedTrail;
+	private SkinnedMeshRenderer renderer;
 
 	private Vector2 moveInput;
 	private bool shooting;
@@ -26,6 +29,8 @@ public class PlayerController : Pausable, IHarmable
 		anim = GetComponentInChildren<Animator>();
 		shootPoints = new Transform[] { transform.GetChild(0).GetChild(0) };
 		shootTimer = data.fireRate;
+		speedTrail = GetComponentInChildren<MeshTrail>();
+		renderer = GetComponentInChildren<SkinnedMeshRenderer>();
 	}
 
 	private void FixedUpdate()
@@ -85,6 +90,7 @@ public class PlayerController : Pausable, IHarmable
 	{
 		foreach (var shootPoint in shootPoints)
 		{
+			shootFeedback.Play();
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
 			if (CompareTag("PlayerGreen"))
 			{
@@ -123,7 +129,6 @@ public class PlayerController : Pausable, IHarmable
 	public void Harm(int damage, bool green = false)
 	{
 		if (!canTakeDmg) return;
-		if ((green && tag.Contains("Pink")) || (!green && tag.Contains("Green"))) return;
 		print($"{name} poc");
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
@@ -144,10 +149,11 @@ public class PlayerController : Pausable, IHarmable
 	public void ToggleFeedback(bool damage, bool on)
 	{
 		var feedback = powerUpFeedbacks[damage ? 0 : 1];
-		print(feedback.name);
 		if (on) feedback.Play();
 		else feedback.Stop();
 	}
+
+	public void ToggleSpeedFeedback() => StartCoroutine(speedTrail.ActivateTrail());
 
 	public void Invulnerability()
 	{
@@ -157,7 +163,15 @@ public class PlayerController : Pausable, IHarmable
 
 	private IEnumerator InvulnerabilityCooldown()
 	{
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_Flicker", 1f);
+		}
 		yield return new WaitForSeconds(data.invulnerabilityDuration);
 		canTakeDmg = true;
+		foreach (Material material in renderer.materials)
+		{
+			material.SetFloat("_Flicker", 0);
+		}
 	}
 }

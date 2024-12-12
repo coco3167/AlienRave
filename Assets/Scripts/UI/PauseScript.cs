@@ -11,11 +11,29 @@ namespace UI
         [SerializeField] private GameObject optionsMenu;
         [SerializeField] private GameObject controlsMenu;
         [SerializeField] private GameObject controlsBackButton;
+        [SerializeField] private Image backgroundImage;
+        
         private UnityEvent optionsEvent;
+        
+        private Sprite[] UIAnimList;
+        private int animIndex;
+
+        private void Awake()
+        {
+            UIAnimList = Resources.LoadAll<Sprite>("PauseMenu_Anim");
+        }
+        
         private void Start()
         {
             GetFocus();
             optionsEvent = optionsMenu.GetComponent<OptionsMenu>().backEvent;
+        }
+        
+        private void FixedUpdate()
+        {
+            backgroundImage.sprite = UIAnimList[animIndex];
+            animIndex++;
+            animIndex %= UIAnimList.Length;
         }
 
         private void OnEnable()
@@ -26,7 +44,7 @@ namespace UI
         public void Back()
         {
             GameManager.Instance.Play();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         public void Restart()

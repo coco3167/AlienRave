@@ -12,12 +12,28 @@ namespace UI
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider voicesSlider;
         [SerializeField] private Slider SFXSlider;
+        [SerializeField] private Image backgroundImage;
 
         [HideInInspector] public UnityEvent backEvent;
+        
+        private Sprite[] UIAnimList;
+        private int animIndex;
+
+        private void Awake()
+        {
+            UIAnimList = Resources.LoadAll<Sprite>("PauseMenu_Anim");
+        }
 
         void OnEnable()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
+        }
+        
+        private void FixedUpdate()
+        {
+            backgroundImage.sprite = UIAnimList[animIndex];
+            animIndex++;
+            animIndex %= UIAnimList.Length;
         }
 
         public void Back()

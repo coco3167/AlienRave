@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -38,6 +40,9 @@ public class GameManager : MonoBehaviour
 
 	public bool areUWinningSon = true;
 	public int score;
+	private int multi = 1;
+	private float multiLastingTime = .5f;
+	private Coroutine multiResetCoroutine;
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
 
@@ -67,16 +72,6 @@ public class GameManager : MonoBehaviour
 		}
 
 		SetStartMenu();
-	}
-
-	private void Update()
-	{
-		// tmpObstacleSPawnertimer -= Time.deltaTime;
-		// if (tmpObstacleSPawnertimer <= 0)
-		// {
-		// 	tmp_crowdManager.TMP_SpawnRandomObstacle();
-		// 	tmpObstacleSPawnertimer = 3f;
-		// }
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -117,9 +112,28 @@ public class GameManager : MonoBehaviour
 
 	public void UpdateScore(int amount)
 	{
-		score += amount;
+		score += amount*multi;
+		multi++;
+		if (!multiResetCoroutine.IsUnityNull())
+			StopCoroutine(multiResetCoroutine);
+		multiResetCoroutine = StartCoroutine(ResetMulti());
 		hud.UpdateScore(score);
+		hud.UpdateMulti(multi);
 		// TODO Anims ?
+	}
+
+	private IEnumerator ResetMulti()
+	{
+		float time = 0f;
+		while (time < multiLastingTime)
+		{
+			time = Mathf.Clamp(time+.01f, 0, multiLastingTime);
+			
+			hud.UpdateMultiSlider(time/multiLastingTime);
+			yield return new WaitForSeconds(.01f);
+		}
+		multi = 1;
+		hud.UpdateMulti(multi);
 	}
 
 	public int GetFinalScore()
@@ -171,7 +185,7 @@ public class GameManager : MonoBehaviour
 
 		if (duration > 0)
 		{
-			//hud.UpdatePowerUpVisuals(PowerUpData.Type.Speed, duration);
+			foreach (var player in players) player.ToggleSpeedFeedback();
 			StartCoroutine(PowerUpTimer(duration));
 		}
 	}
@@ -239,6 +253,7 @@ public class GameManager : MonoBehaviour
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
+		EnvironmentManager.Instance.started = true;
 		return true;
 	}
 
@@ -261,30 +276,56 @@ public class GameManager : MonoBehaviour
 				menus[0].SetActive(true);
 				break;
 			case ScreenState.Pause:
-				menus[1].SetActive(true);
+				StartCoroutine(TransitionStateScreen(1));
 				break;
 			case ScreenState.Win:
 				areUWinningSon = true;
 				OnPause?.Invoke();
-				menus[2].SetActive(true);
+				StartCoroutine(TransitionStateScreen(2));
 				break;
 			case ScreenState.Lose:
 				areUWinningSon = false;
 				OnPause?.Invoke();
-				menus[2].SetActive(true);
+				StartCoroutine(TransitionStateScreen(2));
 				break;
 		}
 	}
 
+	// ReSharper disable Unity.PerformanceAnalysis
+	private IEnumerator TransitionStateScreen(int index, bool appearing = true)
+	{
+		CanvasGroup group = menus[index].GetComponent<CanvasGroup>();
+		
+		group.alpha = appearing ? 0 : 1;
+		if(appearing)
+			menus[index].SetActive(true);
+
+		float difference = (appearing ? 1 : -1) * .08f;
+		
+		while (appearing ? group.alpha < 1 : group.alpha > 0)
+		{
+			Debug.Log(group.alpha);
+			group.alpha = Mathf.Clamp01(group.alpha + difference);
+			yield return new WaitForSeconds(.001f);
+		}
+		
+		if(!appearing)
+			menus[index].SetActive(false);
+	}
+
 	public void HideUIScreen()
 	{
-		menus.ForEach(x => x.SetActive(false));
+		for (int loop = 0; loop < menus.Count; loop++)
+		{
+			if (menus[loop].activeSelf)
+				StartCoroutine(TransitionStateScreen(loop, false));
+		}
+		// menus.ForEach(x => x.SetActive(false));
 	}
 
 	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
 	{
 		musicState = newMusicState;
-		//FMODEvents.Instance.
 		// TODO change Fmod state
 	}
 }

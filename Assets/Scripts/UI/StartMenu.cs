@@ -11,10 +11,26 @@ namespace UI
         [SerializeField] private GameObject firstSelectedGameobject;
         [SerializeField] private OptionsMenu optionsMenu;
         [SerializeField] private List<Image> playerJoinImages;
-        
+        [SerializeField] private Image backgroundImage;
+
+        private Sprite[] UIAnimList;
+        private int animIndex;
+
+        private void Awake()
+        {
+            UIAnimList = Resources.LoadAll<Sprite>("StartMenu_Anim");
+        }
+
         private void OnEnable()
         {
             GetFocus();
+        }
+
+        private void FixedUpdate()
+        {
+            backgroundImage.sprite = UIAnimList[animIndex];
+            animIndex++;
+            animIndex %= UIAnimList.Length;
         }
 
         public void PlayGame()

@@ -73,5 +73,7 @@ public enum PoolType
 	HealPowerUp, FireRatePowerUp, NbProjectilesPowerUp,
 	SpeedPowerUp, DamagePowerUp, InvulnerabilityPowerUp,
 	PinkFollowEnemy, GreenFollowEnemy,
-	GreenWaveProjectile, PinkWaveProjectile
+	GreenWaveProjectile, PinkWaveProjectile,
+	EnvironmentChunk,
+	FeedbackNoHitPink, FeedbackNoHitGreen, FeedbackHitPink, FeedbackHitGreen
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class HybridEnemy : ThrowEnemy
 {
 	private HybridEnemyUI ui;
-	private int greenHealth;
+	private int greenHealth = 1;
 	private int pinkHealth;
 
 	private PoolType RandomProjectileType => Random.Range(0, 2) == 0 ?
@@ -48,17 +48,19 @@ public class HybridEnemy : ThrowEnemy
 			greenHealth -= damage;
 			if (greenHealth <= 0) greenHealth = 0;
 			ui.TakeDamage(true, greenHealth);
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenHybridEnemyIsHurt, transform.position);
+			//AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenHybridEnemyIsHurt, transform.position);
 		}
 		else
 		{
 			pinkHealth -= damage;
 			if (pinkHealth <= 0) pinkHealth = 0;
 			ui.TakeDamage(false, pinkHealth);
-			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkHybridEnemyIsHurt, transform.position);
+			//AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkHybridEnemyIsHurt, transform.position);
 		}
 
 		StartCoroutine(FreezeFrame());
+
+		
 	}
 
 	protected override IEnumerator FreezeFrame()
@@ -66,23 +68,25 @@ public class HybridEnemy : ThrowEnemy
 		Pause();
 		foreach (Material material in renderer.materials)
 		{
-			material.SetFloat("_IsBlackWhite", 1);
+			material.SetFloat("_Effect", 1f);
 		}
+
 		yield return new WaitForSeconds(freezeTime);
+		
 		foreach (Material material in renderer.materials)
 		{
-			material.SetFloat("_IsBlackWhite", 0);
+			material.SetFloat("_Effect", 0f);
 		}
+		
 		if (pinkHealth == 0 && greenHealth == 0)
 		{
 			Die();
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyDeath, transform.position);
 		}
-		
-		if(!paused)
+
+		if (!paused)
 			Play();
 	}
-
 
 	protected override void ResetLife()
 	{
