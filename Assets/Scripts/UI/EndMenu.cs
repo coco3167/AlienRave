@@ -12,6 +12,8 @@ namespace UI
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private Image backgroundImage;
 
+        [SerializeField] private GameObject buttonsLose, buttonsWin;
+
     
         private Sprite[] UIAnimListLose, UIAnimListWin, UIAnimListMain;
         private int animIndex;
@@ -21,6 +23,9 @@ namespace UI
             UIAnimListLose = Resources.LoadAll<Sprite>("LoseMenu_Anim");
             UIAnimListWin = Resources.LoadAll<Sprite>("WinMenu_Anim");
             UIAnimListMain = UIAnimListLose;
+            
+            buttonsLose.SetActive(false);
+            buttonsWin.SetActive(false);
         }
         
         void OnEnable()
@@ -42,11 +47,13 @@ namespace UI
             {
                 titleText.text = "Victory";
                 UIAnimListMain = UIAnimListWin;
+                buttonsWin.SetActive(true);
             }
             else
             {
                 titleText.text = "Game Over";
                 UIAnimListMain = UIAnimListLose;
+                buttonsLose.SetActive(true);
             }
 
             scoreText.text = $"Score : {GameManager.Instance.GetFinalScore()}";

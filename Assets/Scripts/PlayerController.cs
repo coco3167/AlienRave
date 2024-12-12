@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerController : Pausable, IHarmable
 {
@@ -22,6 +24,8 @@ public class PlayerController : Pausable, IHarmable
 
 	private bool canTakeDmg = true;
 
+	[HideInInspector] public bool tuto = true;
+
 	private void Awake()
 	{
 		input = GetComponent<PlayerInput>();
@@ -31,6 +35,8 @@ public class PlayerController : Pausable, IHarmable
 		shootTimer = data.fireRate;
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
+		Pause();
+		tuto = true;
 	}
 
 	private void FixedUpdate()
@@ -54,10 +60,16 @@ public class PlayerController : Pausable, IHarmable
 
 	public void OnShoot(InputAction.CallbackContext ctx)
 	{
-		if (isPaused)
+		print("Bah alors le shoot");
+		if (ctx.performed) print(tuto);
+		if(tuto && ctx.performed)
 		{
+			print("bah alors le tuto");
+			TutoManager.Instance.NextImage(tag.Contains("Green"));
 			return;
 		}
+
+		if (isPaused || tuto) return;
 		shooting = ctx.performed;
 		anim.SetBool("Shoot", shooting);
 	}
