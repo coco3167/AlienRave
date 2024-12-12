@@ -7,6 +7,7 @@ public class PowerUpPickup : Scrolling
 	public void OnTriggerEnter(Collider other)
 	{
 		other.GetComponentInParent<PlayerController>().PickUpPowerUp(powerUpData.PowerUp);
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pickUp, this.transform.position);
 		Despawn();
 	}
 

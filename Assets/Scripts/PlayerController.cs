@@ -92,18 +92,16 @@ public class PlayerController : Pausable, IHarmable
 		{
 			shootFeedback.Play();
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
-			if (CompareTag("PlayerGreen"))
-			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
-			}
-
-			if (CompareTag("PlayerPink"))
-			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerAttack, this.transform.position);
-			}
-			
+		}
+		if (CompareTag("PlayerGreen"))
+		{ 
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
 		}
 
+		else if (CompareTag("PlayerPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerAttack, this.transform.position);
+		}
 		shootTimer = data.fireRate;
 	}
 
@@ -132,7 +130,7 @@ public class PlayerController : Pausable, IHarmable
 		print($"{name} poc");
 		anim.SetTrigger("Hurt");
 		GameManager.Instance.Harm(damage);
-		Invulnerability();
+		Invulnerability(true);
 		if (CompareTag("PlayerGreen"))
 		{
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerIsHurt, this.transform.position);
@@ -155,10 +153,11 @@ public class PlayerController : Pausable, IHarmable
 
 	public void ToggleSpeedFeedback() => StartCoroutine(speedTrail.ActivateTrail());
 
-	public void Invulnerability()
+	public void Invulnerability(bool isFromHarm = false)
 	{
 		canTakeDmg = false;
-		StartCoroutine(InvulnerabilityCooldown());
+		if(isFromHarm)
+			StartCoroutine(InvulnerabilityCooldown());
 	}
 
 	private IEnumerator InvulnerabilityCooldown()

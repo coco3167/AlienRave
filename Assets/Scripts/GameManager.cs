@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
 	{
 		score += amount*multi;
 		multi++;
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.scoreUp, this.transform.position);
 		if (!multiResetCoroutine.IsUnityNull())
 			StopCoroutine(multiResetCoroutine);
 		multiResetCoroutine = StartCoroutine(ResetMulti());
@@ -229,7 +230,7 @@ public class GameManager : MonoBehaviour
 
 	public void SetStartMenu()
 	{
-		// TODO Change Fmod state to Start
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -238,7 +239,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
-		// TODO Change Fmod state to Pause
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -249,7 +250,7 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
-		// TODO Change Fmod state to currentState
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();

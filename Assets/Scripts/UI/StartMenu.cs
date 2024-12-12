@@ -35,8 +35,11 @@ namespace UI
 
         public void PlayGame()
         {
-            if(GameManager.Instance.Play())
-                return;
+            if (GameManager.Instance.Play())
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIClickButton, this.transform.position);
+            }
+            return;
             
             // Add animation when 2 players are not connected
         }
@@ -45,6 +48,7 @@ namespace UI
         {
             optionsMenu.backEvent.AddListener(GetFocus);
             optionsMenu.gameObject.SetActive(true);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
         }
     
         public void QuitGame()
