@@ -33,7 +33,7 @@ public class PlayerController : Pausable, IHarmable
 		shootTimer = data.fireRate;
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
-		Pause();
+		//Pause();
 	}
 
 	private void FixedUpdate()
