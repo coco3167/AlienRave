@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
 	{
 		score += amount*multi;
 		multi++;
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.scoreUp, this.transform.position);
 		if (!multiResetCoroutine.IsUnityNull())
 			StopCoroutine(multiResetCoroutine);
 		multiResetCoroutine = StartCoroutine(ResetMulti());

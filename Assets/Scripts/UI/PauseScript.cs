@@ -44,6 +44,7 @@ namespace UI
         public void Back()
         {
             GameManager.Instance.Play();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIOnButton, this.transform.position);
             //gameObject.SetActive(false);
         }
 
@@ -56,18 +57,21 @@ namespace UI
         {
             optionsMenu.SetActive(true);
             optionsEvent.AddListener(GetFocus);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIOnButton, this.transform.position);
         }
 
         public void Controls()
         {
             controlsMenu.SetActive(true);
             EventSystem.current.SetSelectedGameObject(controlsBackButton);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIOnButton, this.transform.position);
         }
 
         public void BackControls()
         {
             controlsMenu.SetActive(false);
             GetFocus();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIOnButton, this.transform.position);
         }
 
         public void StartMenu()

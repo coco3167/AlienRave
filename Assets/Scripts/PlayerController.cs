@@ -92,18 +92,16 @@ public class PlayerController : Pausable, IHarmable
 		{
 			shootFeedback.Play();
 			PoolManager.Instance.SpawnElement(data.projType, shootPoint.position, shootPoint.rotation);
-			if (CompareTag("PlayerGreen"))
-			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
-			}
-
-			if (CompareTag("PlayerPink"))
-			{
-				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerAttack, this.transform.position);
-			}
-			
+		}
+		if (CompareTag("PlayerGreen"))
+		{ 
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
 		}
 
+		else if (CompareTag("PlayerPink"))
+		{
+			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkPlayerAttack, this.transform.position);
+		}
 		shootTimer = data.fireRate;
 	}
 

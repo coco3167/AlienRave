@@ -40,6 +40,12 @@ public class FMODEvents : MonoBehaviour
     [field : Header("UI")]
     [field : SerializeField] public EventReference uIOnButton { get; private set; }
     [field : SerializeField] public EventReference uIClickButton { get; private set; }
+    [field : SerializeField] public EventReference notification { get; private set; }
+    [field : SerializeField] public EventReference sendMessage { get; private set; }
+    
+    [field : Header("HUD")]
+    [field : SerializeField] public EventReference pickUp { get; private set; }
+    [field : SerializeField] public EventReference scoreUp { get; private set; }
     
     [field : Header("Amb")]
     [field : SerializeField] public EventReference crowd2D { get; private set; }
