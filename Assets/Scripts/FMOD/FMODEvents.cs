@@ -37,13 +37,16 @@ public class FMODEvents : MonoBehaviour
     [field : SerializeField] public EventReference projectileObstacle { get; private set; }
     [field : SerializeField] public EventReference kisserEnemyKiss { get; private set; }
     
+    [field : Header("UI")]
+    [field : SerializeField] public EventReference uIOnButton { get; private set; }
+    [field : SerializeField] public EventReference uIClickButton { get; private set; }
+    
     [field : Header("Amb")]
     [field : SerializeField] public EventReference crowd2D { get; private set; }
     [field : SerializeField] public EventReference crowdGroup { get; private set; }
     
     [field : Header("Music")]
     [field : SerializeField] public EventReference music { get; private set; }
-    [field : SerializeField] public EventReference gameStatus { get; private set; }
     
     [field : Header("Parameters")]
     [field : SerializeField] private string musicStateParameterName = "LevelState";
