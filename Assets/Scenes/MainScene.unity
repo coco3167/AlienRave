@@ -1998,6 +1998,10 @@ PrefabInstance:
       propertyPath: audioListener
       value: 
       objectReference: {fileID: 326727643}
+    - target: {fileID: 2509381696475723118, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: needsForTwoPlayers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2853314701369332577, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
