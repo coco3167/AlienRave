@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class EnvironmentChunk : Scrolling
 {
-	protected override void Awake()
-	{
-		base.Awake();
-		paused = true;
-	}
-
 	protected override bool Move()
 	{
 		if (!base.Move()) return false;
@@ -19,11 +13,5 @@ public class EnvironmentChunk : Scrolling
 	{
 		base.Despawn();
 		if(EnvironmentManager.Instance != null) EnvironmentManager.Instance.SpawnChunk();
-	}
-
-	public override void Spawn()
-	{
-		base.Spawn();
-		paused = false;
 	}
 }

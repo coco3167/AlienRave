@@ -20,23 +20,13 @@ public class Projectile : Spawnable
 			{
 				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenDrunkEnemyIsHurt, this.transform.position);
 			}
-			if (other.CompareTag("EnemyPink"))
+			if (CompareTag("EnemyPink"))
 			{
 				AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pinkDrunkEnemyIsHurt, this.transform.position);
 			}
 			return;
 		}
-		
-		if (data.targetTag == "PlayerGreen" && other.CompareTag("PlayerPink"))
-		{
-			Feedback(false, other.transform);
-			Despawn();
-		}
-		if (data.targetTag == "PlayerPink" && other.CompareTag("PlayerGreen"))
-		{
-			Feedback(false, other.transform);
-			Despawn();
-		}
+
 		if (other.CompareTag("Obstacle"))
 		{
 			Feedback(false, other.transform);

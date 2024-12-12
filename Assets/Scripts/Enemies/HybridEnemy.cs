@@ -83,8 +83,9 @@ public class HybridEnemy : ThrowEnemy
 			Die();
 			AudioManager.Instance.PlayOneShot(FMODEvents.Instance.hybridEnemyDeath, transform.position);
 		}
-		
-		Play();
+
+		if (!paused)
+			Play();
 	}
 
 	protected override void ResetLife()

@@ -65,7 +65,7 @@ namespace UI
             playerJoinImages[playerInput.playerIndex].enabled = true;
         }
 
-        public void GetFocus()
+        private void GetFocus()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
         }

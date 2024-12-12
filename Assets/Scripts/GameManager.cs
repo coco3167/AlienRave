@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private PlayerAudioListener audioListener;
 	[SerializeField] private List<GameObject> menus;
 	[SerializeField] private bool needsForTwoPlayers;
-	[SerializeField] private StartMenu startMenu;
 
 	private PlayerInputManager playerInputManager;
 	private PlayerController[] players = new PlayerController[2];
@@ -37,7 +35,6 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
-	private bool isDead;
 
 	//private float tmpObstacleSPawnertimer = 2f;
 
@@ -152,11 +149,7 @@ public class GameManager : MonoBehaviour
 		print(damage);
 		playersHealth -= damage;
 		print(playersHealth);
-		if (!isDead && playersHealth <= 0)
-		{
-			isDead = true;
-			ShowUIScreen(ScreenState.Lose);
-		}
+		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
 		else hud.UpdateLifeVisuals(playersHealth);
 	}
 
@@ -198,7 +191,6 @@ public class GameManager : MonoBehaviour
 			foreach (var player in players) player.ToggleSpeedFeedback();
 			StartCoroutine(PowerUpTimer(duration));
 		}
-		hud.UpdatePowerUpVisuals(PowerUpData.Type.Speed, duration);
 	}
 
 	public void ChangeDamage(int amount, float duration = -1)
@@ -249,7 +241,6 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
-
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
@@ -262,7 +253,6 @@ public class GameManager : MonoBehaviour
 			return false;
 		
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
-
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
@@ -277,12 +267,6 @@ public class GameManager : MonoBehaviour
 		tuto = false;
 		Play();
 	}*/
-
-	public void OnPlayerInstantiated(bool green)
-	{
-		if (green) return;
-		startMenu.GetFocus();
-	}
 
 	public void Restart(bool showMainMenu)
 	{
@@ -331,6 +315,7 @@ public class GameManager : MonoBehaviour
 		
 		while (appearing ? group.alpha < 1 : group.alpha > 0)
 		{
+			Debug.Log(group.alpha);
 			group.alpha = Mathf.Clamp01(group.alpha + difference);
 			yield return new WaitForSeconds(.001f);
 		}
