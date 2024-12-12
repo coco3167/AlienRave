@@ -33,7 +33,7 @@ public class PlayerController : Pausable, IHarmable
 		shootTimer = data.fireRate;
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
-		Pause();
+		//Pause();
 	}
 
 	private void FixedUpdate()
@@ -157,18 +157,25 @@ public class PlayerController : Pausable, IHarmable
 	public void Invulnerability(bool isFromHarm = false)
 	{
 		canTakeDmg = false;
-		if(isFromHarm)
-			StartCoroutine(InvulnerabilityCooldown());
+		StartCoroutine(InvulnerabilityCooldown(isFromHarm));
 	}
 
-	private IEnumerator InvulnerabilityCooldown()
+	private IEnumerator InvulnerabilityCooldown(bool isFromHarm)
 	{
-		foreach (Material material in rend.materials)
+		if (isFromHarm)
 		{
-			material.SetFloat("_Flicker", 1f);
+			foreach (Material material in rend.materials)
+			{
+				material.SetFloat("_Flicker", 1f);
+			}
 		}
+
 		yield return new WaitForSeconds(data.invulnerabilityDuration);
 		canTakeDmg = true;
+		
+		if (!isFromHarm)
+			yield break;
+		
 		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Flicker", 0);
