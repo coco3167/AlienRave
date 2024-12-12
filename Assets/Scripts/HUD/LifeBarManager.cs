@@ -23,8 +23,7 @@ public class LifeBarManager : MonoBehaviour
     private void Awake()
     {
         foreach(Transform child in transform) hpImgs.Add(child.GetComponent<Image>());
-        UpdateLife(3);
-
+        UpdateLife(transform.childCount);
     }
 /*
     private void Update()

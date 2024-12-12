@@ -326,7 +326,7 @@ MonoBehaviour:
   - {fileID: 6164144794380841402}
   - {fileID: 7346278960364449199}
   spawnCooldownDuration: 0.1
-  nbSpawned: 0
+  nbSpawned: 3
 --- !u!1 &1645517082246230497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   playerSpawnPos:
   - {fileID: 5286680312658126574}
   - {fileID: 467998378550231740}
-  maxPlayersHealth: 3
+  maxPlayersHealth: 4
   areUWinningSon: 0
   score: 0
 --- !u!114 &9164605542015038320
