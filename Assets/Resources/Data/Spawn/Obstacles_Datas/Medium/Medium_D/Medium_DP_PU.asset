@@ -24,7 +24,7 @@ MonoBehaviour:
     nb: 0
     followMode: 0
     hasPowerUp: 1
-    powerUpType: 16
+    powerUpType: 11
   - enemy: 4
     xPosEnemy: 0
     nb: 0
