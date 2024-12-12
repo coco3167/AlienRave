@@ -191,6 +191,7 @@ public class GameManager : MonoBehaviour
 			foreach (var player in players) player.ToggleSpeedFeedback();
 			StartCoroutine(PowerUpTimer(duration));
 		}
+		hud.UpdatePowerUpVisuals(PowerUpData.Type.Speed, duration);
 	}
 
 	public void ChangeDamage(int amount, float duration = -1)
