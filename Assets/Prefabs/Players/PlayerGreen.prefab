@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 7249247840707618523}
   - component: {fileID: 364689090315109507}
   - component: {fileID: 6927254707449766073}
+  - component: {fileID: 3854733867898636542}
   m_Layer: 6
   m_Name: PlayerGreen
   m_TagString: PlayerGreen
@@ -623,6 +624,18 @@ MonoBehaviour:
   shaderVarRef: _Alpha
   shaderVarRate: 0.1
   shaderVarRefresh: 0.05
+--- !u!114 &3854733867898636542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166040892525687113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c26c151196d6c45a7a0eaec83fe34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8787493617767757844
 GameObject:
   m_ObjectHideFlags: 0
