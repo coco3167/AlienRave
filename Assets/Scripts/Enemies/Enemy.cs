@@ -7,7 +7,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected float freezeTime = .2f;
 	protected PoolType powerUpType;
 	protected bool hasPowerUp;
-	protected SkinnedMeshRenderer renderer;
+	protected SkinnedMeshRenderer rend;
 	protected Animator anim;
 	protected int health;
 
@@ -16,7 +16,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected override void Awake()
 	{
 		base.Awake();
-		renderer = GetComponentInChildren<SkinnedMeshRenderer>();
+		rend = GetComponentInChildren<SkinnedMeshRenderer>();
 		anim = GetComponentInChildren<Animator>();
 	}
 
@@ -37,14 +37,14 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected virtual IEnumerator FreezeFrame()
 	{
 		Pause();
-		foreach (Material material in renderer.materials)
+		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Effect", 1f);
 		}
 
 		yield return new WaitForSeconds(freezeTime);
 		
-		foreach (Material material in renderer.materials)
+		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Effect", 0f);
 		}
