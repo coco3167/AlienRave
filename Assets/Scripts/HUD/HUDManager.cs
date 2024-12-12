@@ -7,6 +7,7 @@ public class HUDManager : MonoBehaviour
 	private LifeBarManager lifeBar;
 	[SerializeField] private TextMeshProUGUI scoreTxt;
 	[SerializeField] private TextMeshProUGUI multiTxt;
+	[SerializeField] private Transform multiSlider;
 
 	[SerializeField] private PowerUpUI[] powerUpUIs;
 
@@ -39,4 +40,6 @@ public class HUDManager : MonoBehaviour
 	public void UpdateScore(int score) => scoreTxt.text = $"Score : {score}";
 
 	public void UpdateMulti(int multi) => multiTxt.text = $"X{multi}";
+
+	public void UpdateMultiSlider(float fillPortion) => multiSlider.localScale = new Vector3(1-fillPortion, 1, 1);
 }

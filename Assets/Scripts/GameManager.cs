@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 	public bool areUWinningSon = true;
 	public int score;
 	private int multi = 1;
-	private float multiLastingTime = 2f;
+	private float multiLastingTime = .5f;
 	private Coroutine multiResetCoroutine;
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
@@ -124,7 +124,14 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator ResetMulti()
 	{
-		yield return new WaitForSeconds(multiLastingTime);
+		float time = 0f;
+		while (time < multiLastingTime)
+		{
+			time = Mathf.Clamp(time+.01f, 0, multiLastingTime);
+			
+			hud.UpdateMultiSlider(time/multiLastingTime);
+			yield return new WaitForSeconds(.01f);
+		}
 		multi = 1;
 		hud.UpdateMulti(multi);
 	}

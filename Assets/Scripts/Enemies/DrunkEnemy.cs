@@ -42,7 +42,7 @@ public class DrunkEnemy : Enemy
 			return false;
 		
 		rb.linearVelocity = data.speed * Time.deltaTime * walkDirection;
-		print(transform.position.x);
+		//print(transform.position.x);
 		if ((transform.position.x >= 10 || transform.position.x <= -10) && !switchDirection)
 		{
 			switchDirection = true;
