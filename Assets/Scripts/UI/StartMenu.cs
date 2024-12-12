@@ -12,6 +12,7 @@ namespace UI
         [SerializeField] private OptionsMenu optionsMenu;
         [SerializeField] private List<Image> playerJoinImages;
         [SerializeField] private Image backgroundImage;
+        [SerializeField] private GameObject tutoScreen;
 
         private Sprite[] UIAnimList;
         private int animIndex;
@@ -36,7 +37,11 @@ namespace UI
         public void PlayGame()
         {
             if(GameManager.Instance.Play())
-                return;
+            {
+				tutoScreen.SetActive(true);
+				if(GameManager.Instance.tuto) EventSystem.current.SetSelectedGameObject(null);
+				return;
+			}
             
             // Add animation when 2 players are not connected
         }

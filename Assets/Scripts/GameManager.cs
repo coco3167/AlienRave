@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
 
+	[HideInInspector] public bool tuto = true;
+
 	#region Événements
 
 	public delegate void TimeChange();
@@ -248,13 +250,26 @@ public class GameManager : MonoBehaviour
 	{
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
-		
+
+		if (tuto)
+		{
+			return true;
+		}
+
 		// TODO Change Fmod state to currentState
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
 		EnvironmentManager.Instance.started = true;
 		return true;
+	}
+
+	public void EndTuto()
+	{
+		print("non");
+		foreach (var player in players) player.tuto = false;
+		tuto = false;
+		Play();
 	}
 
 	public void Restart(bool showMainMenu)
