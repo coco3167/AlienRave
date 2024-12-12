@@ -46,6 +46,7 @@ namespace UI
         public void OnMusicVolumeChanged()
         {
             Debug.LogWarning("Music volume change not implemented");
+            
         }
     
         public void OnVoicesVolumeChanged()

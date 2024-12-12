@@ -1,3 +1,5 @@
+using System;
+using FMOD.Studio;
 using UnityEngine;
 using FMODUnity;
 using Unity.VisualScripting;
@@ -35,6 +37,16 @@ public class FMODEvents : MonoBehaviour
     [field : SerializeField] public EventReference projectileObstacle { get; private set; }
     [field : SerializeField] public EventReference kisserEnemyKiss { get; private set; }
     
+    [field : Header("UI")]
+    [field : SerializeField] public EventReference uIOnButton { get; private set; }
+    [field : SerializeField] public EventReference uIClickButton { get; private set; }
+    [field : SerializeField] public EventReference notification { get; private set; }
+    [field : SerializeField] public EventReference sendMessage { get; private set; }
+    
+    [field : Header("HUD")]
+    [field : SerializeField] public EventReference pickUp { get; private set; }
+    [field : SerializeField] public EventReference scoreUp { get; private set; }
+    
     [field : Header("Amb")]
     [field : SerializeField] public EventReference crowd2D { get; private set; }
     [field : SerializeField] public EventReference crowdGroup { get; private set; }
@@ -43,18 +55,13 @@ public class FMODEvents : MonoBehaviour
     [field : SerializeField] public EventReference music { get; private set; }
     
     [field : Header("Parameters")]
-    [field : SerializeField] private string musicStateName = "MusicState";
+    [field : SerializeField] private string musicStateParameterName = "LevelState";
+    [field : SerializeField] private string pauseParameterName = "GameStatus";
+    
     public static FMODEvents Instance { get; private set;}
     private void Awake()
     {
         Instance = this;
     }
     
-    
-
-
-
-
-
-
 }

@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
 	{
 		score += amount*multi;
 		multi++;
+		AudioManager.Instance.PlayOneShot(FMODEvents.Instance.scoreUp, this.transform.position);
 		if (!multiResetCoroutine.IsUnityNull())
 			StopCoroutine(multiResetCoroutine);
 		multiResetCoroutine = StartCoroutine(ResetMulti());
@@ -229,7 +230,7 @@ public class GameManager : MonoBehaviour
 
 	public void SetStartMenu()
 	{
-		// TODO Change Fmod state to Start
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -238,7 +239,7 @@ public class GameManager : MonoBehaviour
 	{
 		if(!isPlaying)
 			return;
-		// TODO Change Fmod state to Pause
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -249,13 +250,21 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 		
-		// TODO Change Fmod state to currentState
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
 		EnvironmentManager.Instance.started = true;
 		return true;
 	}
+
+	/*public void EndTuto()
+	{
+		print("non");
+		foreach (var player in players) player.tuto = false;
+		tuto = false;
+		Play();
+	}*/
 
 	public void Restart(bool showMainMenu)
 	{
@@ -326,6 +335,7 @@ public class GameManager : MonoBehaviour
 	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
 	{
 		musicState = newMusicState;
-		// TODO change Fmod state
+		Debug.Log(musicState);
+		AudioManager.Instance.SetMusicParameter("LevelState", "musicState");
 	}
 }

@@ -12,6 +12,7 @@ namespace UI
         [SerializeField] private OptionsMenu optionsMenu;
         [SerializeField] private List<Image> playerJoinImages;
         [SerializeField] private Image backgroundImage;
+        [SerializeField] private GameObject tutoScreen;
 
         private Sprite[] UIAnimList;
         private int animIndex;
@@ -36,8 +37,11 @@ namespace UI
         public void PlayGame()
         {
             if(GameManager.Instance.Play())
-                return;
-            
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIClickButton, this.transform.position);
+				return;
+			}
+            return;
             // Add animation when 2 players are not connected
         }
 
@@ -45,6 +49,7 @@ namespace UI
         {
             optionsMenu.backEvent.AddListener(GetFocus);
             optionsMenu.gameObject.SetActive(true);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.greenPlayerAttack, this.transform.position);
         }
     
         public void QuitGame()

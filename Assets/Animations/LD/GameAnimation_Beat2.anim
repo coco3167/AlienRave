@@ -31,7 +31,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 54.033333
+    m_StopTime: 53.016666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -72,41 +72,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 5
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 77733d16697c311498c4d8df72dc4dcd, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 5.5
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 6.016667
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 7.866667
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 78b761fef1674b743b8a69afcc0b97f4, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 8.666667
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: cbd105b4a5d921649b9d7179b68e43fa, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 9.3
     functionName: Spawn
     data: 
@@ -135,13 +100,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 14.15
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 3edd1bc75b8f61141afe4d12cc86d35f, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 15.333333
     functionName: Spawn
     data: 
@@ -153,13 +111,6 @@ AnimationClip:
     functionName: Spawn
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: 7761bec2ca03d274a8510f89c6ad70ef, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 17.883333
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 77733d16697c311498c4d8df72dc4dcd, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
@@ -194,7 +145,7 @@ AnimationClip:
   - time: 28.116667
     functionName: Spawn
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
+    objectReferenceParameter: {fileID: 11400000, guid: 25c12f0dc6e644f4f809d226cfde6576, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
@@ -205,28 +156,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 33.133335
+  - time: 33.566666
     functionName: Spawn
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: ebccdc802edf9534796e27505295afd8, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 34.733334
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 967e6423f124cdb43a97edde39ff300d, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 36.866665
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 39.316666
     functionName: Spawn
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: 47a57f57472aff040bf2fe25c083f57a, type: 2}
@@ -261,13 +198,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 46.7
-    functionName: Spawn
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 26fd79375afa8144eafe700d9ad61fc1, type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 49.416668
     functionName: Spawn
     data: 
@@ -282,7 +212,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 54.033333
+  - time: 53.016666
     functionName: Spawn
     data: 
     objectReferenceParameter: {fileID: 11400000, guid: cd621d2d06ec20e4182dbbed55f98cc7, type: 2}
