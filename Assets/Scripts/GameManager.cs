@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 		playerInputManager.playerJoinedEvent.AddListener(menus[0].GetComponent<UI.StartMenu>().OnPlayerJoined);
 		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
-		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
+		
 	}
 
 	private void Start()
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		SetStartMenu();
-		
+		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
