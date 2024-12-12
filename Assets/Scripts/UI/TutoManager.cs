@@ -23,7 +23,7 @@ public class TutoManager : MonoBehaviour
 
 	public void NextImage(bool green)
 	{
-		print(green);
+		print("green ?" + green);
 		print(awaitPlayer);
 		if (awaitPlayer != AwaitPlayerInputType.Both &&
 		  ((awaitPlayer == AwaitPlayerInputType.Green && !green) || (awaitPlayer == AwaitPlayerInputType.Pink && green)))
@@ -31,7 +31,7 @@ public class TutoManager : MonoBehaviour
 
 		if(++imgIndex == 5)
 		{
-			GameManager.Instance.EndTuto();
+			//GameManager.Instance.EndTuto();
 			gameObject.SetActive(false);
 			return;
 		}

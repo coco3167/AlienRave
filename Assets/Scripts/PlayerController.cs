@@ -24,8 +24,6 @@ public class PlayerController : Pausable, IHarmable
 
 	private bool canTakeDmg = true;
 
-	[HideInInspector] public bool tuto = true;
-
 	private void Awake()
 	{
 		input = GetComponent<PlayerInput>();
@@ -36,7 +34,6 @@ public class PlayerController : Pausable, IHarmable
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
 		Pause();
-		tuto = true;
 	}
 
 	private void FixedUpdate()
@@ -60,16 +57,8 @@ public class PlayerController : Pausable, IHarmable
 
 	public void OnShoot(InputAction.CallbackContext ctx)
 	{
-		print("Bah alors le shoot");
-		if (ctx.performed) print(tuto);
-		if(tuto && ctx.performed)
-		{
-			print("bah alors le tuto");
-			TutoManager.Instance.NextImage(tag.Contains("Green"));
-			return;
-		}
 
-		if (isPaused || tuto) return;
+		if (isPaused) return;
 		shooting = ctx.performed;
 		anim.SetBool("Shoot", shooting);
 	}

@@ -46,8 +46,6 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
 
-	[HideInInspector] public bool tuto = true;
-
 	#region Événements
 
 	public delegate void TimeChange();
@@ -252,11 +250,6 @@ public class GameManager : MonoBehaviour
 	{
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
-			
-		if (tuto)
-		{
-			return true;
-		}
 		
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
@@ -267,13 +260,13 @@ public class GameManager : MonoBehaviour
 		return true;
 	}
 
-	public void EndTuto()
+	/*public void EndTuto()
 	{
 		print("non");
 		foreach (var player in players) player.tuto = false;
 		tuto = false;
 		Play();
-	}
+	}*/
 
 	public void Restart(bool showMainMenu)
 	{
