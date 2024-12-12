@@ -2077,6 +2077,22 @@ PrefabInstance:
       value: event:/Music/GameStatus
       objectReference: {fileID: 0}
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data1
+      value: 927792389
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data2
+      value: 1144679613
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data3
+      value: -72083524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data4
+      value: -1771455578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <gameStatus>k__BackingField.Guid.Data1
       value: 268306134
       objectReference: {fileID: 0}
@@ -2091,6 +2107,26 @@ PrefabInstance:
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <gameStatus>k__BackingField.Guid.Data4
       value: 1372572912
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <drunkEnemyChenille>k__BackingField.Path
+      value: event:/SFX/DrunkEnemy/DrunkEnemy Chenille
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <drunkEnemyChenille>k__BackingField.Guid.Data1
+      value: 490924033
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <drunkEnemyChenille>k__BackingField.Guid.Data2
+      value: 1188099524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <drunkEnemyChenille>k__BackingField.Guid.Data3
+      value: 765814919
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <drunkEnemyChenille>k__BackingField.Guid.Data4
+      value: 1266333934
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

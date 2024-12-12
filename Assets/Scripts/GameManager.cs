@@ -327,6 +327,7 @@ public class GameManager : MonoBehaviour
 	public void ChangeMainMusicState(LDTool.LevelAnimationSpawner.MusicState newMusicState)
 	{
 		musicState = newMusicState;
-		// TODO change Fmod state
+		Debug.Log(musicState);
+		AudioManager.Instance.SetMusicParameter("LevelState", "musicState");
 	}
 }
