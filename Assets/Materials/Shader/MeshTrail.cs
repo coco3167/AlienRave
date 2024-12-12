@@ -16,7 +16,6 @@ public class MeshTrail : MonoBehaviour
     public float shaderVarRate = 0.1f;
     public float shaderVarRefresh = 0.05f;
 
-    private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
 
     public IEnumerator ActivateTrail()
@@ -53,8 +52,6 @@ public class MeshTrail : MonoBehaviour
 
             yield return new WaitForSeconds(meshRefreshRate);
         }
-
-        isTrailActive = false;
     }
 
     IEnumerator AnimateMaterialfloat(Material mat, float goal, float rate, float refreshRate)
