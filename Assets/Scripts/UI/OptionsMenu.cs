@@ -9,8 +9,8 @@ namespace UI
     {
         [SerializeField] private GameObject firstSelectedGameobject;
 
+        [SerializeField] private Slider masterSlider;
         [SerializeField] private Slider musicSlider;
-        [SerializeField] private Slider voicesSlider;
         [SerializeField] private Slider SFXSlider;
         [SerializeField] private Image backgroundImage;
 
@@ -43,10 +43,9 @@ namespace UI
             gameObject.SetActive(false);
         }
 
-        public void OnMusicVolumeChanged()
+        /*public void OnMusicVolumeChanged()
         {
-            Debug.LogWarning("Music volume change not implemented");
-            
+            //SetVolume();    
         }
     
         public void OnVoicesVolumeChanged()
@@ -57,6 +56,6 @@ namespace UI
         public void OnSFXVolumeChanged()
         {
             Debug.LogWarning("SFX volume change not implemented");
-        }
+        }*/
     }
 }

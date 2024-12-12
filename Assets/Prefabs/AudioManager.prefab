@@ -273,10 +273,10 @@ MonoBehaviour:
     Path: event:/Crowd/CrowdGroup
   <music>k__BackingField:
     Guid:
-      Data1: 1961496942
-      Data2: 1331048661
-      Data3: -1891327314
-      Data4: 2066002183
+      Data1: 927792389
+      Data2: 1144679613
+      Data3: -72083524
+      Data4: -1771455578
     Path: event:/Music/Music
   musicStateParameterName: LevelState
   pauseParameterName: GameStatus

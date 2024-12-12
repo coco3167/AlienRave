@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedGameobject: {fileID: 2091516297279593624}
-  musicSlider: {fileID: 3200688032720230215}
-  voicesSlider: {fileID: 8756071748588612140}
+  masterSlider: {fileID: 3200688032720230215}
+  musicSlider: {fileID: 8756071748588612140}
   SFXSlider: {fileID: 7098658315159539437}
   backgroundImage: {fileID: 5657853471054553495}
   backEvent:
@@ -956,14 +956,6 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 8756071748588612140}
-    - target: {fileID: 4761973889156835140, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4761973889156835140, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1615390155224050632}
     - target: {fileID: 5285170902821396414, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

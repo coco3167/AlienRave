@@ -591,6 +591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b944c2ad33473d489367751c9dda07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTxt: {fileID: 0}
+  multiTxt: {fileID: 0}
+  multiSlider: {fileID: 0}
+  powerUpUIs: []
 --- !u!1 &473386884 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9116671949989215893, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
@@ -1005,7 +1009,7 @@ MonoBehaviour:
       Data2: 1331048661
       Data3: -1891327314
       Data4: 2066002183
-    Path: event:/Music/Music1
+    Path: event:/Music/MusicAdaptative
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2

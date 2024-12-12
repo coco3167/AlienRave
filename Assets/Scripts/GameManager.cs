@@ -233,6 +233,7 @@ public class GameManager : MonoBehaviour
 	public void SetStartMenu()
 	{
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -258,6 +259,7 @@ public class GameManager : MonoBehaviour
 		}
 		
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
