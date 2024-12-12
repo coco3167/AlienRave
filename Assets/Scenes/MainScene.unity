@@ -2482,7 +2482,7 @@ PrefabInstance:
       objectReference: {fileID: 326727643}
     - target: {fileID: 2509381696475723118, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: needsForTwoPlayers
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2853314701369332577, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2793,20 +2793,24 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Path
+      value: event:/Music/MusicAdaptative
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <music>k__BackingField.Guid.Data1
-      value: 927792389
+      value: 1961496942
       objectReference: {fileID: 0}
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <music>k__BackingField.Guid.Data2
-      value: 1144679613
+      value: 1331048661
       objectReference: {fileID: 0}
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <music>k__BackingField.Guid.Data3
-      value: -72083524
+      value: -1891327314
       objectReference: {fileID: 0}
     - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: <music>k__BackingField.Guid.Data4
-      value: -1771455578
+      value: 2066002183
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     }
     public void SetMusicParameter(string parameterName, string parameterLabel)
     {
+        Debug.Log(parameterName + " " + parameterLabel);
         musicInstance.setParameterByNameWithLabel(parameterName, parameterLabel);
     }
     public void SetAmbParameter(string parameterName, string parameterLabel)

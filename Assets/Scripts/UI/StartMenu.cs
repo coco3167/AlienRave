@@ -39,7 +39,10 @@ namespace UI
             if(GameManager.Instance.Play())
             {
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIClickButton, this.transform.position);
+                AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
+
 				return;
+                
 			}
             return;
             // Add animation when 2 players are not connected
