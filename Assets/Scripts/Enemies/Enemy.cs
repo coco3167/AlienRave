@@ -12,7 +12,7 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected int health;
 
 	private bool IsDead => health <= 0;
-	private int pauseStack;
+	protected int pauseStack;
 
 	protected override void Awake()
 	{

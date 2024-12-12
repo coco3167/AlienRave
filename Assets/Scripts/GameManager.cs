@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
-		
+
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 
 		isPlaying = true;
