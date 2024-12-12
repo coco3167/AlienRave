@@ -12,6 +12,8 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected int health;
 
 	private bool IsDead => health <= 0;
+	private bool isFrozen;
+	private int pauseStack;
 
 	protected override void Awake()
 	{
@@ -37,6 +39,8 @@ public abstract class Enemy : Scrolling, IHarmable
 	protected virtual IEnumerator FreezeFrame()
 	{
 		Pause();
+		isFrozen = true;
+		
 		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Effect", 1f);
@@ -50,19 +54,25 @@ public abstract class Enemy : Scrolling, IHarmable
 		}
 		
 		if (health <= 0) Die();
-
-		if (!paused)
-			Play();
+		
+		Play();
+		isFrozen = false;
 	}
 
 	protected override void Pause()
 	{
+		pauseStack++;
+		if (pauseStack < 1)
+			return;
 		base.Pause();
 		anim.enabled = false;
 	}
 
 	protected override void Play()
 	{
+		pauseStack--;
+		if(pauseStack > 0)
+			return;
 		base.Play();
 		anim.enabled = true;
 	}
