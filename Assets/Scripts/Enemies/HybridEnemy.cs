@@ -66,14 +66,14 @@ public class HybridEnemy : ThrowEnemy
 	protected override IEnumerator FreezeFrame()
 	{
 		Pause();
-		foreach (Material material in renderer.materials)
+		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Effect", 1f);
 		}
 
 		yield return new WaitForSeconds(freezeTime);
 		
-		foreach (Material material in renderer.materials)
+		foreach (Material material in rend.materials)
 		{
 			material.SetFloat("_Effect", 0f);
 		}

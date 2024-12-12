@@ -197,7 +197,7 @@ PrefabInstance:
     - target: {fileID: -751053091955376463, guid: 7f4fa2d73a896de44bf96f3da4b33e0b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c2721b7160803aa40b6c7f2f2ce3db91, type: 2}
+      objectReference: {fileID: 2100000, guid: 520cef0f9eb006e489461d62e5237663, type: 2}
     - target: {fileID: 919132149155446097, guid: 7f4fa2d73a896de44bf96f3da4b33e0b, type: 3}
       propertyPath: m_Name
       value: SM_CrowdMember
