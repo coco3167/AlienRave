@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private int maxPlayersHealth;
 	private int playersHealth;
+	private bool isDead;
 
 	//private float tmpObstacleSPawnertimer = 2f;
 
@@ -147,7 +148,11 @@ public class GameManager : MonoBehaviour
 		print(damage);
 		playersHealth -= damage;
 		print(playersHealth);
-		if (playersHealth <= 0) ShowUIScreen(ScreenState.Lose);
+		if (!isDead && playersHealth <= 0)
+		{
+			isDead = true;
+			ShowUIScreen(ScreenState.Lose);
+		}
 		else hud.UpdateLifeVisuals(playersHealth);
 	}
 
