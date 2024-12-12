@@ -8,9 +8,85 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284278926963346886, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284278926963346886, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1931516080, guid: 90a58281182a3e44da4cbf7f817b73bd, type: 3}
+    - target: {fileID: 284278926963346886, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.76504785
+      objectReference: {fileID: 0}
+    - target: {fileID: 284278926963346886, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 284278926963346886, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.42216086
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.033018887
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.9032199
+      objectReference: {fileID: 0}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 526596592, guid: 90a58281182a3e44da4cbf7f817b73bd, type: 3}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 1931516080, guid: 90a58281182a3e44da4cbf7f817b73bd, type: 3}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 345697042, guid: 90a58281182a3e44da4cbf7f817b73bd, type: 3}
+    - target: {fileID: 914945965572507141, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 1931516080, guid: 90a58281182a3e44da4cbf7f817b73bd, type: 3}
     - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_text
       value: Options
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877142655305644656, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5019020346901725231, guid: 18e9c39d1be97a241a71d9d320b0c2f5, type: 3}
       propertyPath: m_Name

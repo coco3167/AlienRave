@@ -45,7 +45,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: {x: -29.1, y: 14.697, z: -26.2}
         inSlope: {x: 6.32, y: 9.707084, z: 0}
         outSlope: {x: 6.32, y: 9.707084, z: 0}
@@ -201,14 +201,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: {x: -30.456, y: -25.998, z: -25.847}
-        inSlope: {x: 0, y: -4.046669, z: -1.1325009}
-        outSlope: {x: 0, y: -4.046669, z: -1.1325009}
+        inSlope: {x: 0, y: -4.8560033, z: -1.3590012}
+        outSlope: {x: 0, y: -4.8560033, z: -1.3590012}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: {x: -29.1, y: -27.212, z: -26.2}
         inSlope: {x: 3.0133307, y: 0, z: 0}
         outSlope: {x: 3.0133307, y: 0, z: 0}
@@ -262,14 +262,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: {x: 12.993, y: -3.066, z: -38.684}
-        inSlope: {x: 36.726665, y: 0, z: 20.539999}
-        outSlope: {x: 36.726665, y: 0, z: 20.539999}
+        inSlope: {x: 44.072, y: 0, z: 24.648}
+        outSlope: {x: 44.072, y: 0, z: 24.648}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: {x: 29.317, y: -7.546, z: -24.984}
         inSlope: {x: 0, y: -9.955555, z: 12.657776}
         outSlope: {x: 0, y: -9.955555, z: 12.657776}
@@ -425,7 +425,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2
-        value: {x: 1.8645861, y: 8.557805, z: 0.16496554}
+        value: {x: 1.57, y: 8.9, z: 0.167}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -518,7 +518,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.18368183, y: 14.489414, z: 0.237514}
+        value: {x: 1.17, y: 12.91, z: 0.228}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -527,7 +527,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2
-        value: {x: -0.18368062, y: 14.489414, z: 0.23751397}
+        value: {x: 0.76, y: 13.39, z: 0.231}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -536,7 +536,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4.4
-        value: {x: -0.18368183, y: 14.489414, z: 0.237514}
+        value: {x: 1.17, y: 12.91, z: 0.228}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -728,7 +728,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -29.1
         inSlope: 6.32
         outSlope: 6.32
@@ -785,7 +785,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: 14.697
         inSlope: 9.707084
         outSlope: 9.707084
@@ -842,7 +842,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -26.2
         inSlope: 0
         outSlope: 0
@@ -1259,7 +1259,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -29.1
         inSlope: 3.0133307
         outSlope: 3.0133307
@@ -1318,14 +1318,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: -25.998
-        inSlope: -4.046669
-        outSlope: -4.046669
+        inSlope: -4.8560033
+        outSlope: -4.8560033
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -27.212
         inSlope: 0
         outSlope: 0
@@ -1384,14 +1384,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: -25.847
-        inSlope: -1.1325009
-        outSlope: -1.1325009
+        inSlope: -1.3590012
+        outSlope: -1.3590012
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -26.2
         inSlope: 0
         outSlope: 0
@@ -1450,14 +1450,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: 12.993
-        inSlope: 36.726665
-        outSlope: 36.726665
+        inSlope: 44.072
+        outSlope: 44.072
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: 29.317
         inSlope: 0
         outSlope: 0
@@ -1523,7 +1523,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -7.546
         inSlope: -9.955555
         outSlope: -9.955555
@@ -1582,14 +1582,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 2.6
         value: -38.684
-        inSlope: 20.539999
-        outSlope: 20.539999
+        inSlope: 24.648
+        outSlope: 24.648
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.2
+        time: 3
         value: -24.984
         inSlope: 12.657776
         outSlope: 12.657776
@@ -2034,7 +2034,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 1.8645861
+        value: 1.57
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2073,7 +2073,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 8.557805
+        value: 8.9
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2112,7 +2112,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 0.16496554
+        value: 0.167
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2376,7 +2376,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.18368183
+        value: 1.17
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2385,7 +2385,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: -0.18368062
+        value: 0.76
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2394,7 +2394,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.4
-        value: -0.18368183
+        value: 1.17
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2415,7 +2415,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 14.489414
+        value: 12.91
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2424,7 +2424,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 14.489414
+        value: 13.39
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2433,7 +2433,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.4
-        value: 14.489414
+        value: 12.91
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2454,7 +2454,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.237514
+        value: 0.228
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2463,7 +2463,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 0.23751397
+        value: 0.231
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2472,7 +2472,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.4
-        value: 0.237514
+        value: 0.228
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2496,114 +2496,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Spot Light
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Spot Light
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Spot Light
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Spot Light color (2)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Spot Light color (2)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Spot Light color (2)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Spot Light (5)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Spot Light (5)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Spot Light (5)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
     path: Spot Light color
     classID: 4
     script: {fileID: 0}
@@ -2629,6 +2521,42 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: Spot Light color
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Spot Light color (1)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Spot Light color (1)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Spot Light color (1)
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2676,7 +2604,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Spot Light (1)
+    path: Spot Light (5)
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2688,7 +2616,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Spot Light (1)
+    path: Spot Light (5)
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2700,31 +2628,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Spot Light (1)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Spot Light color (1)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Spot Light color (1)
+    path: Spot Light (5)
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -2736,7 +2640,103 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Spot Light color (1)
+    path: Spot Light (1)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Spot Light (1)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Spot Light (1)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Spot Light
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Spot Light
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Spot Light
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Spot Light color (2)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Spot Light color (2)
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Spot Light color (2)
     classID: 4
     script: {fileID: 0}
     flags: 0
