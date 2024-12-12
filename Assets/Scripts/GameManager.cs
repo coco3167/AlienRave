@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour
 		playerInputManager.playerJoinedEvent.AddListener(menus[0].GetComponent<UI.StartMenu>().OnPlayerJoined);
 		foreach (var data in playerDatas) data.ResetData();
 		playersHealth = maxPlayersHealth;
-		
 	}
 
 	private void Start()

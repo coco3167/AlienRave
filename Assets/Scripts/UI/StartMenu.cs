@@ -24,7 +24,7 @@ namespace UI
 
         private void OnEnable()
         {
-            GetFocus();
+            //GetFocus();
         }
 
         private void FixedUpdate()

@@ -33,7 +33,14 @@ public class PlayerController : Pausable, IHarmable
 		shootTimer = data.fireRate;
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
-		//Pause();
+		Pause();
+		
+	}
+
+	protected override void Start()
+	{
+		base.Start();
+		GameManager.Instance.OnPlayerInstantiated(tag.Contains("Green"));
 	}
 
 	private void FixedUpdate()
@@ -120,6 +127,7 @@ public class PlayerController : Pausable, IHarmable
 
 	protected override void Play()
 	{
+		print($"{name} -> play");
 		isPaused = false;
 		// input.enabled = true;
 		anim.enabled = true;
