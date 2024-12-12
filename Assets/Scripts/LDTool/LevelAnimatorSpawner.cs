@@ -11,7 +11,7 @@ namespace LDTool
 	{
 		public enum MusicState
      	{
-     		StartMenu, Pause, Chapter1, Chapter2, Chapter3
+     		Chapter1, Chapter2, Chapter3
      	}
 		#region Attributs
 

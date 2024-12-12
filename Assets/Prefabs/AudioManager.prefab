@@ -215,6 +215,48 @@ MonoBehaviour:
       Data3: 1643285168
       Data4: -981116851
     Path: event:/SFX/KisserEnemy/Kisses
+  <uIOnButton>k__BackingField:
+    Guid:
+      Data1: -1585287233
+      Data2: 1202497319
+      Data3: -881823843
+      Data4: 2123178207
+    Path: event:/SFX/UI/UiOnButton
+  <uIClickButton>k__BackingField:
+    Guid:
+      Data1: 808323165
+      Data2: 1312800242
+      Data3: 149575349
+      Data4: 354391493
+    Path: event:/SFX/UI/UiStart
+  <notification>k__BackingField:
+    Guid:
+      Data1: -1187383163
+      Data2: 1234520659
+      Data3: -197410145
+      Data4: -1671292523
+    Path: event:/SFX/UI/Notification
+  <sendMessage>k__BackingField:
+    Guid:
+      Data1: 769292977
+      Data2: 1236925879
+      Data3: 92116614
+      Data4: -652564708
+    Path: event:/SFX/UI/SendMessage
+  <pickUp>k__BackingField:
+    Guid:
+      Data1: -2085771098
+      Data2: 1100781680
+      Data3: -2046449483
+      Data4: 1970555318
+    Path: event:/SFX/HUD/PickUp PowerUp
+  <scoreUp>k__BackingField:
+    Guid:
+      Data1: -1052827806
+      Data2: 1146582088
+      Data3: -313252942
+      Data4: 1756542844
+    Path: event:/SFX/HUD/ScoreUp
   <crowd2D>k__BackingField:
     Guid:
       Data1: -592237271
@@ -236,3 +278,5 @@ MonoBehaviour:
       Data3: -1891327314
       Data4: 2066002183
     Path: event:/Music/Music
+  musicStateParameterName: LevelState
+  pauseParameterName: GameStatus
