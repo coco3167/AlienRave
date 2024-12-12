@@ -8,6 +8,7 @@ public class HUDManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI scoreTxt;
 	[SerializeField] private TextMeshProUGUI multiTxt;
 	[SerializeField] private Transform multiSlider;
+    [SerializeField] private ProgressBar progressBar;
 
 	[SerializeField] private PowerUpUI[] powerUpUIs;
 
@@ -37,6 +38,9 @@ public class HUDManager : MonoBehaviour
 		powerUpUIs[index].Toggle(false);
 	}
 
+	public void InitializeProgressBar() => progressBar.SetMaxValue(60 * 3);
+	public void PauseProgressBar() => progressBar.Pause();
+	public void RunProgressBar() => progressBar.Run();
 	public void UpdateScore(int score) => scoreTxt.text = $"Score : {score}";
 
 	public void UpdateMulti(int multi) => multiTxt.text = $"X{multi}";
