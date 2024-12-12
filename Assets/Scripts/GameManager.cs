@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private List<GameObject> menus;
 	[SerializeField] private bool needsForTwoPlayers;
 	[SerializeField] private StartMenu startMenu;
+	[SerializeField] private Transform[] playerSpawnPos;
 
 	private PlayerInputManager playerInputManager;
 	private PlayerController[] players = new PlayerController[2];
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour
 		playerInput.onDeviceRegained += OnDeviceReconnected;
 
 		PlayerController ctrl = playerInput.GetComponent<PlayerController>();
+		ctrl.transform.position = playerSpawnPos[nbPlayers].position;
 		players[nbPlayers] = ctrl;
 		audioListener.AddPlayer(ctrl.transform);
 		if (nbPlayers++ == 0) playerInputManager.playerPrefab = playerPrefabs[1];
@@ -279,7 +281,7 @@ public class GameManager : MonoBehaviour
 
 	public void OnPlayerInstantiated(bool green)
 	{
-		if (green) return;
+		if (green && needsForTwoPlayers) return;
 		startMenu.GetFocus();
 	}
 
