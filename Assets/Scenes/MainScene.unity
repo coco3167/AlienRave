@@ -613,8 +613,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296089058}
-  - component: {fileID: 296089057}
-  - component: {fileID: 296089059}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -622,37 +620,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &296089057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1961496942
-      Data2: 1331048661
-      Data3: -1891327314
-      Data4: 2066002183
-    Path: event:/Music/Music
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!4 &296089058
 Transform:
   m_ObjectHideFlags: 0
@@ -668,37 +635,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &296089059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -592237271
-      Data2: 1257739683
-      Data3: 1796911806
-      Data4: 210793111
-    Path: event:/Crowd/CrowdBackground
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &326727643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7586191970783341175, guid: f7435f27299406144997c61285852dd7, type: 3}
@@ -2855,6 +2791,22 @@ PrefabInstance:
     - target: {fileID: 2333502669818488630, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data1
+      value: 927792389
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data2
+      value: 1144679613
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data3
+      value: -72083524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641204307233176773, guid: 1af52a21623da2e448bf528c143f1768, type: 3}
+      propertyPath: <music>k__BackingField.Guid.Data4
+      value: -1771455578
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
