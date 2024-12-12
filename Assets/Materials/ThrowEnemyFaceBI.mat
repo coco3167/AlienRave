@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ThrowEnemyFace
+  m_Name: ThrowEnemyFaceBI
   m_Shader: {fileID: -6465566751694194690, guid: 2a12576d9f9c9dd45992c2dcb6906364, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ce3fe6790758cfa4496774af5079a23a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 79f506c99c0dd8e44bb37759b691fbfc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
