@@ -401,37 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febcb4e067ae2244f80ce70a17545277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &296089056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 296089058}
-  m_Layer: 0
-  m_Name: MusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &296089058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296089056}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9787583, y: -13.873195, z: 63.157616}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &326727643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7586191970783341175, guid: f7435f27299406144997c61285852dd7, type: 3}
@@ -2000,7 +1969,7 @@ PrefabInstance:
       objectReference: {fileID: 326727643}
     - target: {fileID: 2509381696475723118, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: needsForTwoPlayers
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2853314701369332577, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2137,7 +2106,6 @@ SceneRoots:
   - {fileID: 1243119432}
   - {fileID: 1888672561}
   - {fileID: 7723536141749916865}
-  - {fileID: 296089058}
   - {fileID: 1843075153}
   - {fileID: 895528001310317170}
   - {fileID: 1754725856}

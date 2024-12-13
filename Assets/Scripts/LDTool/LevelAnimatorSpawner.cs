@@ -121,6 +121,7 @@ namespace LDTool
 
 		public void ChangeMusic(MusicState newMusicState)
 		{
+			print(newMusicState);
 			GameManager.Instance.ChangeMainMusicState(newMusicState);
 		}
 	}
