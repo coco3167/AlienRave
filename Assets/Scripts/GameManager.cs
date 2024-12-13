@@ -80,7 +80,6 @@ public class GameManager : MonoBehaviour
 
 		hud.InitializeProgressBar();
 		SetStartMenu();
-		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -245,6 +244,7 @@ public class GameManager : MonoBehaviour
 	public void SetStartMenu()
 	{
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -315,6 +315,7 @@ public class GameManager : MonoBehaviour
 		switch(state)
 		{
 			case ScreenState.Start:
+				AudioManager.Instance.SetMusicParameter("GameStatus", "Play"); 
 				menus[0].SetActive(true);
 				AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 				AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
@@ -375,6 +376,9 @@ public class GameManager : MonoBehaviour
 		Debug.Log(musicState);
 		switch (newMusicState)
 		{
+			/*case LDTool.LevelAnimationSpawner.MusicState.Chapter1:
+				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
+				break;*/
 			case LDTool.LevelAnimationSpawner.MusicState.Chapter2:
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 2");
 				break;
@@ -382,6 +386,5 @@ public class GameManager : MonoBehaviour
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 3");
 				break;
 		}
-		AudioManager.Instance.SetMusicParameter("LevelState", "musicState");
 	}
 }
