@@ -9,8 +9,9 @@ namespace UI
     {
         [SerializeField] private GameObject firstSelectedGameobject;
 
+        [SerializeField] private Slider masterSlider;
         [SerializeField] private Slider musicSlider;
-        [SerializeField] private Slider voicesSlider;
+        [SerializeField] private Slider ambSlider;
         [SerializeField] private Slider SFXSlider;
         [SerializeField] private Image backgroundImage;
 
