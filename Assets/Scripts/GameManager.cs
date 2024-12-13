@@ -310,11 +310,13 @@ public class GameManager : MonoBehaviour
 				areUWinningSon = true;
 				OnPause?.Invoke();
 				StartCoroutine(TransitionStateScreen(2));
+				AudioManager.Instance.SetMusicParameter("LevelState", "Success");
 				break;
 			case ScreenState.Lose:
 				areUWinningSon = false;
 				OnPause?.Invoke();
 				StartCoroutine(TransitionStateScreen(2));
+				AudioManager.Instance.SetMusicParameter("LevelState", "GameOver");
 				break;
 		}
 	}
