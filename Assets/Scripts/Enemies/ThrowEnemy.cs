@@ -51,9 +51,9 @@ public class ThrowEnemy : Enemy
 		else StartCoroutine(ShootTimer(false));
 	}
 
-	protected virtual void EndSalvo(bool hybrid = false)
+	protected virtual void EndSalvo()
 	{
-		if(!hybrid) anim.SetBool("Shooting", false);
+		anim.SetBool("Shooting", false);
 		StartCoroutine(ShootTimer(true));
 		nbProjectileShot = 0;
 
@@ -69,7 +69,7 @@ public class ThrowEnemy : Enemy
 		nbSalvos = 0;
 	}
 
-	protected IEnumerator ShootTimer(bool restartSalvo)
+	protected virtual IEnumerator ShootTimer(bool restartSalvo)
 	{
 		yield return new WaitForSeconds(restartSalvo ? Data.salvoCooldown : Data.shootCooldown);
 		if(pauseStack >= 1) pausedSalvo = true;

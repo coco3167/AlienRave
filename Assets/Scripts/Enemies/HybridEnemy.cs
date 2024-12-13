@@ -35,7 +35,7 @@ public class HybridEnemy : ThrowEnemy
 	private IEnumerator SalvoEndDelay()
 	{
 		yield return new WaitForSeconds(Data.salvoCooldown);
-		EndSalvo(true);
+		EndSalvo();
 	}
 
 	public override void Harm(int damage, bool green = false)
@@ -59,8 +59,23 @@ public class HybridEnemy : ThrowEnemy
 		}
 
 		StartCoroutine(FreezeFrame());
+	}
 
-		
+	protected override void EndSalvo()
+	{
+		StartCoroutine(ShootTimer(true));
+		nbProjectileShot = 0;
+
+		if (++nbSalvos < Data.nbSalvoBeforeMove)
+		{
+			scrollDir = Vector3.back;
+			return;
+		}
+
+		anim.SetBool("Moving", true);
+		moveDir = transform.position.x > 0 ? Vector3.left : Vector3.right;
+		scrollDir = Vector3.zero;
+		nbSalvos = 0;
 	}
 
 	protected override IEnumerator FreezeFrame()
@@ -85,6 +100,12 @@ public class HybridEnemy : ThrowEnemy
 		}
 		
 		Play();
+	}
+
+	protected override IEnumerator ShootTimer(bool restartSalvo)
+	{
+		yield return new WaitForSeconds(restartSalvo ? Data.salvoCooldown : Data.shootCooldown);
+		 Shoot();
 	}
 
 	protected override void ResetLife()

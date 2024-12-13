@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HybridEnemy
   m_EditorClassIdentifier: 
   speed: 300
-  maxHealth: 150
+  maxHealth: 100
   damage: 1
   scoreValue: 2000
   shootCooldown: 1
