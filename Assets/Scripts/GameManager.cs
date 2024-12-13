@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private bool needsForTwoPlayers;
 	[SerializeField] private StartMenu startMenu;
 	[SerializeField] private Transform[] playerSpawnPos;
+	[SerializeField] private Animator playerHurtAnim;
 
 	private PlayerInputManager playerInputManager;
 	private PlayerController[] players = new PlayerController[2];
@@ -150,9 +151,8 @@ public class GameManager : MonoBehaviour
 
 	public void Harm(int damage)
 	{
-		print(damage);
 		playersHealth -= damage;
-		print(playersHealth);
+		playerHurtAnim.SetTrigger("Hurt");
 		if (!isDead && playersHealth <= 0)
 		{
 			isDead = true;
