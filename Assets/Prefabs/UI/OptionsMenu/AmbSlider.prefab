@@ -18,7 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: ee43d5712466ced4a9c0bf109457ba62, type: 3}
     - target: {fileID: 330187958178975221, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: VcaName
-      value: Amb
+      value: SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536058178561932291, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536058178561932291, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2616264381355325576, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_Type
@@ -138,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6356030101603870393, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_text
-      value: Ambience
+      value: SFX
       objectReference: {fileID: 0}
     - target: {fileID: 7347748638339284496, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_Name
@@ -162,15 +170,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8354687766190437112, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.52
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8354687766190437112, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.52
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8354687766190437112, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.52
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
