@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class degaAnimationController : MonoBehaviour
+public class degaAnimationTrigger : MonoBehaviour
 {
-    [SerializeField]private Animator targetAnimator;
+    public string targetGameObjectName;
+    private Animator targetAnimator;
 
     void Start()
     {
-        // Recherchez le GameObject par son tag
-        GameObject targetObject = GameObject.FindWithTag("TargetAnimator");
-        if (targetObject != null)
+        GameObject targetGameObject = GameObject.Find(targetGameObjectName);
+        if (targetGameObject != null)
         {
-            targetAnimator = targetObject.GetComponent<Animator>();
+            targetAnimator = targetGameObject.GetComponent<Animator>();
         }
     }
 
-    public void TriggerDegat()
+    public void TriggerDegaAnimation()
     {
         if (targetAnimator != null)
         {
