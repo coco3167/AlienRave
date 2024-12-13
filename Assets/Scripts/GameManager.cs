@@ -265,13 +265,14 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 
-		if(!hasHadTuto)
+		if (!hasHadTuto)
 		{
+			AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
 			HideUIScreen();
 			TutoManager.Instance.LaunchTuto();
 			return false;
 		}
-
+	
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
@@ -315,7 +316,6 @@ public class GameManager : MonoBehaviour
 		switch(state)
 		{
 			case ScreenState.Start:
-				AudioManager.Instance.SetMusicParameter("GameStatus", "Play"); 
 				menus[0].SetActive(true);
 				AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 				AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
