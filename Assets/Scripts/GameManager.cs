@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
 			return;
 
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
+		hud.PauseProgressBar();
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -267,6 +268,7 @@ public class GameManager : MonoBehaviour
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
+		hud.RunProgressBar();
 		EnvironmentManager.Instance.started = true;
 		return true;
 	}
