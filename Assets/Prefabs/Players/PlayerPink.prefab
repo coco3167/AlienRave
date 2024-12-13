@@ -150,6 +150,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae96c2d172aba584ca4450e7cbcfb540, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8749282623437821604}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae96c2d172aba584ca4450e7cbcfb540, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3938017031847269135}
   m_SourcePrefab: {fileID: 100100000, guid: ae96c2d172aba584ca4450e7cbcfb540, type: 3}
 --- !u!1 &2762745217123211607 stripped
 GameObject:
@@ -178,6 +181,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3938017031847269135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762745217123211607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30c26c151196d6c45a7a0eaec83fe34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGameObjectName: domageScreen
 --- !u!4 &3250735332177052653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ae96c2d172aba584ca4450e7cbcfb540, type: 3}
