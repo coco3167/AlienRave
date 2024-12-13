@@ -288,6 +288,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 742370149752863899}
     m_Modifications:
+    - target: {fileID: 1534469848091079603, guid: 503f37b636c215b4e9b6598447173376, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534469848091079603, guid: 503f37b636c215b4e9b6598447173376, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1897038170764477173, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -368,10 +376,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3670287988412301893, guid: 503f37b636c215b4e9b6598447173376, type: 3}
-      propertyPath: VcaName
-      value: Amb
-      objectReference: {fileID: 0}
     - target: {fileID: 5011304663244963144, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -388,10 +392,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VoicesSlider
       objectReference: {fileID: 0}
-    - target: {fileID: 7948656511660960009, guid: 503f37b636c215b4e9b6598447173376, type: 3}
-      propertyPath: m_text
-      value: Ambience
-      objectReference: {fileID: 0}
     - target: {fileID: 8390071199862663412, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
@@ -400,10 +400,6 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 2092233116243678328}
-    - target: {fileID: 8390071199862663412, guid: 503f37b636c215b4e9b6598447173376, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1615390155224050632}
     - target: {fileID: 9161123905304924174, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -854,6 +850,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3670287988412301893, guid: 503f37b636c215b4e9b6598447173376, type: 3}
+      propertyPath: VcaName
+      value: SFX
+      objectReference: {fileID: 0}
     - target: {fileID: 5011304663244963144, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 7948656511660960009, guid: 503f37b636c215b4e9b6598447173376, type: 3}
+      propertyPath: m_text
+      value: SFX
+      objectReference: {fileID: 0}
     - target: {fileID: 8390071199862663412, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
@@ -877,7 +881,7 @@ PrefabInstance:
     - target: {fileID: 8390071199862663412, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 6658066543829479951}
+      objectReference: {fileID: 0}
     - target: {fileID: 9161123905304924174, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1025,12 +1029,16 @@ PrefabInstance:
       objectReference: {fileID: 8756071748588612140}
     - target: {fileID: 4761973889156835140, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4761973889156835140, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1615390155224050632}
+      objectReference: {fileID: 7704496751588965878}
+    - target: {fileID: 4761973889156835140, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 5285170902821396414, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1050,7 +1058,7 @@ PrefabInstance:
     - target: {fileID: 7970547366524221100, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b1faf96ee5236f438c30cb6637af069, type: 3}
+      objectReference: {fileID: 21300000, guid: 2513c81085500db45b73076770c98d2c, type: 3}
     - target: {fileID: 8354687766190437112, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1089,3 +1097,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3182296035484126533, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
   m_PrefabInstance: {fileID: 7962028564252127235}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7704496751588965878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 330187958178975221, guid: 24bb4c71e933f0f42935fa3e75ca5ebb, type: 3}
+  m_PrefabInstance: {fileID: 7962028564252127235}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1fb7b086719fc43a4c71b91b5c32b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
