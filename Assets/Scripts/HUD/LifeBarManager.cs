@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -13,10 +14,8 @@ public class LifeBarManager : MonoBehaviour
 
     private readonly List<Image> hpImgs = new();
 	
-    [SerializeField] private float ShakeMagnitude;
-    [SerializeField] private float ShakeTimer;
-	
-    private int value = 0;
+    [SerializeField] private float shakeMagnitude;
+    [SerializeField] private float shakeTimer;
 	
     private bool firstUpdate = true;
 
@@ -50,7 +49,7 @@ public class LifeBarManager : MonoBehaviour
 
     private void Shake()
     {
-        StartCoroutine(ShakeCoroutine(ShakeMagnitude, ShakeTimer));
+        StartCoroutine(ShakeCoroutine(shakeMagnitude, shakeTimer));
     }
 	
     private IEnumerator ShakeCoroutine(float magnitude, float timer)
