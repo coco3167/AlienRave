@@ -272,10 +272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstSelectedGameobject: {fileID: 2091516297279593624}
-  masterSlider: {fileID: 3200688032720230215}
+  masterSlider: {fileID: 1452539383044692091}
   musicSlider: {fileID: 3200688032720230215}
   ambSlider: {fileID: 8756071748588612140}
-  SFXSlider: {fileID: 0}
+  SFXSlider: {fileID: 2092233116243678328}
   backgroundImage: {fileID: 5657853471054553495}
   backEvent:
     m_PersistentCalls:
@@ -367,6 +367,10 @@ PrefabInstance:
     - target: {fileID: 1897038170764477173, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670287988412301893, guid: 503f37b636c215b4e9b6598447173376, type: 3}
+      propertyPath: VcaName
+      value: Amb
       objectReference: {fileID: 0}
     - target: {fileID: 5011304663244963144, guid: 503f37b636c215b4e9b6598447173376, type: 3}
       propertyPath: m_AnchorMax.x
