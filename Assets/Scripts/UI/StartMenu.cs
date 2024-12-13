@@ -13,6 +13,7 @@ namespace UI
         [SerializeField] private List<Image> playerJoinImages;
         [SerializeField] private Image backgroundImage;
         [SerializeField] private GameObject tutoScreen;
+        [SerializeField] private GameObject creditsMenu;
 
         private Sprite[] UIAnimList;
         private int animIndex;
@@ -68,6 +69,11 @@ namespace UI
         public void GetFocus()
         {
             EventSystem.current.SetSelectedGameObject(firstSelectedGameobject);
+        }
+
+        public void OpenCredits()
+        {
+            creditsMenu.gameObject.SetActive(true);
         }
     }
 }

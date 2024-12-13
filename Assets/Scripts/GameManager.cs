@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 			return;
 		}
 
+		hud.InitializeProgressBar();
 		SetStartMenu();
 	}
 
