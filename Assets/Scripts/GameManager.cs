@@ -76,7 +76,6 @@ public class GameManager : MonoBehaviour
 		}
 
 		SetStartMenu();
-		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -242,6 +241,7 @@ public class GameManager : MonoBehaviour
 	public void SetStartMenu()
 	{
 		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
 		ShowUIScreen(ScreenState.Start);
 		OnPause?.Invoke();
 	}
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
 		if(!isPlaying)
 			return;
 
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
+		
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
 		OnPause?.Invoke();
@@ -301,10 +301,12 @@ public class GameManager : MonoBehaviour
 		switch(state)
 		{
 			case ScreenState.Start:
+				AudioManager.Instance.SetMusicParameter("GameStatus", "Play"); 
 				menus[0].SetActive(true);
 				break;
 			case ScreenState.Pause:
 				StartCoroutine(TransitionStateScreen(1));
+				AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 				break;
 			case ScreenState.Win:
 				areUWinningSon = true;
@@ -358,6 +360,9 @@ public class GameManager : MonoBehaviour
 		Debug.Log(musicState);
 		switch (newMusicState)
 		{
+			case LDTool.LevelAnimationSpawner.MusicState.Chapter1:
+				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
+				break;
 			case LDTool.LevelAnimationSpawner.MusicState.Chapter2:
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 2");
 				break;
@@ -365,6 +370,5 @@ public class GameManager : MonoBehaviour
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 3");
 				break;
 		}
-		AudioManager.Instance.SetMusicParameter("LevelState", "musicState");
 	}
 }

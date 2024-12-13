@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class AudioManager : MonoBehaviour
 {
@@ -33,5 +36,9 @@ public class AudioManager : MonoBehaviour
     {
         ambInstance.setParameterByNameWithLabel(parameterName, parameterLabel);
     }
-    
+
+    private void OnDestroy()
+    {
+        musicInstance.stop(STOP_MODE.IMMEDIATE);
+    }
 }
