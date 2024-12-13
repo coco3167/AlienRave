@@ -62,8 +62,10 @@ namespace UI
 
         public void Controls()
         {
-            controlsMenu.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(controlsBackButton);
+            TutoManager.Instance.LaunchTuto(true);
+            gameObject.SetActive(false);
+            //controlsMenu.SetActive(true);
+            //EventSystem.current.SetSelectedGameObject(controlsBackButton);
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.uIOnButton, this.transform.position);
         }
 

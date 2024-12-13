@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class TutoManager : MonoBehaviour
 {
@@ -8,36 +10,52 @@ public class TutoManager : MonoBehaviour
 	private static TutoManager instance;
 	public static TutoManager Instance => instance; // TODO faire un vrai singleton
 	#endregion
-
-	[SerializeField] private Sprite[] phoneSprites;
-	[SerializeField] private Image phoneImg;
-	private int imgIndex;
-
-	private enum AwaitPlayerInputType { Green, Pink, Both }
-	private AwaitPlayerInputType awaitPlayer = AwaitPlayerInputType.Green;
+	[SerializeField] private GameObject tutoScreen;
+	[SerializeField] private VideoPlayer videoPlayer;
+	[HideInInspector] public bool inTuto;
+	bool canSkip;
+	bool menuContext;
 
 	private void Awake()
 	{
 		instance = this;
 	}
 
-	public void NextImage(bool green)
+	private void Update()
 	{
-		print("green ?" + green);
-		print(awaitPlayer);
-		if (awaitPlayer != AwaitPlayerInputType.Both &&
-		  ((awaitPlayer == AwaitPlayerInputType.Green && !green) || (awaitPlayer == AwaitPlayerInputType.Pink && green)))
-			return;
+		if(inTuto && canSkip && !videoPlayer.isPlaying) EndTuto();
+	}
 
-		if(++imgIndex == 5)
-		{
-			//GameManager.Instance.EndTuto();
-			gameObject.SetActive(false);
-			return;
-		}
+	public void LaunchTuto(bool menuContext = false)
+	{
+		this.menuContext = menuContext;
+		canSkip = false;
+		inTuto = true;
 
-		phoneImg.sprite = phoneSprites[imgIndex];
-		if (imgIndex == 4) awaitPlayer = AwaitPlayerInputType.Both;
-		else awaitPlayer = imgIndex % 2 == 0 ? AwaitPlayerInputType.Green : AwaitPlayerInputType.Pink;
+		tutoScreen.SetActive(true);
+		videoPlayer.Play();
+		StartCoroutine(TimeBeforeSkip());
+	}
+
+	public void Skip()
+	{
+		if (!canSkip) return;
+		EndTuto();
+	}
+
+	private void EndTuto()
+	{
+		videoPlayer.Stop();
+		tutoScreen.SetActive(false);
+		inTuto = false;
+		GameManager.Instance.hasHadTuto = true;
+		if (!menuContext) GameManager.Instance.Play();
+		else GameManager.Instance.ReshowPause();
+	}
+
+	private IEnumerator TimeBeforeSkip()
+	{
+		yield return new WaitForSeconds(2f);
+		canSkip = true;
 	}
 }

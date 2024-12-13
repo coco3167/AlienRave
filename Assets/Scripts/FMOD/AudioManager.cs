@@ -33,5 +33,4 @@ public class AudioManager : MonoBehaviour
     {
         ambInstance.setParameterByNameWithLabel(parameterName, parameterLabel);
     }
-    
 }

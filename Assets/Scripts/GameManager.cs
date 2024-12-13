@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector] public Queue<LastingPowerUp> powerUps = new();
 
+	[HideInInspector] public bool hasHadTuto;
+
 	#region Événements
 
 	public delegate void TimeChange();
@@ -252,7 +254,6 @@ public class GameManager : MonoBehaviour
 		if(!isPlaying)
 			return;
 
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 		hud.PauseProgressBar();
 		isPlaying = false;
 		ShowUIScreen(ScreenState.Pause);
@@ -264,7 +265,12 @@ public class GameManager : MonoBehaviour
 		if (needsForTwoPlayers && playerInputManager.playerCount < 2)
 			return false;
 
-		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
+		if(!hasHadTuto)
+		{
+			HideUIScreen();
+			TutoManager.Instance.LaunchTuto();
+			return false;
+		}
 
 		isPlaying = true;
 		OnPlay?.Invoke();
@@ -299,15 +305,23 @@ public class GameManager : MonoBehaviour
 		ShowUIScreen(ScreenState.Win);
 	}
 
+	public void ReshowPause()
+	{
+		ShowUIScreen(ScreenState.Pause);
+	}
+
 	private void ShowUIScreen(ScreenState state)
 	{
 		switch(state)
 		{
 			case ScreenState.Start:
 				menus[0].SetActive(true);
+				AudioManager.Instance.SetMusicParameter("LevelState", "StartMenu");
+				AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 				break;
 			case ScreenState.Pause:
 				StartCoroutine(TransitionStateScreen(1));
+				AudioManager.Instance.SetMusicParameter("GameStatus", "Pause");
 				break;
 			case ScreenState.Win:
 				areUWinningSon = true;

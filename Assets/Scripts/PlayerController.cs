@@ -1,8 +1,6 @@
-using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerController : Pausable, IHarmable
 {
@@ -34,7 +32,6 @@ public class PlayerController : Pausable, IHarmable
 		speedTrail = GetComponentInChildren<MeshTrail>();
 		rend = GetComponentInChildren<SkinnedMeshRenderer>();
 		Pause();
-		
 	}
 
 	protected override void Start()
@@ -64,6 +61,11 @@ public class PlayerController : Pausable, IHarmable
 
 	public void OnShoot(InputAction.CallbackContext ctx)
 	{
+		if (TutoManager.Instance.inTuto)
+		{
+			TutoManager.Instance.Skip();
+			return;
+		}
 
 		if (isPaused) return;
 		shooting = ctx.performed;
