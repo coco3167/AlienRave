@@ -363,9 +363,9 @@ public class GameManager : MonoBehaviour
 		Debug.Log(musicState);
 		switch (newMusicState)
 		{
-			case LDTool.LevelAnimationSpawner.MusicState.Chapter1:
+			/*case LDTool.LevelAnimationSpawner.MusicState.Chapter1:
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 1");
-				break;
+				break;*/
 			case LDTool.LevelAnimationSpawner.MusicState.Chapter2:
 				AudioManager.Instance.SetMusicParameter("LevelState", "Chapter 2");
 				break;
