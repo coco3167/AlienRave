@@ -26,18 +26,11 @@ public class Projectile : Spawnable
 			}
 			return;
 		}
-		
-		if (data.targetTag == "PlayerGreen" && other.CompareTag("PlayerPink"))
-		{
-			Feedback(false, other.transform);
-			Despawn();
-		}
-		if (data.targetTag == "PlayerPink" && other.CompareTag("PlayerGreen"))
-		{
-			Feedback(false, other.transform);
-			Despawn();
-		}
-		if (other.CompareTag("Obstacle"))
+		if (data.targetTag == "EnemyPink" && other.CompareTag("EnemyGreen")
+		    || data.targetTag == "EnemyGreen" && other.CompareTag("EnemyPink")
+		    || data.targetTag == "PlayerGreen" && other.CompareTag("PlayerPink")
+		    || data.targetTag == "PlayerPink" && other.CompareTag("PlayerGreen")
+		    || other.CompareTag("Obstacle"))
 		{
 			Feedback(false, other.transform);
 			Despawn();
