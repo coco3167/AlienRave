@@ -1184,6 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutoScreen: {fileID: 1079871849}
   videoPlayer: {fileID: 1079871851}
+  inTuto: 0
 --- !u!1001 &1974332348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,6 +1373,10 @@ PrefabInstance:
     - target: {fileID: 256921491202097902, guid: bdd1170680f183f429c9024014323d5e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786134281448777166, guid: bdd1170680f183f429c9024014323d5e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3088588973847828444, guid: bdd1170680f183f429c9024014323d5e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1959,6 +1964,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476935141656068047, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686110628381635314, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5772005034517231192, guid: 27761f6818294bd4f89b5edf09f6f5e7, type: 3}

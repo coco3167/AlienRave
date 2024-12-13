@@ -7,15 +7,14 @@ using Random = UnityEngine.Random;
 
 namespace LDTool
 {
-	public class LevelAnimationSpawner : MonoBehaviour
+	public class LevelAnimationSpawner : Pausable
 	{
 		public enum MusicState
      	{
      		Chapter1, Chapter2, Chapter3
      	}
-		#region Attributs
 
-		
+		#region Attributs
 		
 		[SerializeField] private Animator animator;
 		
@@ -28,12 +27,10 @@ namespace LDTool
 		private float zLength;
 		#endregion
 
-		private void Start()
+		protected override void Start()
 		{
+			base.Start();
 			zLength = Mathf.Abs(crowdSpawnPoint[0].position.z - crowdSpawnPoint[1].position.z);
-
-			GameManager.Instance.OnPause += Pause;
-			GameManager.Instance.OnPlay += Play;
 		}
 
 		public void Spawn(SpawnData spawnObject)
@@ -104,12 +101,12 @@ namespace LDTool
 		private PoolType RandomFollowEnemy => 
 			Random.Range(0, 2) == 0 ? PoolType.PinkFollowEnemy : PoolType.GreenFollowEnemy;
 
-		private void Pause()
+		protected override void Pause()
 		{
 			animator.enabled = false;
 		}
 
-		private void Play()
+		protected override void Play()
 		{			
 			animator.enabled = true;
 		}

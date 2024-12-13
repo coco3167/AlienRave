@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
 
 		hud.InitializeProgressBar();
 		SetStartMenu();
+
 	}
 
 	public void OnPlayerJoined(PlayerInput playerInput)
@@ -272,7 +273,8 @@ public class GameManager : MonoBehaviour
 			TutoManager.Instance.LaunchTuto();
 			return false;
 		}
-	
+
+		AudioManager.Instance.SetMusicParameter("GameStatus", "Play");
 		isPlaying = true;
 		OnPlay?.Invoke();
 		HideUIScreen();
@@ -308,6 +310,7 @@ public class GameManager : MonoBehaviour
 
 	public void ReshowPause()
 	{
+		print("reshowPause");
 		ShowUIScreen(ScreenState.Pause);
 	}
 

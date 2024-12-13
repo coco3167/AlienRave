@@ -28,6 +28,7 @@ public class TutoManager : MonoBehaviour
 
 	public void LaunchTuto(bool menuContext = false)
 	{
+		print(menuContext);
 		this.menuContext = menuContext;
 		canSkip = false;
 		inTuto = true;
